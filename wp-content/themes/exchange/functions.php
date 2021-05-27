@@ -105,38 +105,6 @@ function letters_email_setting_callback_function( $val ){
 
 add_action('admin_menu', 'add_email_field_to_general_admin_page');
 
-//hook into the init action and call create_book_taxonomies when it fires
-
-add_action( 'init', 'create_subjects_hierarchical_taxonomy', 0 );
-
-//create a custom taxonomy name it subjects for your posts
-
-function create_subjects_hierarchical_taxonomy() {
-	$labels = array(
-		'name' => _x( 'FAQ Categories', 'taxonomy general name' ),
-		'singular_name' => _x( 'FAQ Category', 'taxonomy singular name' ),
-		'search_items' =>  __( 'Search FAQ Category' ),
-		'all_items' => __( 'All FAQ Categories' ),
-		'parent_item' => __( 'Parent FAQ Category' ),
-		'parent_item_colon' => __( 'Parent FAQ Category:' ),
-		'edit_item' => __( 'Edit FAQ Category' ),
-		'update_item' => __( 'Update FAQ Category' ),
-		'add_new_item' => __( 'Add FAQ Category' ),
-		'new_item_name' => __( 'New FAQ Category' ),
-		'menu_name' => __( 'FAQ Categories' ),
-	);
-
-	register_taxonomy('faq-category',array('faq'), array(
-		'hierarchical' => true,
-		'labels' => $labels,
-		'show_ui' => true,
-		'show_in_rest' => true,
-		'show_admin_column' => true,
-		'query_var' => true,
-		'rewrite' => array( 'slug' => 'faq-category' ),
-	));
-}
-
 function add_menu_link_class( $atts, $item, $args ) {
     if (property_exists($args, 'link_class')) {
         $atts['class'] = $args->link_class;
