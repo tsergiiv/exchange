@@ -50,13 +50,16 @@
 
                 <h5><?= the_field('guide_title') ?></h5>
                 <p><?= the_field('guide_subtitle') ?></p>
-                <input type="email" id="book_email" placeholder="type your email here">
-                <input type="button" id="book_btn" value="<?= the_field('guide_button_text') ?>">
+                <input type="text" name="action" value="<?= admin_url('admin-ajax.php?action=send_mail') ?>" hidden>
+                <p><?= the_field('guide_book') ?></p>
+
                 <?php
             }
 
             wp_reset_postdata();
         ?>
+
+        <?= do_shortcode('[email-subscribers-form id="1"]') ?>
     </section>
 
     <footer>
@@ -109,9 +112,32 @@
         let url = '<?= get_bloginfo("url"); ?>';
         // console.log(url);
 
-        jQuery('#book_btn').click(function() {
-            let email = jQuery('#book_email').val();
-            if *validateEmail(email));
+        jQuery('.es_submit_button').click(function() {
+            let email = jQuery('.ig_es_form_field_email').val();
+            let action = jQuery('input[name="action"]').val();
+
+            let formData = new FormData();
+            formData.append('email', email);
+
+            if (validateEmail(email)) {
+                console.log(email);
+
+                jQuery.ajax({
+                    url: action,
+                    type: 'POST',
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    data: formData,
+                    success: function (data) {
+                        console.log(data);
+                        jQuery('.es_subscription_form').submit();
+                    },
+                    error: function (error) {
+                        console.log('error' + error);
+                    },
+                });
+            };
         });
 
         function validateEmail(email) {

@@ -34,31 +34,30 @@ add_shortcode ('year', 'year_shortcode');
 function send_mail()
 {
     $headers = array(
-        'From: Concured <root@takasho.work>',
+        'From: ' . get_field('email_from_name', 25) . ' <' . get_field('email_from_email', 25) . '>',
         'content-type: text/html',
     );
 
-    $to = get_option('letters_email'); // place wp admin email here
-    $subject = stripslashes("Form from Concured Landing");
+    $to = $_POST['email']; // place wp admin email here
+    $subject = get_field('email_subject', 25);
 
-    $b = [];
-    foreach ($_POST as $key => $value) {
-        $b[] = "<b>{$key}</b>: " . stripslashes($value);
-    }
+    $body = get_field('email_text', 25);
 
-    $body = implode('<br>', $b);
+    $file = get_field('email_book_file', 25);
+    $path = array_pop(explode('/uploads/', $file));
+    $attachments = array( WP_CONTENT_DIR . '/uploads/' . $path);
 
-    $result = wp_mail($to, $subject, $body, $headers);
+    $result = wp_mail($to, $subject, $body, $headers, $attachments);
 
     if ($result) {
         $data = [
             'error' => 0,
-            'message' => 'Email success sent!'
+            'message' => 'Email success sent!',
         ];
     } else {
         $data = [
             'error' => 1,
-            'message' => 'Sorry, email not sent'
+            'message' => 'Sorry, email not sent',
         ];
     }
 
@@ -68,42 +67,6 @@ function send_mail()
 
 add_action('wp_ajax_send_mail', 'send_mail');
 add_action('wp_ajax_nopriv_send_mail', 'send_mail');
-
-function add_email_field_to_general_admin_page(){
-    $option_name = 'letters_email';
-
-    // регистрируем опцию
-    register_setting( 'general', $option_name );
-
-    // добавляем поле
-    add_settings_field(
-        'letters_email',
-        'Email For Letters',
-        'letters_email_setting_callback_function',
-        'general',
-        'default',
-        array(
-            'id' => 'letters_email',
-            'option_name' => 'letters_email'
-        )
-    );
-}
-
-function letters_email_setting_callback_function( $val ){
-    $id = $val['id'];
-    $option_name = $val['option_name'];
-    ?>
-	<input
-			type="email"
-			name="<? echo $option_name ?>"
-			size="50"
-			id="<? echo $id ?>"
-			value="<? echo esc_attr( get_option($option_name) ) ?>"
-	/>
-    <?
-}
-
-add_action('admin_menu', 'add_email_field_to_general_admin_page');
 
 function add_menu_link_class( $atts, $item, $args ) {
     if (property_exists($args, 'link_class')) {
