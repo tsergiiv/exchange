@@ -36,8 +36,8 @@
             <h1><?= the_field('find_title') ?></h1>
             <h3><?= the_field('find_label_1') ?></h3>
             <h3><?= the_field('find_label_2') ?></h3>
-            <h3><?= the_field('find_title_1') ?></h3>
-            <h3><?= the_field('find_title_2') ?></h3>
+            <h3><a href="<?= get_home_url(); ?>/exchange"><?= the_field('find_title_1') ?></a></h3>
+            <h3><a href="<?= get_home_url(); ?>/country"><?= the_field('find_title_2') ?></a></h3>
 
             <?php
         }

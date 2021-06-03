@@ -51,7 +51,6 @@
                 <h5><?= the_field('guide_title') ?></h5>
                 <p><?= the_field('guide_subtitle') ?></p>
                 <input type="text" name="action" value="<?= admin_url('admin-ajax.php?action=send_mail') ?>" hidden>
-                <p><?= the_field('guide_book') ?></p>
 
                 <?php
             }

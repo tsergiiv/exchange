@@ -4,14 +4,14 @@
     $args = array(
         'posts_per_page' => -1,
         'post_type'      => 'post',
-        'category_name'  => 'exchange',
+        'category_name'  => 'country',
     );
 
     $posts_query = new WP_Query($args);
     $post_count = $posts_query->post_count;
 ?>
 
-    <h1>Exchange Page</h1>
+    <h1>Country Page</h1>
 
     <section class="blog-article container">
         <div class="blog-article-wrap" id="ajax-posts">
@@ -19,7 +19,7 @@
             $posts = get_posts( array(
                 'post_type'     => 'post',
                 'numberposts'   => 8,
-                'category_name' => 'exchange',
+                'category_name' => 'country',
                 'orderby'       => 'date',
                 'order'         => 'ASC',
             ) );
@@ -37,7 +37,7 @@
 
     <script>
         let postCount = <?= $post_count ?>;
-        let category = 'exchange';
+        let category = 'country';
     </script>
 
 <?php get_footer(); ?>

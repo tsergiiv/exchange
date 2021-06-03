@@ -18,9 +18,18 @@ function enqueue_scripts()
 
 	wp_enqueue_script('my', get_template_directory_uri() . '/assets/js/my.js', array('jquery'), date("h:i:s"));
 	wp_enqueue_script('my');
+
+    wp_register_script( 'core-js', get_template_directory_uri() . '/assets/js/core.js');
+    wp_enqueue_script( 'core-js' );
+
+    wp_localize_script( 'core-js', 'ajax_posts', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'noposts' => __('No older posts found', 'concuredblog'),
+    ));
 }
 
 add_theme_support( 'menus' );
+add_theme_support( 'widgets' );
 add_theme_support( 'post-thumbnails' );
 
 require get_template_directory() . '/post-types.php';
@@ -75,3 +84,35 @@ function add_menu_link_class( $atts, $item, $args ) {
     return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'add_menu_link_class', 1, 3 );
+
+function more_post_ajax() {
+    $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
+    $category = (isset($_POST['category'])) ? $_POST['category'] : '';
+    $ppp = 8;
+    $offset = ($page - 1) * $ppp;
+
+    header("Content-Type: text/html");
+
+    $args = array(
+        'post_type'      => 'post',
+        'category_name'  => $category,
+        'orderby'        => 'date',
+        'order'          => 'ASC',
+        'posts_per_page' => $ppp,
+        'offset'         => $offset,
+    );
+
+    $loop = new WP_Query($args);
+
+    $out = '';
+
+    if ($loop -> have_posts()) :  while ($loop -> have_posts()) : $loop -> the_post();
+        $out .= get_template_part('blocks/block-article', get_post_format());;
+    endwhile;
+    endif;
+    wp_reset_postdata();
+    die($out);
+}
+
+add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
+add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
