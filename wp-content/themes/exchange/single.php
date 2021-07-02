@@ -33,13 +33,19 @@
                 </div>
 
                 <div>
-                    <?php if (get_field('rating')): ?>
+                    <?php if (get_field('type') == 'exchange'): ?>
                     <?php
                         $ratings = [];
+                        $group = get_field_object('exchange_rating_group');
+
+                        $subfields = $group['sub_fields'];
+                        $values = $group['value'];
                         for ($i = 1; $i <= 6; $i++) {
-                            $rating = get_field_object('rating_' . $i) ?? null;
+                            $rating = $subfields[$i - 1] ?? null;
+                            $rating['value'] = $values[$rating['name']];
                             $ratings[] = $rating;
                         }
+
 
                         $average = 0;
                         $sum = 0;
@@ -52,7 +58,7 @@
                             }
                         }
                     ?>
-                    <h3>Rating <?= round($sum / $count, 1) ?> / 5</h3>
+                    <h3>Rating <?= round($sum / $count, 0) ?> / 5</h3>
                     <?php foreach ($ratings as $rating): ?>
                         <?php if ($rating['value']): ?>
                             <p><?= $rating['label'] ?> <?= $rating['value'] ?>/5</p>

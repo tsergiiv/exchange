@@ -13,7 +13,7 @@ function enqueue_styles()
 
 function enqueue_scripts()
 {
-	wp_register_script('jquery', 'https://code.jquery.com/jquery-3.5.1.min.js', array(), date("h:i:s"));
+	wp_register_script('jquery', get_template_directory_uri()  . '/assets/jquery-3.6.0.min.js', array(), date("h:i:s"));
 	wp_enqueue_script('jquery');
 
 	wp_enqueue_script('my', get_template_directory_uri() . '/assets/js/my.js', array('jquery'), date("h:i:s"));
@@ -26,6 +26,15 @@ function enqueue_scripts()
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
         'noposts' => __('No older posts found', 'concuredblog'),
     ));
+
+    wp_register_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js');
+    wp_enqueue_script( 'slick' );
+
+    wp_register_script( 'jquery.nice', get_template_directory_uri() . '/assets/js/jquery.nice-select.min.js');
+    wp_enqueue_script( 'jquery.nice' );
+
+    wp_register_script( 'main', get_template_directory_uri() . '/assets/js/main.js');
+    wp_enqueue_script( 'main' );
 }
 
 add_theme_support( 'menus' );
