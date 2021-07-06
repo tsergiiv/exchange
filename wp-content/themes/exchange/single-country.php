@@ -50,7 +50,7 @@ Template Post Type: country
                         </div>
                     </div>
                     <div class="article-head-right"><img class="article-head-img"
-                                                         src="<?php bloginfo('template_url'); ?>/assets/img/content/article/hongkong-img.png"
+                                                         src="<?php bloginfo('template_url'); ?>/assets/img/content/flags/flag-<?= basename(get_permalink()) ?>.png"
                                                          alt="<?= the_title() ?> head image"></div>
                 </div>
             </section>
@@ -233,7 +233,7 @@ Template Post Type: country
                         <h1 class="section-header m"><span class="word-accent orange">Bitcoin and cryptocurrency trading <span
                                         class="word-accent-square left"></span><span
                                         class="word-accent-square right"> </span></span>in <?= the_title() ?></h1>
-                        <?= the_content() ?>
+                        <?= the_field('trading_text') ?>
 
                         <!-- Country facts block -->
                         <?php
@@ -263,14 +263,26 @@ Template Post Type: country
                         ?>
                         <div class="article-info pink">
                             <div class="article-info-title">Services</div>
+                            <?php if ($service1['value']): ?>
                             <div class="article-info-elem">
-                                <?= $service1['label'] ?> <span class="article-info-elem-val"><?= $service1['value'] ?></span></div>
+                                <?= $service1['label'] ?> <span class="article-info-elem-val"><?= $service1['value'] ?></span>
+                            </div>
+                            <?php endif; ?>
+                            <?php if ($service2['value']): ?>
                             <div class="article-info-elem">
-                                <?= $service2['label'] ?> <span class="article-info-elem-val"><?= $service2['value'] ?></span></div>
+                                <?= $service2['label'] ?> <span class="article-info-elem-val"><?= $service2['value'] ?></span>
+                            </div>
+                            <?php endif; ?>
+                            <?php if ($service3['value']): ?>
                             <div class="article-info-elem">
-                                <?= $service3['label'] ?> <span class="article-info-elem-val violet"><?= $service3['value'] ?></span></div>
+                                <?= $service3['label'] ?> <span class="article-info-elem-val violet"><?= $service3['value'] ?></span>
+                            </div>
+                            <?php endif; ?>
+                            <?php if ($service4['value']): ?>
                             <div class="article-info-elem">
-                                <?= $service4['label'] ?> <span class="article-info-elem-val"><?= $service4['value'] ?></span></div>
+                                <?= $service4['label'] ?> <span class="article-info-elem-val"><?= $service4['value'] ?></span>
+                            </div>
+                            <?php endif; ?>
                         </div>
 
                         <!-- Law and crypto trading block -->
@@ -344,17 +356,11 @@ Template Post Type: country
                         ?>
                         <div class="article-content-heading">Crypto financial services in <?= the_title() ?></div>
                         <div class="article-content-subheading"><?= $services1['label'] ?></div>
-                        <p>
-                            <?= $services1['value'] ?>
-                        </p>
+                        <?= $services1['value'] ?>
                         <div class="article-content-subheading"><?= $services2['label'] ?></div>
-                        <p>
-                            <?= $services2['value'] ?>
-                        </p>
+                        <?= $services2['value'] ?>
                         <div class="article-content-subheading"><?= $services3['label'] ?></div>
-                        <p>
-                            <?= $services3['value'] ?>
-                        </p>
+                        <?= $services3['value'] ?>
 
                         <!-- Using crypto block -->
                         <?php
@@ -362,28 +368,33 @@ Template Post Type: country
                             $using2 =  get_field_object('using_text_2');
                         ?>
                         <div class="article-content-heading">Using crypto in <?= the_title() ?></div>
-                        <div class="article-step green">
-                            <div class="article-step-icon"><img class="article-step-icon-content"
-                                                                src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-1.png"
-                                                                alt="Article step image 1"></div>
-                            <div class="article-step-info">
-                                <div class="article-step-info-title"><?= $using1['label'] ?></div>
-                                <div class="article-step-info-text">
-                                    <?= $using1['value'] ?>
+                        <?php if ($using1['value']): ?>
+                            <div class="article-step green">
+                                <div class="article-step-icon"><img class="article-step-icon-content"
+                                                                    src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-1.png"
+                                                                    alt="Article step image 1"></div>
+                                <div class="article-step-info">
+                                    <div class="article-step-info-title"><?= $using1['label'] ?></div>
+                                    <div class="article-step-info-text">
+                                        <?= $using1['value'] ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="article-step orange">
-                            <div class="article-step-icon"><img class="article-step-icon-content"
-                                                                src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-2.png"
-                                                                alt="Article step image 1"></div>
-                            <div class="article-step-info">
-                                <div class="article-step-info-title"><?= $using2['label'] ?></div>
-                                <div class="article-step-info-text">
-                                    <?= $using2['value'] ?>
+                        <?php endif; ?>
+
+                        <?php if ($using2['value']): ?>
+                            <div class="article-step orange">
+                                <div class="article-step-icon"><img class="article-step-icon-content"
+                                                                    src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-2.png"
+                                                                    alt="Article step image 1"></div>
+                                <div class="article-step-info">
+                                    <div class="article-step-info-title"><?= $using2['label'] ?></div>
+                                    <div class="article-step-info-text">
+                                        <?= $using2['value'] ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php endif; ?>
 
                         <!-- Crypto regulation block -->
                         <?php
@@ -391,10 +402,14 @@ Template Post Type: country
                             $regulation2 =  get_field_object('regulation_text_2');
                         ?>
                         <div class="article-content-heading">Crypto regulation in <?= the_title() ?></div>
-                        <div class="article-content-subheading"><?= $regulation1['label'] ?></div>
-                        <?= $regulation1['value'] ?>
-                        <div class="article-content-subheading"><?= $regulation2['label'] ?></div>
-                        <?= $regulation2['value'] ?>
+                        <?php if ($regulation1['value']): ?>
+                            <div class="article-content-subheading"><?= $regulation1['label'] ?></div>
+                            <?= $regulation1['value'] ?>
+                        <?php endif; ?>
+                        <?php if ($regulation1['value']): ?>
+                            <div class="article-content-subheading"><?= $regulation2['label'] ?></div>
+                            <?= $regulation2['value'] ?>
+                        <?php endif; ?>
                         <div class="article-help"><span class="article-help-title">Helpful?</span>
                             <button class="article-help-btn violet">Yes</button>
                             <button class="article-help-btn orange">No</button>

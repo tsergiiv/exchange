@@ -207,7 +207,7 @@ function register_post_types(){
 //        ],
 //        'map_meta_cap' => true,
         'hierarchical'        => false,
-        'supports'            => ['title', 'editor', 'custom-fields'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'supports'            => ['title', 'custom-fields'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'taxonomies'          => [],
         'has_archive'         => false,
         'rewrite'             => true,
