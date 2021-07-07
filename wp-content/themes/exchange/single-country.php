@@ -414,8 +414,16 @@ Template Post Type: country
                             <button class="article-help-btn violet">Yes</button>
                             <button class="article-help-btn orange">No</button>
                         </div>
-                        <div class="article-tag"><a href="">#coinbase</a><a href="">#coinbase exchange </a><a href="">#what
-                                is coinbase? </a><a href="">#coinbase wallet </a><a href="">#coinbase review </a></div>
+                        <div class="article-tag">
+                            <a href="">#crypto</a>
+                            <a href="">#exchanges</a>
+                            <a href="">#regulation</a>
+                            <a href="">#<?= the_title() ?></a>
+                            <a href="">#coinbase exchange </a>
+                            <a href="">#what is coinbase? </a>
+                            <a href="">#coinbase wallet </a>
+                            <a href="">#coinbase review </a>
+                        </div>
                     </div>
                     <div class="article-sidebar">
                         <div class="article-sidebar-title">Table of contents</div>

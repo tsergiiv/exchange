@@ -126,6 +126,8 @@ function more_post_ajax() {
 add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
 add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
 
+flush_rewrite_rules( false );
+
 //function wp_coming_soon_mode() {
 //    echo '<h1>Coming soon</h1>';
 //    die();
