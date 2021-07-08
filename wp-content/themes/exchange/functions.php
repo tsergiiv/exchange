@@ -128,9 +128,18 @@ add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
 
 flush_rewrite_rules( false );
 
-//function wp_coming_soon_mode() {
-//    echo '<h1>Coming soon</h1>';
-//    die();
-//}
-//
-//add_action('get_header', 'wp_coming_soon_mode');
+// Enable the option show in rest
+add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
+
+// Enable the option edit in rest
+add_filter( 'acf/rest_api/field_settings/edit_in_rest', '__return_true' );
+
+function wp_coming_soon_mode() {
+    $part = get_template_part('blocks/coming-soon');
+    echo $part;
+    die();
+}
+
+if( !current_user_can('administrator') ) {
+    add_action('get_header', 'wp_coming_soon_mode');
+};

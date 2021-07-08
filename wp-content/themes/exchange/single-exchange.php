@@ -300,185 +300,11 @@ Template Post Type: exchange
                             generating income.
                         </p>
                         <div class="article-content-heading">How does <?= the_title() ?> compare? </div>
-                        <div class="article-content-subheading">Entry threshold</div>
-                        <p>
-                            <?= the_title() ?> has something to please everyone. With a customizable interface
-                            and powerful trading tools, beginner and intermediate traders alike
-                            can jump right in.
-                        </p>
-                        <div class="article-content-subheading">Аlternatives</div>
-                        <p>
-                            For users who are intimidated by the <?= the_title() ?> interface and find it too
-                            complicated, Luno presents an excellent alternative. Those looking to
-                            integrate crypto into their daily lives and get more rewards might want
-                            to try Crypto.com.
-                        </p>
-                        <p>
-                            If you want access to more coins and are willing to compromise on security,
-                            KuCoin (260+ coins) or Gate.io (650+ coins) are great options.
-                        </p>
+                        <?= the_field('compare') ?>
                         <div class="article-content-heading">Customer Support </div>
                         <?= the_field('customer_support') ?>
                         <div class="article-content-heading">Opening an Account and Trading </div>
-                        <p>Opening an account on <?= the_title() ?> is relatively straightforward. </p>
-                        <div class="article-content-subheading">How To Open Account and Trade </div>
-                        <div class="article-slider">
-                            <div class="article-slider-wrap">
-                                <div class="article-slider-elem">
-                                    <div class="article-slider-elem-content">
-                                        <div class="article-slider-img"><img class="article-slider-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/article/article-slider-img-1.png" alt="Slider Image #1"></div>
-                                        <div class="article-slider-info">
-                                            <div class="article-slider-number">01</div>
-                                            <div class="article-slider-title">Create an account in <?=  the_title() ?></div>
-                                            <div class="article-slider-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Cras vitae ligula sed velit ultrices ullamcorper.
-                                                Integer ut lacus id purus lobortis egestas sit amet
-                                                ac felis. Quisque nec ex a lacus placerat volutpat.
-                                                Duis congue, magna in volutpat dictum, tortor arcu
-                                                condimentum elit.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article-slider-elem">
-                                    <div class="article-slider-elem-content">
-                                        <div class="article-slider-img"><img class="article-slider-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/article/article-slider-img-2.png" alt="Slider Image #1"></div>
-                                        <div class="article-slider-info">
-                                            <div class="article-slider-number">02</div>
-                                            <div class="article-slider-title">Create an account in <?=  the_title() ?></div>
-                                            <div class="article-slider-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Cras vitae ligula sed velit ultrices ullamcorper.
-                                                Integer ut lacus id purus lobortis egestas sit amet
-                                                ac felis. Quisque nec ex a lacus placerat volutpat.
-                                                Duis congue, magna in volutpat dictum, tortor arcu
-                                                condimentum elit.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article-slider-elem">
-                                    <div class="article-slider-elem-content">
-                                        <div class="article-slider-img"><img class="article-slider-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/article/article-slider-img-1.png" alt="Slider Image #1"></div>
-                                        <div class="article-slider-info">
-                                            <div class="article-slider-number">01</div>
-                                            <div class="article-slider-title">Create an account in <?=  the_title() ?></div>
-                                            <div class="article-slider-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Cras vitae ligula sed velit ultrices ullamcorper.
-                                                Integer ut lacus id purus lobortis egestas sit amet
-                                                ac felis. Quisque nec ex a lacus placerat volutpat.
-                                                Duis congue, magna in volutpat dictum, tortor arcu
-                                                condimentum elit.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article-slider-elem">
-                                    <div class="article-slider-elem-content">
-                                        <div class="article-slider-img"><img class="article-slider-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/article/article-slider-img-1.png" alt="Slider Image #1"></div>
-                                        <div class="article-slider-info">
-                                            <div class="article-slider-number">01</div>
-                                            <div class="article-slider-title">Create an account in <?=  the_title() ?></div>
-                                            <div class="article-slider-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Cras vitae ligula sed velit ultrices ullamcorper.
-                                                Integer ut lacus id purus lobortis egestas sit amet
-                                                ac felis. Quisque nec ex a lacus placerat volutpat.
-                                                Duis congue, magna in volutpat dictum, tortor arcu
-                                                condimentum elit.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article-slider-elem">
-                                    <div class="article-slider-elem-content">
-                                        <div class="article-slider-img"><img class="article-slider-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/article/article-slider-img-1.png" alt="Slider Image #1"></div>
-                                        <div class="article-slider-info">
-                                            <div class="article-slider-number">01</div>
-                                            <div class="article-slider-title">Create an account in <?=  the_title() ?></div>
-                                            <div class="article-slider-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Cras vitae ligula sed velit ultrices ullamcorper.
-                                                Integer ut lacus id purus lobortis egestas sit amet
-                                                ac felis. Quisque nec ex a lacus placerat volutpat.
-                                                Duis congue, magna in volutpat dictum, tortor arcu
-                                                condimentum elit.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article-slider-elem">
-                                    <div class="article-slider-elem-content">
-                                        <div class="article-slider-img"><img class="article-slider-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/article/article-slider-img-1.png" alt="Slider Image #1"></div>
-                                        <div class="article-slider-info">
-                                            <div class="article-slider-number">01</div>
-                                            <div class="article-slider-title">Create an account in <?=  the_title() ?></div>
-                                            <div class="article-slider-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Cras vitae ligula sed velit ultrices ullamcorper.
-                                                Integer ut lacus id purus lobortis egestas sit amet
-                                                ac felis. Quisque nec ex a lacus placerat volutpat.
-                                                Duis congue, magna in volutpat dictum, tortor arcu
-                                                condimentum elit.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article-slider-elem">
-                                    <div class="article-slider-elem-content">
-                                        <div class="article-slider-img"><img class="article-slider-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/article/article-slider-img-1.png" alt="Slider Image #1"></div>
-                                        <div class="article-slider-info">
-                                            <div class="article-slider-number">01</div>
-                                            <div class="article-slider-title">Create an account in <?=  the_title() ?></div>
-                                            <div class="article-slider-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Cras vitae ligula sed velit ultrices ullamcorper.
-                                                Integer ut lacus id purus lobortis egestas sit amet
-                                                ac felis. Quisque nec ex a lacus placerat volutpat.
-                                                Duis congue, magna in volutpat dictum, tortor arcu
-                                                condimentum elit.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article-slider-elem">
-                                    <div class="article-slider-elem-content">
-                                        <div class="article-slider-img"><img class="article-slider-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/article/article-slider-img-1.png" alt="Slider Image #1"></div>
-                                        <div class="article-slider-info">
-                                            <div class="article-slider-number">01</div>
-                                            <div class="article-slider-title">Create an account in <?=  the_title() ?></div>
-                                            <div class="article-slider-text">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Cras vitae ligula sed velit ultrices ullamcorper.
-                                                Integer ut lacus id purus lobortis egestas sit amet
-                                                ac felis. Quisque nec ex a lacus placerat volutpat.
-                                                Duis congue, magna in volutpat dictum, tortor arcu
-                                                condimentum elit.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="article-slider-footer">
-                                <div class="article-slider-btn article-slider-prev">
-                                    <svg class="article-slider-btn-icon">
-                                        <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#slider-arrow"></use>
-                                    </svg>
-                                </div>
-                                <div class="article-slider-nav">
-                                    <div class="article-slider-nav-num">1</div>
-                                    <div class="article-slider-nav-dots"></div>
-                                    <div class="article-slider-nav-num">8</div>
-                                </div>
-                                <div class="article-slider-btn article-slider-next">
-                                    <svg class="article-slider-btn-icon">
-                                        <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#slider-arrow"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                        <?= the_field('opening_account') ?>
                         <div class="article-content-subheading">Sign-up </div>
                         <div class="article-step">
                             <div class="article-step-icon"><span class="article-step-icon-text">01</span></div>
@@ -728,111 +554,28 @@ Template Post Type: exchange
                             </div>
                         </div>
                         <div class="article-content-heading">FAQs</div>
-                        <div class="article-accordion" data-accordion="faq">
-                            <div class="article-accordion-title">
-                                Is <?=  the_title() ?> Safe?<span class="article-accordion-title-btn"><span></span></span></div>
-                            <div class="article-accordion-dropdown">
-                                Although there is no 100% guarantee of safety when using any
-                                online exchange, <?=  the_title() ?> does pride itself in its extensive
-                                security profile. Skeptics will be happy to know that the
-                                exchange also insures online holdings.
-                            </div>
-                        </div>
-                        <div class="article-accordion" data-accordion="faq">
-                            <div class="article-accordion-title">
-                                How to withdraw money from <?=  the_title() ?>?<span class="article-accordion-title-btn"><span></span></span></div>
-                            <div class="article-accordion-dropdown">
-                                If you trade cryptocurrencies professionally you’ll be
-                                eligible for income tax on your profits but if you only
-                                do it as a casual player you can avoid tax. However,
-                                whether you are trading cryptocurrencies professionally
-                                or as an amateur is something you’ll have to iron out
-                                with a glass of Sake and a specialist advisor. The
-                                important thing is whether your profits are derived in
-                                Hong Kong (even if the exchanges are overseas), so if
-                                you’re buying, selling, exchanging bitcoin for gain and
-                                based in Hong Kong you’ll need to declare them. Taxation
-                                issues around crypto currencies appear straightforward
-                                but expert advice is advisable as everything crypto is
-                                changing all the time.
-                            </div>
-                        </div>
-                        <div class="article-accordion" data-accordion="faq">
-                            <div class="article-accordion-title">
-                                How to send/receive Bitcoin on <?=  the_title() ?>?<span class="article-accordion-title-btn"><span></span></span></div>
-                            <div class="article-accordion-dropdown">
-                                If you trade cryptocurrencies professionally you’ll be
-                                eligible for income tax on your profits but if you only
-                                do it as a casual player you can avoid tax. However,
-                                whether you are trading cryptocurrencies professionally
-                                or as an amateur is something you’ll have to iron out
-                                with a glass of Sake and a specialist advisor. The
-                                important thing is whether your profits are derived in
-                                Hong Kong (even if the exchanges are overseas), so if
-                                you’re buying, selling, exchanging bitcoin for gain and
-                                based in Hong Kong you’ll need to declare them. Taxation
-                                issues around crypto currencies appear straightforward
-                                but expert advice is advisable as everything crypto is
-                                changing all the time.
-                            </div>
-                        </div>
-                        <div class="article-accordion" data-accordion="faq">
-                            <div class="article-accordion-title">
-                                Which coin will <?=  the_title() ?> add next?<span class="article-accordion-title-btn"><span></span></span></div>
-                            <div class="article-accordion-dropdown">
-                                If you trade cryptocurrencies professionally you’ll be
-                                eligible for income tax on your profits but if you only
-                                do it as a casual player you can avoid tax. However,
-                                whether you are trading cryptocurrencies professionally
-                                or as an amateur is something you’ll have to iron out
-                                with a glass of Sake and a specialist advisor. The
-                                important thing is whether your profits are derived in
-                                Hong Kong (even if the exchanges are overseas), so if
-                                you’re buying, selling, exchanging bitcoin for gain and
-                                based in Hong Kong you’ll need to declare them. Taxation
-                                issues around crypto currencies appear straightforward
-                                but expert advice is advisable as everything crypto is
-                                changing all the time.
-                            </div>
-                        </div>
-                        <div class="article-accordion" data-accordion="faq">
-                            <div class="article-accordion-title">
-                                How do you transfer from <?=  the_title() ?> to Binance?<span class="article-accordion-title-btn"><span></span></span></div>
-                            <div class="article-accordion-dropdown">
-                                If you trade cryptocurrencies professionally you’ll be
-                                eligible for income tax on your profits but if you only
-                                do it as a casual player you can avoid tax. However,
-                                whether you are trading cryptocurrencies professionally
-                                or as an amateur is something you’ll have to iron out
-                                with a glass of Sake and a specialist advisor. The
-                                important thing is whether your profits are derived in
-                                Hong Kong (even if the exchanges are overseas), so if
-                                you’re buying, selling, exchanging bitcoin for gain and
-                                based in Hong Kong you’ll need to declare them. Taxation
-                                issues around crypto currencies appear straightforward
-                                but expert advice is advisable as everything crypto is
-                                changing all the time.
-                            </div>
-                        </div>
-                        <div class="article-accordion" data-accordion="faq">
-                            <div class="article-accordion-title">
-                                How to avoid <?=  the_title() ?> fees?<span class="article-accordion-title-btn"><span></span></span></div>
-                            <div class="article-accordion-dropdown">
-                                If you trade cryptocurrencies professionally you’ll be
-                                eligible for income tax on your profits but if you only
-                                do it as a casual player you can avoid tax. However,
-                                whether you are trading cryptocurrencies professionally
-                                or as an amateur is something you’ll have to iron out
-                                with a glass of Sake and a specialist advisor. The
-                                important thing is whether your profits are derived in
-                                Hong Kong (even if the exchanges are overseas), so if
-                                you’re buying, selling, exchanging bitcoin for gain and
-                                based in Hong Kong you’ll need to declare them. Taxation
-                                issues around crypto currencies appear straightforward
-                                but expert advice is advisable as everything crypto is
-                                changing all the time.
-                            </div>
-                        </div>
+                        <?php
+                            for ($i = 1; $i <= 7; $i++) {
+                                if (!get_field('question_' . $i)) {
+                                    continue;
+                                }
+
+                                ?>
+
+                                <div class="article-accordion" data-accordion="faq">
+                                    <div class="article-accordion-title">
+                                        <?= the_field('question_' . $i) ?>
+                                        <span class="article-accordion-title-btn"><span></span></span>
+                                    </div>
+                                    <div class="article-accordion-dropdown">
+                                        <?= the_field('answer_' . $i) ?>
+                                    </div>
+                                </div>
+
+                                <?php
+                            }
+                        ?>
+
                         <div class="article-content-heading"><?=  the_title() ?> Payment Methods</div>
                         <p>
                             Depending on your location, <?=  the_title() ?> allows account funding via a
@@ -881,112 +624,11 @@ Template Post Type: exchange
                         </p>
                         <p><a class="article-link-sm" href="">US customers</a><br><a class="article-link-sm" href="">UK customers</a><br><a class="article-link-sm" href="">European customers</a></p>
                         <div class="article-content-heading"><?=  the_title() ?> Fees and Trading costs</div>
-                        <p><?=  the_title() ?> Fees and Trading costs</p>
-                        <ul class="article-list">
-                            <li>
-                                <?=  the_title() ?> charges a spread of about 0.5% for cryptocurrency sales and
-                                purchases. These rates may be higher or lower depending on market fluctuations.
-                            </li>
-                            <li>
-                                <?=  the_title() ?> also charges a fee, the greater of either a flat fee or a variable
-                                one depending on the amount purchased and the payment type.
-                            </li>
-                        </ul>
-                        <p>
-                            For example, if you purchase $100 worth of Bitcoin in the US and pay with a US
-                            bank account or your USD Wallet, the flat fee would be calculated as $2.99. The
-                            fee structure is similar for the rest of the world.
-                        </p>
-                        <p>
-                            The variable percentage fee would usually be 1.49% of the total transaction
-                            (or $1.49). Since the flat fee is greater than the 1.49% variable fee, the
-                            fee charged would be $2.99.
-                        </p>
-                        <p>
-                            A bitcoin purchase with a debit card would have a fee of 3.99% since the
-                            variable percentage fee is higher than the flat fee.
-                        </p>
-                        <p><?=  the_title() ?> gives these fee guidelines for total amount of trade:</p>
-                        <div class="article-content-subheading">Withdrawal fees update</div>
-                        <p>
-                            <?=  the_title() ?> previously paid the network fees for crypto withdrawals from <?=  the_title() ?>
-                            Pro. As of September 2020 however, <?=  the_title() ?> announced that the fees would be
-                            passed on to the users instead. This is mainly due to the increased costs
-                            associated with high network activity. <br><?=  the_title() ?> ensures that the fees are communicated before withdrawal, so there
-                            are no additional hidden fees.
-                        </p>
-                        <div class="article-content-subheading"><?=  the_title() ?> Pro Fees</div>
-                        <p>
-                            <?=  the_title() ?> Pro’s pricing model is  more straightforward, as it's based on
-                            monthly trading volume and liquidity of the asset at the time of purchase.
-                            If the asset is immediately available for purchase you are charged a
-                            “taker” fee.
-                        </p>
-                        <p>
-                            If the order needs to wait for a buyer you are charged a “maker” fee. On
-                            <?=  the_title() ?> Pro, any deposits and withdrawals must be made through a linked
-                            bank account. No card purchases are allowed. Wire transfer fees still apply.
-                        </p>
-                        <p>
-                            <?=  the_title() ?> Pro has relatively low fees ranging from 0% to 0.50% for taker trades,
-                            although the interface is not as easy to use as the standard <?=  the_title() ?>. <br>Compared to <?=  the_title() ?>’s fees which can go as high as 4%, avid crypto investors
-                            may prefer <?=  the_title() ?> Pro.<br>Deposits of available cryptocurrency into your <?=  the_title() ?> Pro wallet are
-                            unlimited. There is also no restriction on deposits in USD via wire transfer. <br><?=  the_title() ?> Pro offers its users a highly liquid trading platform with users
-                            able to withdraw $10,000 per day from personal accounts, and $50,000 per day
-                            from an institutional account. They allow higher withdrawal limits upon
-                            request and approval.
-                        </p>
+                        <?= the_field('trading_costs') ?>
+
                         <div class="section-header m"><span class="word-accent orange"><?= the_title() ?>’s Services<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span></div>
-                        <p><b class="orange"><?= the_title() ?> </b>offers an extensive array of features that will appeal to experienced
-                            investors, including a wide array of trade options,  advanced charting,
-                            API keys,  an account management service, an over-the-counter investment
-                            service, and more.
-                        </p>
-                        <div class="article-content-subheading">Diverse trade options</div>
-                        <p>
-                            Investors familiar with market mechanics who want to step up their crypto
-                            game will find <?= the_title() ?> already offers them the tools to maximise profits.
-                            <?= the_title() ?> offers margin trading,  allowing users to use up to 5x leverage to
-                            go long or short on a currency pair. Another tempting feature are the low
-                            rollover fees (never more than 0.02% per four hours) and high margin limits.
-                        </p>
-                        <p>
-                            Users can also access <?= the_title() ?>’s futures trading service. Currently, the
-                            exchange offers futures contracts for Ethereum, Bitcoin, Bitcoin Cash,
-                            Litecoin, and Ripple. Compared to exchanges such as Binance, however, <?= the_title() ?>’s
-                            number of futures products and maximum leverage (50x) is below average.
-                        </p>
-                        <div class="article-content-subheading">Account management service</div>
-                        <p><?= the_title() ?> offers a bespoke <a class="article-link-sm orange" href="">account management service </a>for high level traders. This includes more channels of
-                            communication and a personal account manager.
-                        </p>
-                        <div class="article-content-subheading"><?= the_title() ?> OTC desk </div>
-                        <p>
-                            In addition to the account management service, <?= the_title() ?> offers high-volume
-                            traders making trades in excess of $100,000 access to over-the-counter
-                            (OTC) trading that takes place off the main exchange. This includes
-                            market insight, 1-on-1 white glove service, full asset support, and
-                            global coverage.
-                        </p>
-                        <div class="article-content-subheading">Customisable user interface</div>
-                        <p>
-                            <?= the_title() ?> offers trading interfaces for beginner, intermediate, and
-                            experienced traders and a <a class="article-link-sm orange" href="">customisable platform UI. </a>While the options may be intimidating for beginners, experienced
-                            traders will be able to dive right in.
-                        </p>
-                        <div class="article-content-subheading"><?= the_title() ?> APIs</div>
-                        <p>
-                            For users looking to integrate automation into their trading, <?= the_title() ?>
-                            offers a fully documented <a class="article-link-sm orange" href="">REST API</a>, in addition to the <a class="article-link-sm orange" href="">Websockets API </a>and <a class="article-link-sm orange" href=""><?= the_title() ?> Futures API</a>. The <?= the_title() ?> API unfortunately does not offer a test environment,
-                            but algorithmic traders can use the APIs to their advantage.
-                        </p>
-                        <div class="article-content-subheading">Dark Pool </div>
-                        <p>
-                            No, it’s not the next Marvel movie. The dark pool allows users
-                            to trade off the books, so traders can anonymously place large buy
-                            or sell orders without revealing their interest or causing the
-                            market to move unfavorably.
-                        </p>
+                        <?= the_field('services') ?>
+
                         <div class="article-help"><span class="article-help-title">Helpful?</span>
                             <button class="article-help-btn violet">Yes</button>
                             <button class="article-help-btn orange">No</button>
