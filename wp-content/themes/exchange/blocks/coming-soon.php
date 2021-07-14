@@ -4,7 +4,7 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Coincub - Coming soon</title>
-    <link rel="icon" href="<?php bloginfo('template_url'); ?>/assets/img/icons/favicon-light.ico?light" media="(prefers-color-scheme:no-preference)">
+    <link rel="icon" href="<?php bloginfo('template_url'); ?>/assets/img/favicon.png"">
     <?php wp_head(); ?>
 </head>
 
@@ -60,7 +60,8 @@
                             <form class="soon-form" action="">
                                 <div class="form-group">
                                     <label class="form-title"><?= the_field('email_input_label') ?></label>
-                                    <input class="form-input" id="email" type="text" name="formEmail" placeholder="Your Email" value="youremail@mail.com">
+                                    <input class="form-input" type="email" name="formEmail" placeholder="youremail@mail.com" required>
+                                    <span class="form-error-msg">Please type correct email</span>
                                 </div>
                                 <button class="btn form-btn" id="submit-form-btn">
                                     <span class="btn-arrow"></span>
@@ -83,6 +84,33 @@
     <?php wp_footer(); ?>
 
     <script>
+        // Coming soon form validation
+        jQuery('.soon-form').on('submit', function (e) {
+            e.preventDefault();
+
+            var $this = jQuery(this);
+            var action = $this.attr('action');
+
+            if (!action) {
+                console.log('У формы отсутствует атрибут action, не знаю куда посылать данные');
+                return false;
+            };
+
+            if (validation.verificationFields($this)) {
+                let formBtn = $this.find('.form-btn');
+                let formBtnText = $this.find('.btn-text');
+                let formBtnArrow = $this.find('.btn-arrow');
+
+                formBtn.addClass('success');
+                formBtnText.text('Done');
+
+                validation.resetForm($this);
+            };
+
+            return false;
+        });
+
+        // Coming soon form validation - end
         // Coming soon timer
         let endDate = '<?= $end_date ?>';
         console.log(endDate);
@@ -91,7 +119,21 @@
             e.preventDefault();
             let email = jQuery('#email').val();
             jQuery('.ig_es_form_field_email').val(email);
-            console.log(email);
+
+            let $this = jQuery('.soon-form');
+
+            if (!validation.verificationFields($this)) {
+                return false;
+            }
+
+            let formBtn = $this.find('.form-btn');
+            let formBtnText = $this.find('.btn-text');
+            let formBtnArrow = $this.find('.btn-arrow');
+
+            formBtn.addClass('success');
+            formBtnText.text('Done');
+
+            validation.resetForm($this);
 
             jQuery('.es_submit_button').attr('name', 'sth-else');
             jQuery('.es_subscription_form').submit();

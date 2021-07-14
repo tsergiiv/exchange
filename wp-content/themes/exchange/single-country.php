@@ -7,19 +7,14 @@ Template Post Type: country
 
 <?php get_header(); ?>
 
-<div class="wrapper">
-    <header class="header container"><a class="header-logo" href=""><img class="header-logo-img"
-                                                                         src="<?php bloginfo('template_url'); ?>/assets/img/general/logo.svg"
-                                                                         alt="СoinResident Logo"></a>
-        <nav class="header-nav"><a class="header-nav-link" href="">Countries</a><a class="header-nav-link" href="">Exchanges</a>
-        </nav>
-    </header>
     <main class="content">
         <div class="article country">
             <section class="article-head container">
-                <div class="breadcrumbs"><a class="breadcrumbs-link" href="">Main Page</a><a class="breadcrumbs-link"
-                                                                                             href="">Exchange
-                        Reviews</a><a class="breadcrumbs-link" href="">Coinbase Review 2021 - Pros, Cons and More</a></div>
+                <div class="breadcrumbs">
+                    <a class="breadcrumbs-link" href="<?= home_url() ?>">Main Page</a>
+                    <a class="breadcrumbs-link" href="<?= home_url() ?>/catalog">Country Reviews</a>
+                    <a class="breadcrumbs-link" href="">Crypto exchanges & Regulation in <?= the_title() ?></a>
+                </div>
                 <div class="article-head-wrap">
                     <div class="article-head-left">
                         <h1 class="section-header big"><span class="word-accent violet">Crypto exchanges<span
@@ -59,90 +54,26 @@ Template Post Type: country
                 <!-- Crypto Country Rating block -->
                 <?php
                     $rating =  get_field_object('country_rating');
-                    $rating1 =  get_field_object('country_rating_1');
-                    $rating2 =  get_field_object('country_rating_2');
-                    $rating3 =  get_field_object('country_rating_3');
-                    $rating4 =  get_field_object('country_rating_4');
-                    $rating5 =  get_field_object('country_rating_5');
-                    $rating6 =  get_field_object('country_rating_6');
-                    $rating7 =  get_field_object('country_rating_7');
-                    $rating8 =  get_field_object('country_rating_8');
                 ?>
-                <section class="article-rating">
+                <section class="article-rating" data-max="10">
                     <div class="article-rating-title"><?= $rating['label'] ?>: <?= $rating['value'] ?>/10</div>
                     <div class="article-rating-wrap">
-                        <div class="article-rating-elem green">
-                            <div class="article-rating-elem-content">
-                                <div class="article-rating-point">
-                                    <div class="article-rating-point-val"><?= $rating1['value'] ?>/10</div>
+                        <?php
+                            for ($i = 1; $i <= 8; $i++):
+                                $rating = get_field_object('country_rating_' . $i);
+                        ?>
+                            <div class="article-rating-elem">
+                                <div class="article-rating-elem-content">
+                                    <div class="article-rating-point">
+                                        <div class="article-rating-point-num">
+                                            <span class="article-rating-point-val"><?= $rating['value'] ?></span>/10
+                                        </div>
+                                    </div>
+                                    <div class="article-rating-name"><?= $rating['label'] ?></div>
+                                    <div class="article-rating-desc"><?= the_field('why_' . $i) ?></div>
                                 </div>
-                                <div class="article-rating-name"><?= $rating1['label'] ?></div>
-                                <div class="article-rating-desc"><?= the_field('why_1') ?></div>
                             </div>
-                        </div>
-                        <div class="article-rating-elem pink">
-                            <div class="article-rating-elem-content">
-                                <div class="article-rating-point">
-                                    <div class="article-rating-point-val"><?= $rating2['value'] ?>/10</div>
-                                </div>
-                                <div class="article-rating-name"><?= $rating2['label'] ?></div>
-                                <div class="article-rating-desc"><?= the_field('why_2') ?></div>
-                            </div>
-                        </div>
-                        <div class="article-rating-elem pink">
-                            <div class="article-rating-elem-content">
-                                <div class="article-rating-point">
-                                    <div class="article-rating-point-val"><?= $rating3['value'] ?>/10</div>
-                                </div>
-                                <div class="article-rating-name"><?= $rating3['label'] ?></div>
-                                <div class="article-rating-desc"><?= the_field('why_3') ?></div>
-                            </div>
-                        </div>
-                        <div class="article-rating-elem green">
-                            <div class="article-rating-elem-content">
-                                <div class="article-rating-point">
-                                    <div class="article-rating-point-val"><?= $rating4['value'] ?>/10</div>
-                                </div>
-                                <div class="article-rating-name"><?= $rating4['label'] ?></div>
-                                <div class="article-rating-desc"><?= the_field('why_4') ?></div>
-                            </div>
-                        </div>
-                        <div class="article-rating-elem orange">
-                            <div class="article-rating-elem-content">
-                                <div class="article-rating-point">
-                                    <div class="article-rating-point-val"><?= $rating5['value'] ?>/10</div>
-                                </div>
-                                <div class="article-rating-name"><?= $rating5['label'] ?></div>
-                                <div class="article-rating-desc"><?= the_field('why_5') ?></div>
-                            </div>
-                        </div>
-                        <div class="article-rating-elem green">
-                            <div class="article-rating-elem-content">
-                                <div class="article-rating-point">
-                                    <div class="article-rating-point-val"><?= $rating6['value'] ?>/10</div>
-                                </div>
-                                <div class="article-rating-name"><?= $rating6['label'] ?></div>
-                                <div class="article-rating-desc"><?= the_field('why_6') ?></div>
-                            </div>
-                        </div>
-                        <div class="article-rating-elem orange">
-                            <div class="article-rating-elem-content">
-                                <div class="article-rating-point">
-                                    <div class="article-rating-point-val"><?= $rating7['value'] ?>/10</div>
-                                </div>
-                                <div class="article-rating-name"><?= $rating7['label'] ?></div>
-                                <div class="article-rating-desc"><?= the_field('why_7') ?></div>
-                            </div>
-                        </div>
-                        <div class="article-rating-elem orange">
-                            <div class="article-rating-elem-content">
-                                <div class="article-rating-point">
-                                    <div class="article-rating-point-val"><?= $rating8['value'] ?>/10</div>
-                                </div>
-                                <div class="article-rating-name"><?= $rating8['label'] ?></div>
-                                <div class="article-rating-desc"><?= the_field('why_8') ?></div>
-                            </div>
-                        </div>
+                        <?php endfor; ?>
                     </div>
                 </section>
                 <section class="article-exchange">
@@ -290,7 +221,7 @@ Template Post Type: country
                             $law1 =  get_field_object('lax_text_1');
                             $law2 =  get_field_object('lax_text_2');
                         ?>
-                        <div class="article-content-heading">Law and crypto trading in <?= the_title() ?></div>
+                        <div class="article-content-heading" id="law">Law and crypto trading in <?= the_title() ?></div>
                         <a class="article-link" href="">
                             <span class="article-link-icon">
                                 <svg class="article-link-icon-content">
@@ -317,7 +248,7 @@ Template Post Type: country
                             $taxing3 =  get_field_object('taxing_text_3');
                             $taxing4 =  get_field_object('taxing_text_4');
                         ?>
-                        <div class="article-content-heading">Taxing cryptocurrencies in <?= the_title() ?></div>
+                        <div class="article-content-heading" id="tax">Taxing cryptocurrencies in <?= the_title() ?></div>
                         <div class="article-accordion" data-accordion="tax">
                             <div class="article-accordion-title">
                                 <?= $taxing1['label'] ?><span class="article-accordion-title-btn"><span></span></span></div>
@@ -354,7 +285,7 @@ Template Post Type: country
                             $services2 =  get_field_object('services_text_2');
                             $services3 =  get_field_object('services_text_3');
                         ?>
-                        <div class="article-content-heading">Crypto financial services in <?= the_title() ?></div>
+                        <div class="article-content-heading" id="services">Crypto financial services in <?= the_title() ?></div>
                         <div class="article-content-subheading"><?= $services1['label'] ?></div>
                         <?= $services1['value'] ?>
                         <div class="article-content-subheading"><?= $services2['label'] ?></div>
@@ -367,7 +298,7 @@ Template Post Type: country
                             $using1 =  get_field_object('using_text_1');
                             $using2 =  get_field_object('using_text_2');
                         ?>
-                        <div class="article-content-heading">Using crypto in <?= the_title() ?></div>
+                        <div class="article-content-heading" id="use">Using crypto in <?= the_title() ?></div>
                         <?php if ($using1['value']): ?>
                             <div class="article-step green">
                                 <div class="article-step-icon"><img class="article-step-icon-content"
@@ -401,13 +332,13 @@ Template Post Type: country
                             $regulation1 =  get_field_object('regulation_text_1');
                             $regulation2 =  get_field_object('regulation_text_2');
                         ?>
-                        <div class="article-content-heading">Crypto regulation in <?= the_title() ?></div>
+                        <div class="article-content-heading" id="regulation">Crypto regulation in <?= the_title() ?></div>
                         <?php if ($regulation1['value']): ?>
                             <div class="article-content-subheading"><?= $regulation1['label'] ?></div>
                             <?= $regulation1['value'] ?>
                         <?php endif; ?>
                         <?php if ($regulation1['value']): ?>
-                            <div class="article-content-subheading"><?= $regulation2['label'] ?></div>
+                            <div class="article-content-subheading" id="sources"><?= $regulation2['label'] ?></div>
                             <?= $regulation2['value'] ?>
                         <?php endif; ?>
                         <div class="article-help"><span class="article-help-title">Helpful?</span>
@@ -427,12 +358,12 @@ Template Post Type: country
                     </div>
                     <div class="article-sidebar">
                         <div class="article-sidebar-title">Table of contents</div>
-                        <a class="article-sidebar-link active" href="">Law and crypto trading</a><a
-                                class="article-sidebar-link" href="">Taxing cryptocurrencies </a><a
-                                class="article-sidebar-link" href="">Crypto financial services</a><a
-                                class="article-sidebar-link" href="">Using crypto</a><a class="article-sidebar-link"
-                                                                                        href="">Crypto regulation</a><a
-                                class="article-sidebar-link" href="">Sources</a>
+                        <a class="article-sidebar-link active" href="#law">Law and crypto trading</a>
+                        <a class="article-sidebar-link" href="#tax">Taxing cryptocurrencies</a>
+                        <a class="article-sidebar-link" href="#services">Crypto financial services</a>
+                        <a class="article-sidebar-link" href="#use">Using crypto</a>
+                        <a class="article-sidebar-link" href="#regulation">Crypto regulation</a>
+                        <a class="article-sidebar-link" href="#sources">Sources</a>
                     </div>
                 </section>
             </div>
@@ -494,70 +425,5 @@ Template Post Type: country
             </section>
         </div>
     </main>
-    <footer class="footer">
-        <section class="footer-banner">
-            <div class="footer-banner-bg"></div>
-            <div class="footer-banner-left">
-                <div class="section-title-simple">Get a step-by-step</div>
-                <h1 class="section-header m"><span class="word-accent orange">
-                 Read our comprehensive guide to getting into crypto<span class="word-accent-square left"></span><span
-                                class="word-accent-square right"> </span></span></h1>
-                <div class="section-desc">
-                    You will be emailed instructions for downloading
-                    the ebook right away
-                </div>
-            </div>
-            <div class="footer-banner-right">
-                <form class="footer-banner-form" action="">
-                    <div class="form-group">
-                        <label class="form-title">Email</label>
-                        <input class="form-input" type="email" name="bannerEmail" placeholder="Your Email"
-                               value="youremail@mail.com">
-                        <button class="btn footer-banner-form-btn"><span class="btn-arrow"></span><span
-                                    class="btn-text">Send me E-book now </span></button>
-                    </div>
-                </form>
-            </div>
-        </section>
-        <section class="footer-note">
-            This is not financial advice. Coincub is an independent publisher and
-            comparison service. Its articles, interactive tools and other content
-            are provided to you for free, as self-help tools and for informational
-            purposes only. This space changes rapidly and evolving, so please make
-            sure to do your own research. Although we do our best to provide you
-            the best information, we cannot guarantee the accuracy or applicability
-            of any information on this site or in regard to your individual circumstances.
-        </section>
-        <section class="footer-nav container">
-            <div class="footer-nav-copyright">2021 | All Rights Reserved</div>
-            <div class="footer-nav-wrap">
-                <div class="footer-nav-link modal-o-btn" data-modal-btn="modal-terms">Terms & Conditions</div>
-                <div class="footer-nav-link modal-o-btn" data-modal-btn="modal-contact">Contact Us</div>
-                <div class="footer-nav-link modal-o-btn" data-modal-btn="modal-review">Methodology</div>
-            </div>
-            <div class="footer-nav-social"><a class="footer-nav-social-link" href="">
-                    <svg class="footer-nav-social-link-icon">
-                        <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#twitter-icon"></use>
-                    </svg>
-                </a><a class="footer-nav-social-link" href="">
-                    <svg class="footer-nav-social-link-icon">
-                        <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#facebook-icon"></use>
-                    </svg>
-                </a><a class="footer-nav-social-link" href="">
-                    <svg class="footer-nav-social-link-icon">
-                        <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#telegram-icon"></use>
-                    </svg>
-                </a><a class="footer-nav-social-link" href="">
-                    <svg class="footer-nav-social-link-icon">
-                        <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#reddit-icon"></use>
-                    </svg>
-                </a><a class="footer-nav-social-link" href="">
-                    <svg class="footer-nav-social-link-icon">
-                        <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#medium-icon"></use>
-                    </svg>
-                </a></div>
-        </section>
-    </footer>
-</div>
 
 <?php get_footer('other'); ?>

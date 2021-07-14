@@ -16,8 +16,26 @@ function enqueue_scripts()
 	wp_register_script('jquery', get_template_directory_uri()  . '/assets/jquery-3.6.0.min.js', array(), date("h:i:s"));
 	wp_enqueue_script('jquery');
 
+    wp_register_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js');
+    wp_enqueue_script( 'slick' );
+
+    wp_register_script( 'nice-select', get_template_directory_uri() . '/assets/js/jquery.nice-select.min.js');
+    wp_enqueue_script( 'nice-select' );
+
+    wp_register_script( 'jquery-actual', get_template_directory_uri() . '/assets/js/jquery.actual.min.js');
+    wp_enqueue_script( 'jquery-actual' );
+
 	wp_enqueue_script('my', get_template_directory_uri() . '/assets/js/my.js', array('jquery'), date("h:i:s"));
 	wp_enqueue_script('my');
+
+    wp_register_script( 'jquery.nice', get_template_directory_uri() . '/assets/js/jquery.nice-select.min.js');
+    wp_enqueue_script( 'jquery.nice' );
+
+    wp_register_script( 'main', get_template_directory_uri() . '/assets/js/main.js');
+    wp_enqueue_script( 'main' );
+
+    wp_register_script( 'validation', get_template_directory_uri() . '/assets/js/validation.js');
+    wp_enqueue_script( 'validation' );
 
     wp_register_script( 'core-js', get_template_directory_uri() . '/assets/js/core.js');
     wp_enqueue_script( 'core-js' );
@@ -27,14 +45,24 @@ function enqueue_scripts()
         'noposts' => __('No older posts found', 'concuredblog'),
     ));
 
-    wp_register_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js');
-    wp_enqueue_script( 'slick' );
+    wp_register_script( 'axios', 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js');
+    wp_enqueue_script( 'axios' );
 
-    wp_register_script( 'jquery.nice', get_template_directory_uri() . '/assets/js/jquery.nice-select.min.js');
-    wp_enqueue_script( 'jquery.nice' );
+    wp_register_script( 'vue-cookies', 'https://unpkg.com/vue-cookies@1.5.12/vue-cookies.js');
+    wp_enqueue_script( 'vue-cookies' );
 
-    wp_register_script( 'main', get_template_directory_uri() . '/assets/js/main.js');
-    wp_enqueue_script( 'main' );
+    wp_register_script( 'vue', 'https://cdn.jsdelivr.net/npm/vue@2');
+    wp_enqueue_script( 'vue' );
+
+    if (is_front_page()) {
+        wp_register_script( 'main_page', get_template_directory_uri() . '/assets/vue/main_page.js');
+        wp_enqueue_script( 'main_page' );
+    }
+
+    if (is_page('top')) {
+        wp_register_script( 'top_page', get_template_directory_uri() . '/assets/vue/top_page.js');
+        wp_enqueue_script( 'top_page' );
+    }
 }
 
 add_theme_support( 'menus' );
@@ -86,6 +114,39 @@ function send_mail()
 add_action('wp_ajax_send_mail', 'send_mail');
 add_action('wp_ajax_nopriv_send_mail', 'send_mail');
 
+function contact_us()
+{
+    $headers = array(
+        'From: ' . get_field('email_from_name', 25) . ' <' . get_field('email_from_email', 25) . '>',
+        'content-type: text/html',
+    );
+
+    $to = get_field('email_from_email', 25); // place wp admin email here
+    $subject = 'Contact Us Form';
+
+    $body = '<p>Name: ' . $_POST['name'] . '</p><p>Email: ' . $_POST['email'] . '</p><p>Message: ' . $_POST['message'] . '</p>';
+
+    $result = wp_mail($to, $subject, $body, $headers);
+
+    if ($result) {
+        $data = [
+            'error' => 0,
+            'message' => 'Email success sent!',
+        ];
+    } else {
+        $data = [
+            'error' => 1,
+            'message' => 'Sorry, email not sent',
+        ];
+    }
+
+    echo wp_json_encode($data);
+    die;
+}
+
+add_action('wp_ajax_contact_us', 'contact_us');
+add_action('wp_ajax_nopriv_contact_us', 'contact_us');
+
 function add_menu_link_class( $atts, $item, $args ) {
     if (property_exists($args, 'link_class')) {
         $atts['class'] = $args->link_class;
@@ -96,16 +157,14 @@ add_filter( 'nav_menu_link_attributes', 'add_menu_link_class', 1, 3 );
 
 function more_post_ajax() {
     $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
-    $category = (isset($_POST['category'])) ? $_POST['category'] : '';
-    $ppp = 8;
+    $ppp = 9;
     $offset = ($page - 1) * $ppp;
 
     header("Content-Type: text/html");
 
     $args = array(
-        'post_type'      => 'post',
-        'category_name'  => $category,
-        'orderby'        => 'date',
+        'post_type'      => ['country', 'exchange'],
+        'orderby'        => 'title',
         'order'          => 'ASC',
         'posts_per_page' => $ppp,
         'offset'         => $offset,
@@ -115,9 +174,17 @@ function more_post_ajax() {
 
     $out = '';
 
-    if ($loop -> have_posts()) :  while ($loop -> have_posts()) : $loop -> the_post();
-        $out .= get_template_part('blocks/block-article', get_post_format());;
-    endwhile;
+    if ($loop -> have_posts()) :
+        while ($loop -> have_posts()) : $loop -> the_post();
+            if (get_post_type() == 'country') {
+                $out .= get_template_part('blocks/country-catalog', get_post_format());;
+            }
+
+            if (get_post_type() == 'exchange') {
+                $out .= get_template_part('blocks/exchange-catalog', get_post_format());;
+            }
+
+        endwhile;
     endif;
     wp_reset_postdata();
     die($out);
@@ -134,12 +201,35 @@ add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
 // Enable the option edit in rest
 add_filter( 'acf/rest_api/field_settings/edit_in_rest', '__return_true' );
 
-function wp_coming_soon_mode() {
-    $part = get_template_part('blocks/coming-soon');
-    echo $part;
-    die();
+//function wp_coming_soon_mode() {
+//    $part = get_template_part('blocks/coming-soon');
+//    echo $part;
+//    die();
+//}
+//
+//if( !current_user_can('administrator') ) {
+//    add_action('get_header', 'wp_coming_soon_mode');
+//};
+
+function step_shortcode( $atts = array() ) {
+
+    // set up default parameters
+    extract(shortcode_atts(array(
+        'text' => 'test',
+        'n' => '01',
+    ), $atts));
+
+    $res = '<div class="article-step">
+                <div class="article-step-icon"><span class="article-step-icon-text">';
+    $res .= $n;
+    $res .= '</span></div>
+                <div class="article-step-info">
+                    <div class="article-step-info-text">';
+    $res .= $text;
+    $res .=        '</div>
+                </div>
+            </div>';
+    return $res;
 }
 
-if( !current_user_can('administrator') ) {
-    add_action('get_header', 'wp_coming_soon_mode');
-};
+add_shortcode('step', 'step_shortcode');
