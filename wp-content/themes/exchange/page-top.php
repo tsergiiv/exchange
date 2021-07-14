@@ -76,7 +76,6 @@
                         <div class="table-head">
                             <div class="table-elem"> <span class="table-heading">Name</span></div>
                             <div class="table-elem"><span class="table-heading">Rating</span></div>
-                            <div class="table-elem"><span class="table-heading">Deposit method</span></div>
                             <div class="table-elem"><span class="table-heading">Coin Price</span></div>
                             <div class="table-elem"><span class="table-heading">Fees</span></div>
                             <div class="table-elem"><span class="table-heading">Fees(%)</span></div>
@@ -99,28 +98,22 @@
                             <div class="table-elem">
                                 <div class="table-rating"><span class="table-rating-val">{{ exchanger.exchange.rating }}</span></div>
                             </div>
-                            <div class="table-elem">
-                                <div class="table-method">
-                                    <div v-if="selected_deposit_method == 'CREDIT_CARD'" class="table-method-icon credit_card"></div>
-                                    <div v-if="selected_deposit_method == 'WIRE'" class="table-method-icon wire"></div>
-                                </div>
-                            </div>
                             <div class="table-elem"><span class="table-heading">Coin Price</span>
                                 <div class="table-sum price">
                                     <svg class="table-sum-icon">
                                         <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#euro-icon"></use>
-                                    </svg><span class="table-sum-val">{{ exchanger.coinPrice }}</span>
+                                    </svg><span class="table-sum-val">{{ exchanger.coinPrice.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") }}</span>
                                 </div>
                             </div>
                             <div class="table-elem"><span class="table-heading">Fees</span>
                                 <div class="table-sum fee">
                                     <svg class="table-sum-icon">
                                         <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#euro-icon"></use>
-                                    </svg><span class="table-sum-val">{{ exchanger.feeAmount }}</span>
+                                    </svg><span class="table-sum-val">{{ exchanger.feeAmount.toFixed(2) }}</span>
                                 </div>
                             </div>
                             <div class="table-elem"><span class="table-heading">Fees(%)</span>
-                                <div class="table-sum fee-percent"><span class="table-sum-val">{{ exchanger.feePercentage }}</span>% </div>
+                                <div class="table-sum fee-percent"><span class="table-sum-val">{{ exchanger.feePercentage.toFixed(2) }}%</span></div>
                             </div>
                             <div class="table-elem"><span class="table-heading">You Get</span>
                                 <div class="table-sum get"><img class="table-sum-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/btc-icon.svg" alt="BTC Icon"><span class="table-sum-val">{{ exchanger.exchangedAmount }}</span></div>
