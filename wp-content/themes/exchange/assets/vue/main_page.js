@@ -132,7 +132,7 @@ var vMainpage = new Vue({
         // },
         getAllExchanges: function() {
           axios
-            .get('http://api.ers.takasho.work/exchanges?page=0&size=' + Number.MAX_SAFE_INTEGER)
+            .get('https://api.ers.takasho.work/exchanges?page=0&size=' + Number.MAX_SAFE_INTEGER)
             .then(response => {
               if (response.data) {
                 this.all_exchanges = response.data;
@@ -151,7 +151,7 @@ var vMainpage = new Vue({
         },
         getAllCoins: function() {
           axios
-            .get('http://api.ers.takasho.work/cryptoCurrencies?page=0&size=' + Number.MAX_SAFE_INTEGER)
+            .get('https://api.ers.takasho.work/cryptoCurrencies?page=0&size=' + Number.MAX_SAFE_INTEGER)
             .then(response => {
               if (response.data) {
                 this.options_destination_coins = response.data._embedded.cryptoCurrencies;

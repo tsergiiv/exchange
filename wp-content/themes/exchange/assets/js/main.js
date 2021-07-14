@@ -47,6 +47,9 @@ $(document).ready(function () {
         }, 1500);
     }); // Preloader - end
 
+    ratingVal(jQuery('.blog-country').find('.blog-elem'), 5);
+    ratingVal(jQuery('.blog-country').find('.blog-elem'), 10);
+
     // Form custom select
 
   $('.form-custom-select-chosen').click(function (e) {
