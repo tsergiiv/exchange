@@ -82,14 +82,14 @@
                             <div class="table-elem"><span class="table-heading">Fees</span></div>
                             <div class="table-elem"><span class="table-heading">Fees(%)</span></div>
                             <div class="table-elem"><span class="table-heading">You Get</span></div>
-                            <div class="table-elem"><span class="table-heading">CoinCub Review</span></div>
+                            <div class="table-elem"><span class="table-heading">Coincub Review</span></div>
                         </div>
                         <div class="table-row" v-for="(exchanger, index) in exchanges">
                             <div class="table-elem">
                                 <div class="table-name"><img class="table-name-icon"  :src="'<?php bloginfo('template_url'); ?>/assets/img/content/table/'+exchanger.exchange.name.toLowerCase().replace('.', '')+'-logo.svg'" :alt="exchanger.exchange.name + ' Logo'"><span class="table-name-text">{{ exchanger.exchange.name }}</span></div>
                                 <div class="table-mob-wrap">
                                     <div class="table-rating"><span class="table-rating-val">{{ exchanger.exchange.rating }}</span></div>
-                                        <a class="table-link-mob" href="">CoinCub Review
+                                        <a class="table-link-mob" href="">Coincub Review
                                         <svg class="table-link-icon">
                                             <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
                                         </svg></a>
