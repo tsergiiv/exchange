@@ -26,6 +26,9 @@ function load_posts() {
 
             ratingVal(jQuery('.blog-country').find('.blog-elem'), 5);
             ratingVal(jQuery('.blog-country').find('.blog-elem'), 10);
+
+            ratingVal($('.blog-default'), 5);
+            ratingVal($('.blog-country'), 10);
         },
         error : function(jqXHR, textStatus, errorThrown) {
             console.log(jqXHR + " :: " + textStatus + " :: " + errorThrown);

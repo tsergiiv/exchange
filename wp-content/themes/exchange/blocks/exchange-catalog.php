@@ -1,4 +1,4 @@
-<div class="blog-elem" data-rating="<?= the_field('exchange_rating') ?>">
+<div class="blog-elem" data-rating="<?= the_field('exchange_rating') ?>" data-blog-elem="<?= get_the_title() == 'Revolut' || get_the_title() == 'eToro' ? 'financial' : 'exchanges' ?>">
     <a class="blog-elem-content" href="<?= the_permalink() ?>">
         <div class="blog-elem-img">
             <img class="blog-elem-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/exchange-logos/<?= basename(get_permalink()) ?>.png" alt="Blog content #1">

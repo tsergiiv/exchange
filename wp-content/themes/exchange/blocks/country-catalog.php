@@ -1,4 +1,4 @@
-<div class="blog-elem" data-rating="<?= the_field('country_rating') ?>">
+<div class="blog-elem" data-rating="<?= the_field('country_rating') ?>" data-blog-elem="countries">
     <a class="blog-elem-content" href="<?= the_permalink() ?>">
         <div class="blog-elem-country"><img class="blog-elem-country-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/flag-catalog/<?= basename(get_permalink()) ?>.png" alt="<?= the_title() ?>">
             <div class="blog-elem-country-name"><?= the_title() ?></div>
