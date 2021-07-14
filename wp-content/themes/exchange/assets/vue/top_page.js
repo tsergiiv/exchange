@@ -123,6 +123,9 @@ var vMainpage = new Vue({
         },
         getExchanges: function() {
           var currence_code3 = this.options_currencys.find(option => option.value === this.selected_currency).code;
+          if(!this.amount) {
+            this.amount = 0
+          }
           axios
             .get('http://api.ers.takasho.work/exchange-rates?countryCode='+this.selected_country+'&cryptoCurrencyCode='+this.selected_destination_coin+'&fiatCurrencyCode='+currence_code3+'&depositMethodType='+this.selected_deposit_method+'&amount='+this.amount)
             .then(response => {

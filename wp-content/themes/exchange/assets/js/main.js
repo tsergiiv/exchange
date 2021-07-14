@@ -1,5 +1,39 @@
 "use strict";
 
+// Blog rating star
+function ratingVal(elem, maxVal) {
+    elem.each(function () {
+        var elemRating = $(this).data('rating');
+        var maxRating = maxVal;
+        var ratingPrecent = elemRating / maxRating * 100;
+        var ratingFill = $(this).find('.blog-elem-rating-fill');
+        var ratingVal = $(this).find('.blog-elem-rating-val');
+        ratingFill.css({
+            'width': ratingPrecent + "%"
+        });
+        ratingVal.html(elemRating);
+        console.log(maxRating);
+
+        if (maxRating == 5) {
+            if (elemRating < 3) {
+                $(this).addClass('bad');
+            } else if (elemRating >= 3 && elemRating < 4) {
+                $(this).addClass('fine');
+            } else if (elemRating >= 4) {
+                $(this).addClass('good');
+            }
+        } else if (maxRating == 10) {
+            if (elemRating < 6) {
+                $(this).addClass('bad');
+            } else if (elemRating >= 6 && elemRating < 8) {
+                $(this).addClass('fine');
+            } else if (elemRating >= 8) {
+                $(this).addClass('good');
+            }
+        }
+    });
+}
+
 $(document).ready(function () {
     // Preloader
     $(document).ready(function () {
@@ -15,104 +49,103 @@ $(document).ready(function () {
 
     // Form custom select
 
-    $('.form-custom-select-chosen').click(function (e) {
-        var parent = $(this).closest('.form-custom-select');
-        parent.toggleClass('active');
-        $('.form-custom-select').not(parent).removeClass('active');
-        $('.form-custom-select-dd').fadeOut();
-        $('.form-select').removeClass('open');
+  $('.form-custom-select-chosen').click(function (e) {
+    var parent = $(this).closest('.form-custom-select');
+    parent.toggleClass('active');
+    $('.form-custom-select').not(parent).removeClass('active');
+    $('.form-custom-select-dd').fadeOut();
+    $('.form-select').removeClass('open');
 
         function clearSearch() {
             parent.find('.form-search-input').val('');
             parent.find('.form-custom-select-elem').show();
         }
 
-        if (parent.hasClass('active')) {
-            parent.find('.form-custom-select-dd').fadeIn();
-            clearSearch();
-        }
-    });
-
-    $('.form-custom-select, .form-search-input').click(function (e) {
-        e.stopPropagation();
-    });
-    $('body').click(function () {
-        $('.form-custom-select').removeClass('active');
-        $('.form-custom-select-dd').fadeOut();
-        $('.form-custom-select-empty').removeClass('active');
-    }); // Form custom select - end 
-    // Form custom select search
-
-    $('.form-search-input').keyup(function () {
-        var parent = $(this).closest('.form-custom-select');
-        var elem = parent.find('.form-custom-select-elem');
-        var empty = parent.find('.form-custom-select-empty');
-        var searchVal = $(this).val().toLowerCase();
-        elem.filter(function () {
-            $(this).toggle($(this).text().toLowerCase().indexOf(searchVal) > -1);
-        });
-
-        if (parent.find('.form-custom-select-elem:visible').length == 0) {
-            empty.addClass('active');
-        } else if (parent.find('.form-custom-select-elem:visible').length > 0) {
-            empty.removeClass('active');
-        }
-    }); // Form custom select search - end
-    // Tab 
-
-    $('body').on('click', '.tab-nav-link', function () {
-        var tabVal = $(this).data('tab-link');
-        var tabElem = $('.tab-content').find("[data-tab-elem='".concat(tabVal, "']"));
-        $(this).addClass('active').siblings().removeClass('active');
-        tabElem.addClass('active').siblings().removeClass('active');
-    }); // Tab - end
-    // Blog nav
-
-    $('.blog-nav-link').click(function () {
-        var linkData = $(this).data('blog-nav');
-        var blogElem = $('.blog-elem');
-        var blogElemData = blogElem.filter('[data-blog-elem = "' + linkData + '"]');
-        $(this).addClass('active').siblings().removeClass('active');
-        blogElem.hide();
-        blogElemData.show();
-
-        if (linkData === 'all') {
-            blogElem.show();
-        }
-    }); // Blog nav - end
-    // Blog rating star
-
-    function ratingVal(elem, maxVal) {
-        elem.each(function () {
-            var elemRating = $(this).data('rating');
-            var maxRating = maxVal;
-            var ratingPrecent = elemRating / maxRating * 100;
-            var ratingFill = $(this).find('.blog-elem-rating-fill');
-            var ratingVal = $(this).find('.blog-elem-rating-val');
-            ratingFill.css({
-                'width': ratingPrecent + "%"
-            });
-            ratingVal.html(elemRating);
-
-            if (maxRating == 5) {
-                if (elemRating < 3) {
-                    $(this).addClass('bad');
-                } else if (elemRating >= 3 && elemRating < 4) {
-                    $(this).addClass('fine');
-                } else if (elemRating >= 4) {
-                    $(this).addClass('good');
-                }
-            } else if (maxRating == 10) {
-                if (elemRating < 6) {
-                    $(this).addClass('bad');
-                } else if (elemRating >= 6 && elemRating < 8) {
-                    $(this).addClass('fine');
-                } else if (elemRating >= 8) {
-                    $(this).addClass('good');
-                }
-            }
-        });
+    if (parent.hasClass('active')) {
+      parent.find('.form-custom-select-dd').fadeIn();
+      clearSearch();
     }
+  });
+  $('.form-custom-select, .form-search-input').click(function (e) {
+    e.stopPropagation();
+  });
+  $('body').click(function () {
+    $('.form-custom-select').removeClass('active');
+    $('.form-custom-select-dd').fadeOut();
+    $('.form-custom-select-empty').removeClass('active');
+  }); // Form custom select - end
+  // Form custom select search
+
+  $('.form-search-input').keyup(function () {
+    var parent = $(this).closest('.form-custom-select');
+    var elem = parent.find('.form-custom-select-elem');
+    var empty = parent.find('.form-custom-select-empty');
+    var searchVal = $(this).val().toLowerCase();
+    elem.filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(searchVal) > -1);
+    });
+
+    if (parent.find('.form-custom-select-elem:visible').length == 0) {
+      empty.addClass('active');
+    } else if (parent.find('.form-custom-select-elem:visible').length > 0) {
+      empty.removeClass('active');
+    }
+  }); // Form custom select search - end
+  // Tab
+
+  $('body').on('click', '.tab-nav-link', function () {
+    var tabVal = $(this).data('tab-link');
+    var tabElem = $('.tab-content').find("[data-tab-elem='".concat(tabVal, "']"));
+    $(this).addClass('active').siblings().removeClass('active');
+    tabElem.addClass('active').siblings().removeClass('active');
+  }); // Tab - end
+  // Blog nav
+
+  $('.blog-nav-link').click(function () {
+    var linkData = $(this).data('blog-nav');
+    var blogElem = $('.blog-elem');
+    var blogElemData = blogElem.filter('[data-blog-elem = "' + linkData + '"]');
+    $(this).addClass('active').siblings().removeClass('active');
+    blogElem.hide();
+    blogElemData.show();
+
+    if (linkData === 'all') {
+      blogElem.show();
+    }
+  }); // Blog nav - end
+  // Blog rating star
+
+  function ratingVal(elem, maxVal) {
+    elem.each(function () {
+      var elemRating = $(this).data('rating');
+      var maxRating = maxVal;
+      var ratingPrecent = elemRating / maxRating * 100;
+      var ratingFill = $(this).find('.blog-elem-rating-fill');
+      var ratingVal = $(this).find('.blog-elem-rating-val');
+      ratingFill.css({
+        'width': ratingPrecent + "%"
+      });
+      ratingVal.html(elemRating);
+
+      if (maxRating == 5) {
+        if (elemRating < 3) {
+          $(this).addClass('bad');
+        } else if (elemRating >= 3 && elemRating < 4) {
+          $(this).addClass('fine');
+        } else if (elemRating >= 4) {
+          $(this).addClass('good');
+        }
+      } else if (maxRating == 10) {
+        if (elemRating < 6) {
+          $(this).addClass('bad');
+        } else if (elemRating >= 6 && elemRating < 8) {
+          $(this).addClass('fine');
+        } else if (elemRating >= 8) {
+          $(this).addClass('good');
+        }
+      }
+    });
+  }
 
     $(window).ready(function () {
         ratingVal($('.blog-default'), 5);
@@ -125,26 +158,26 @@ $(document).ready(function () {
             var elemVal = $(this).find('.article-rating-point-val').html();
             var ratingMaxVal = $(this).parent().parent().data('max');
 
-            if (ratingMaxVal == 5) {
-                if (elemVal <= 3) {
-                    $(this).addClass('bad');
-                } else if (elemVal = 4 && elemVal < 5) {
-                    $(this).addClass('fine');
-                } else if (elemVal = 5) {
-                    $(this).addClass('good');
-                }
-            } else if (ratingMaxVal == 10) {
-                if (elemVal < 6) {
-                    $(this).addClass('bad');
-                } else if (elemVal >= 6 && elemVal < 8) {
-                    $(this).addClass('fine');
-                } else if (elemVal >= 8) {
-                    $(this).addClass('good');
-                }
-            }
-        });
-    }); // Article rating - end 
-    // Article link
+      if (ratingMaxVal == 5) {
+        if (elemVal <= 3) {
+          $(this).addClass('bad');
+        } else if (elemVal = 4 && elemVal < 5) {
+          $(this).addClass('fine');
+        } else if (elemVal = 5) {
+          $(this).addClass('good');
+        }
+      } else if (ratingMaxVal == 10) {
+        if (elemVal < 6) {
+          $(this).addClass('bad');
+        } else if (elemVal >= 6 && elemVal < 8) {
+          $(this).addClass('fine');
+        } else if (elemVal >= 8) {
+          $(this).addClass('good');
+        }
+      }
+    });
+  }); // Article rating - end
+  // Article link
 
     $('.article-sidebar-link').click(function () {
         var anchor = $(this).attr('href');
@@ -260,43 +293,62 @@ $(document).ready(function () {
     // First time tab height
 
 
-    function firstWrapHeight() {
-        var firstTabElem = $('.first-tab').find('.first-tab-elem');
-        var elementHeights = firstTabElem.map(function () {
-            return $(this).outerHeight();
-        }).get();
-        var maxHeight = Math.max.apply(null, elementHeights);
-        firstTabElem.css({
-            'min-height': maxHeight
-        });
-    }
+  function firstWrapHeight() {
+    var firstTabElem = $('.first-tab').find('.first-tab-elem');
+    var elementHeights = firstTabElem.map(function () {
+      return $(this).outerHeight();
+    }).get();
+    var maxHeight = Math.max.apply(null, elementHeights);
+    firstTabElem.css({
+      'min-height': maxHeight
+    });
+  }
 
-    $(window).on('load', firstWrapHeight);
-    $(window).resize(firstWrapHeight); // First time tab height - end 
-    // Form validate
+  $(window).on('load', firstWrapHeight);
+  $(window).resize(firstWrapHeight); // First time tab height - end
+  // Form validate
 
     $('.form-validate').on('submit', function (e) {
         e.preventDefault();
         var $this = $(this);
-        var action = $this.attr('action');
-
-        if (!action) {
-            console.log('У формы отсутствует атрибут action, не знаю куда посылать данные');
-            return false;
-        }
-
-        ;
 
         if (validation.verificationFields($this)) {
+            var formAction = $this.find('#form-action').val();
             var formBtn = $this.find('.form-btn');
             var formBtnText = $this.find('.btn-text');
             var formBtnArrow = $this.find('.btn-arrow');
             formBtn.addClass('success');
             formBtnText.text('Done');
+
+            let email = jQuery('.ig_es_form_field_email').val();
+            let action = $this.find('#action').val();
+            console.log(action);
+
+            if (formAction == 'contact-us') {
+                let formData = new FormData();
+                formData.append('name', $('#contact-name').val());
+                formData.append('email', $('#contact-email').val());
+                formData.append('message', $('#contact-message').val());
+
+                jQuery.ajax({
+                    url: action,
+                    type: 'POST',
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    data: formData,
+                    success: function (data) {
+                        console.log(data);
+                    },
+                    error: function (error) {
+                        console.log('error' + error);
+                    },
+                });
+            }
+
             validation.resetForm($this);
         }
 
-        ;
         return false;
     }); // Form validate - end
 });
