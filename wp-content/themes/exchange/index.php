@@ -24,6 +24,7 @@
                                             <label class="form-search form-custom-select-search" for="">
                                                 <input class="form-search-input" type="text" placeholder="Search currency you need">
                                             </label>
+                                            <span class="form-custom-select-empty">Nothing found</span>
                                             <div v-for="(country, index) in countrys" :class="'form-custom-select-elem'+(country.value == selected_country ? ' active' : '')">
                                                 <input class="form-custom-select-elem-radio" type="radio" name="customSelectCountry" :value="country.value" :checked="country.value == selected_country" data-el-chenged="selected_country"><span class="form-custom-select-elem-name">{{ country.name }}</span>
                                             </div>
@@ -45,6 +46,7 @@
                                                 <label class="form-search form-custom-select-search" for="">
                                                     <input class="form-search-input" type="text" placeholder="Search currency you need">
                                                 </label>
+                                                <span class="form-custom-select-empty">Nothing found</span>
                                                 <div v-for="(currency, index) in options_currencys" :class="'form-custom-select-elem'+(currency.value == selected_currency ? ' active' : '')">
                                                     <input class="form-custom-select-elem-radio" type="radio" name="customSelectCurrency" :value="currency.value" :checked="currency.value == selected_currency" data-el-chenged="selected_currency"><img class="form-custom-select-elem-icon" :src="currency.flag" :alt="currency.value"><span class="form-custom-select-elem-name">{{ currency.name }}</span><span class="form-custom-select-elem-short">{{ currency.code }}</span>
                                                 </div>
@@ -71,6 +73,7 @@
                                                 <label class="form-search form-custom-select-search" for="">
                                                     <input class="form-search-input" type="text" placeholder="Search currency you need">
                                                 </label>
+                                                <span class="form-custom-select-empty">Nothing found</span>
                                                 <div v-for="(coin, index) in options_destination_coins" :class="'form-custom-select-elem'+(coin.code == selected_destination_coin ? ' active' : '')">
                                                     <input class="form-custom-select-elem-radio" type="radio" name="customSelectCoin" :value="coin.code" :checked="coin.code == selected_destination_coin" data-el-chenged="selected_destination_coin"><!-- <img class="form-custom-select-elem-icon" :src="'<?php bloginfo('template_url'); ?>/assets/img/content/select/'+coin.code.toLowerCase().replace('.', '')+'-icon.svg'" :alt="coin.code"> --><span class="form-custom-select-elem-name">{{ coin.name }}</span><span class="form-custom-select-elem-short">{{ coin.code }}</span>
                                                 </div>
