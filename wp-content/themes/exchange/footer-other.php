@@ -87,7 +87,7 @@
                                 </div>
                                 <button class="btn form-btn footer-banner-form-btn">
                                     <span class="btn-arrow"></span>
-                                    <span class="btn-text">Send me E-book now </span>
+                                    <span class="btn-text"><?= the_field('guide_button_text') ?></span>
                                 </button>
                             </form>
                         </div>

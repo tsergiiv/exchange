@@ -5,7 +5,7 @@ add_action('wp_footer', 'enqueue_scripts');
 
 function enqueue_styles()
 {
-	wp_enqueue_style('style', get_stylesheet_uri(), array(), date("h:i:s"));
+    wp_enqueue_style('style', get_stylesheet_uri(), array(), date("h:i:s"));
 
     wp_register_style('my', get_template_directory_uri() . '/assets/css/my.css', array(), date("h:i:s"));
     wp_enqueue_style('my');
@@ -13,69 +13,71 @@ function enqueue_styles()
 
 function enqueue_scripts()
 {
-	wp_register_script('jquery', get_template_directory_uri()  . '/assets/jquery-3.6.0.min.js', array(), date("h:i:s"));
-	wp_enqueue_script('jquery');
+    wp_register_script('jquery', get_template_directory_uri() . '/assets/jquery-3.6.0.min.js', array(), date("h:i:s"));
+    wp_enqueue_script('jquery');
 
-    wp_register_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js');
-    wp_enqueue_script( 'slick' );
+    wp_register_script('slick', get_template_directory_uri() . '/assets/js/slick.min.js');
+    wp_enqueue_script('slick');
 
-    wp_register_script( 'nice-select', get_template_directory_uri() . '/assets/js/jquery.nice-select.min.js');
-    wp_enqueue_script( 'nice-select' );
+    wp_register_script('nice-select', get_template_directory_uri() . '/assets/js/jquery.nice-select.min.js');
+    wp_enqueue_script('nice-select');
 
-    wp_register_script( 'jquery-actual', get_template_directory_uri() . '/assets/js/jquery.actual.min.js');
-    wp_enqueue_script( 'jquery-actual' );
+    wp_register_script('jquery-actual', get_template_directory_uri() . '/assets/js/jquery.actual.min.js');
+    wp_enqueue_script('jquery-actual');
 
-	wp_enqueue_script('my', get_template_directory_uri() . '/assets/js/my.js', array('jquery'), date("h:i:s"));
-	wp_enqueue_script('my');
+    wp_enqueue_script('my', get_template_directory_uri() . '/assets/js/my.js', array('jquery'), date("h:i:s"));
+    wp_enqueue_script('my');
 
-    wp_register_script( 'jquery.nice', get_template_directory_uri() . '/assets/js/jquery.nice-select.min.js');
-    wp_enqueue_script( 'jquery.nice' );
+    wp_register_script('jquery.nice', get_template_directory_uri() . '/assets/js/jquery.nice-select.min.js');
+    wp_enqueue_script('jquery.nice');
 
-    wp_register_script( 'main', get_template_directory_uri() . '/assets/js/main.js');
-    wp_enqueue_script( 'main' );
+    wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js');
+    wp_enqueue_script('main');
 
-    wp_register_script( 'validation', get_template_directory_uri() . '/assets/js/validation.js');
-    wp_enqueue_script( 'validation' );
+    wp_register_script('validation', get_template_directory_uri() . '/assets/js/validation.js');
+    wp_enqueue_script('validation');
 
-    wp_register_script( 'core-js', get_template_directory_uri() . '/assets/js/core.js');
-    wp_enqueue_script( 'core-js' );
+    wp_register_script('core-js', get_template_directory_uri() . '/assets/js/core.js');
+    wp_enqueue_script('core-js');
 
-    wp_localize_script( 'core-js', 'ajax_posts', array(
-        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+    wp_localize_script('core-js', 'ajax_posts', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
         'noposts' => __('No older posts found', 'concuredblog'),
     ));
 
-    wp_register_script( 'axios', 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js');
-    wp_enqueue_script( 'axios' );
+    wp_register_script('axios', 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js');
+    wp_enqueue_script('axios');
 
-    wp_register_script( 'vue-cookies', 'https://unpkg.com/vue-cookies@1.5.12/vue-cookies.js');
-    wp_enqueue_script( 'vue-cookies' );
+    wp_register_script('vue-cookies', 'https://unpkg.com/vue-cookies@1.5.12/vue-cookies.js');
+    wp_enqueue_script('vue-cookies');
 
-    wp_register_script( 'vue', 'https://cdn.jsdelivr.net/npm/vue@2');
-    wp_enqueue_script( 'vue' );
+    wp_register_script('vue', 'https://cdn.jsdelivr.net/npm/vue@2');
+    wp_enqueue_script('vue');
 
     if (is_front_page()) {
-        wp_register_script( 'main_page', get_template_directory_uri() . '/assets/vue/main_page.js');
-        wp_enqueue_script( 'main_page' );
+        wp_register_script('main_page', get_template_directory_uri() . '/assets/vue/main_page.js');
+        wp_enqueue_script('main_page');
     }
 
     if (is_page('top')) {
-        wp_register_script( 'top_page', get_template_directory_uri() . '/assets/vue/top_page.js');
-        wp_enqueue_script( 'top_page' );
+        wp_register_script('top_page', get_template_directory_uri() . '/assets/vue/top_page.js');
+        wp_enqueue_script('top_page');
     }
 }
 
-add_theme_support( 'menus' );
-add_theme_support( 'widgets' );
-add_theme_support( 'post-thumbnails' );
+add_theme_support('menus');
+add_theme_support('widgets');
+add_theme_support('post-thumbnails');
 
 require get_template_directory() . '/post-types.php';
 
-function year_shortcode () {
-    $year = date_i18n ('Y');
+function year_shortcode()
+{
+    $year = date_i18n('Y');
     return $year;
 }
-add_shortcode ('year', 'year_shortcode');
+
+add_shortcode('year', 'year_shortcode');
 
 function send_mail()
 {
@@ -91,7 +93,10 @@ function send_mail()
 
     $file = get_field('email_book_file', 25);
     $path = array_pop(explode('/uploads/', $file));
-    $attachments = array( WP_CONTENT_DIR . '/uploads/' . $path);
+    $body .= '<a href="' . $file . '">
+                <button style="background: #3498db; color: #ffffff; font-size: 20px; padding: 10px 20px 10px 20px; border-radius: 28px; border: solid #fff 0px; cursor: pointer" type="button" class="btn">Download</button>
+              </a>';
+    $attachments = array(WP_CONTENT_DIR . '/uploads/' . $path);
 
     $result = wp_mail($to, $subject, $body, $headers, $attachments);
 
@@ -147,15 +152,18 @@ function contact_us()
 add_action('wp_ajax_contact_us', 'contact_us');
 add_action('wp_ajax_nopriv_contact_us', 'contact_us');
 
-function add_menu_link_class( $atts, $item, $args ) {
+function add_menu_link_class($atts, $item, $args)
+{
     if (property_exists($args, 'link_class')) {
         $atts['class'] = $args->link_class;
     }
     return $atts;
 }
-add_filter( 'nav_menu_link_attributes', 'add_menu_link_class', 1, 3 );
 
-function more_post_ajax() {
+add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 3);
+
+function more_post_ajax()
+{
     $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
     $ppp = 9;
     $category = $_POST['category'];
@@ -164,20 +172,20 @@ function more_post_ajax() {
     header("Content-Type: text/html");
 
     $args = array(
-        'post_type'      => $category,
-        'meta_key'	     => $category . '_rating',
-        'orderby'        => 'meta_value',
-        'order'          => 'DESC',
+        'post_type' => $category,
+        'meta_key' => $category . '_rating',
+        'orderby' => 'meta_value',
+        'order' => 'DESC',
         'posts_per_page' => $ppp,
-        'offset'         => $offset,
+        'offset' => $offset,
     );
 
     $loop = new WP_Query($args);
 
     $out = '';
 
-    if ($loop -> have_posts()) :
-        while ($loop -> have_posts()) : $loop -> the_post();
+    if ($loop->have_posts()) :
+        while ($loop->have_posts()) : $loop->the_post();
             if (get_post_type() == 'country') {
                 $out .= get_template_part('blocks/country-catalog', get_post_format());;
             }
@@ -195,13 +203,13 @@ function more_post_ajax() {
 add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
 add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
 
-flush_rewrite_rules( false );
+flush_rewrite_rules(false);
 
 // Enable the option show in rest
-add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
+add_filter('acf/rest_api/field_settings/show_in_rest', '__return_true');
 
 // Enable the option edit in rest
-add_filter( 'acf/rest_api/field_settings/edit_in_rest', '__return_true' );
+add_filter('acf/rest_api/field_settings/edit_in_rest', '__return_true');
 
 //function wp_coming_soon_mode() {
 //    $part = get_template_part('blocks/coming-soon');
@@ -213,7 +221,8 @@ add_filter( 'acf/rest_api/field_settings/edit_in_rest', '__return_true' );
 //    add_action('get_header', 'wp_coming_soon_mode');
 //};
 
-function step_shortcode( $atts = array() ) {
+function step_shortcode($atts = array())
+{
 
     // set up default parameters
     extract(shortcode_atts(array(
@@ -228,7 +237,7 @@ function step_shortcode( $atts = array() ) {
                 <div class="article-step-info">
                     <div class="article-step-info-text">';
     $res .= $text;
-    $res .=        '</div>
+    $res .= '</div>
                 </div>
             </div>';
     return $res;
@@ -236,11 +245,13 @@ function step_shortcode( $atts = array() ) {
 
 add_shortcode('step', 'step_shortcode');
 
-function get_reading_speed(){
+function get_reading_speed()
+{
     return 200;
 }
 
-function exchange_post_reading() {
+function exchange_post_reading()
+{
     $count = preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('fees')), ENT_QUOTES));
     $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('interface')), ENT_QUOTES));
     $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('opening_account')), ENT_QUOTES));
@@ -257,21 +268,26 @@ function exchange_post_reading() {
     $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_5')), ENT_QUOTES));
     $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_6')), ENT_QUOTES));
     $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_7')), ENT_QUOTES));
-    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('compare')), ENT_QUOTES));$count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('compare')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_1')), ENT_QUOTES));
     $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('security')), ENT_QUOTES));
     $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('services')), ENT_QUOTES));
-    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('tip_1')), ENT_QUOTES));$count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('tip_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_1')), ENT_QUOTES));
     $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('tip_2')), ENT_QUOTES));
     $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('tip_3')), ENT_QUOTES));
-    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('tip_4')), ENT_QUOTES));$count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('tip_4')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_1')), ENT_QUOTES));
     $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('tip_5')), ENT_QUOTES));
     $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('overview')), ENT_QUOTES));
-    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('regulation')), ENT_QUOTES));$count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('regulation')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_1')), ENT_QUOTES));
     $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('privacy')), ENT_QUOTES));
     return round($count / get_reading_speed()) + 1 . ' min read';
 }
 
-function country_post_reading() {
+function country_post_reading()
+{
     $count = preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('trading_text')), ENT_QUOTES));
     $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('lax_text_1')), ENT_QUOTES));
     $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('lax_text_2')), ENT_QUOTES));
