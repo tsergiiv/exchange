@@ -21,7 +21,7 @@
                 </div><img class="blog-head-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/blog/blog-img.png" alt="Blog header image">
             </section>
             <section class="blog-wrap">
-                <div class="blog-wrap-content" id="ajax-posts">
+                <div class="blog-wrap-content middle" id="ajax-posts">
                     <?php
                         $posts = get_posts( array(
                             'post_type'   => 'country',

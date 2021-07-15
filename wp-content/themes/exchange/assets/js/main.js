@@ -47,7 +47,7 @@ $(document).ready(function () {
         }, 1500);
     }); // Preloader - end
 
-    ratingVal(jQuery('.blog-country').find('.blog-elem'), 5);
+    ratingVal(jQuery('.blog-default').find('.blog-elem'), 5);
     ratingVal(jQuery('.blog-country').find('.blog-elem'), 10);
 
     // Form custom select
@@ -102,58 +102,7 @@ $(document).ready(function () {
     $(this).addClass('active').siblings().removeClass('active');
     tabElem.addClass('active').siblings().removeClass('active');
   }); // Tab - end
-  // Blog nav
 
-  $('.blog-nav-link').click(function () {
-    var linkData = $(this).data('blog-nav');
-    var blogElem = $('.blog-elem');
-    var blogElemData = blogElem.filter('[data-blog-elem = "' + linkData + '"]');
-    $(this).addClass('active').siblings().removeClass('active');
-    blogElem.hide();
-    blogElemData.show();
-
-    if (linkData === 'all') {
-      blogElem.show();
-    }
-  }); // Blog nav - end
-  // Blog rating star
-
-  function ratingVal(elem, maxVal) {
-    elem.each(function () {
-      var elemRating = $(this).data('rating');
-      var maxRating = maxVal;
-      var ratingPrecent = elemRating / maxRating * 100;
-      var ratingFill = $(this).find('.blog-elem-rating-fill');
-      var ratingVal = $(this).find('.blog-elem-rating-val');
-      ratingFill.css({
-        'width': ratingPrecent + "%"
-      });
-      ratingVal.html(elemRating);
-
-      if (maxRating == 5) {
-        if (elemRating < 3) {
-          $(this).addClass('bad');
-        } else if (elemRating >= 3 && elemRating < 4) {
-          $(this).addClass('fine');
-        } else if (elemRating >= 4) {
-          $(this).addClass('good');
-        }
-      } else if (maxRating == 10) {
-        if (elemRating < 6) {
-          $(this).addClass('bad');
-        } else if (elemRating >= 6 && elemRating < 8) {
-          $(this).addClass('fine');
-        } else if (elemRating >= 8) {
-          $(this).addClass('good');
-        }
-      }
-    });
-  }
-
-    $(window).ready(function () {
-        ratingVal($('.blog-default'), 5);
-        ratingVal($('.blog-country'), 10);
-    }); // Blog rating star - end
     // Article rating
 
     $(window).ready(function () {
@@ -216,15 +165,22 @@ $(document).ready(function () {
     }); // Article link - end
     // Article accordion
 
-    $('.article-accordion-title').click(function () {
-        var parent = $(this).parent();
-        parent.toggleClass('active').siblings().removeClass('active');
-        $('.article-accordion-dropdown').slideUp();
+    $('.article-accordion-title').click(function() {
+			let parent = $(this).parent();
+	
+			parent.toggleClass('active').siblings().removeClass('active');
+	
+			parent.parent().find('.article-accordion-dropdown').slideUp();
+	
+			if(parent.hasClass('active')) {
+				parent.find('.article-accordion-dropdown').slideDown();
+			}
+		});
 
-        if (parent.hasClass('active')) {
-            parent.find('.article-accordion-dropdown').slideDown();
-        }
-    }); // Article accordion - end
+		$(window).on('load', function() {
+			$('.article-accordion.active').find('.article-accordion-dropdown').slideDown();
+		});
+		// Article accordion - end
     // Modal
 
     function initModal(button) {

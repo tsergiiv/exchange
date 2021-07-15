@@ -249,22 +249,25 @@ Template Post Type: country
                         <?php
                         ?>
                         <div class="article-content-heading" id="tax">Taxing cryptocurrencies in <?= the_title() ?></div>
-                        <?php
-                            for ($i = 1; $i <= 4; $i++):
-                                $taxing = get_field_object('taxing_text_' . $i);
-                        ?>
-                            <div class="article-accordion <?= $i == 1 ? 'active' : '' ?>" data-accordion="tax">
-                                <div class="article-accordion-title">
-                                    <?= $taxing['label'] ?>
-                                    <span class="article-accordion-title-btn">
-                                        <span></span>
-                                    </span>
-                                </div>
-                                <div class="article-accordion-dropdown">
-                                    <?= $taxing['value'] ?>
-                                </div>
-                            </div>
-                        <?php endfor; ?>
+
+												<div class=".article-accordion-wrap">
+													<?php
+															for ($i = 1; $i <= 4; $i++):
+																	$taxing = get_field_object('taxing_text_' . $i);
+													?>
+															<div class="article-accordion <?= $i == 1 ? 'active' : '' ?>">
+																	<div class="article-accordion-title">
+																			<?= $taxing['label'] ?>
+																			<span class="article-accordion-title-btn">
+																					<span></span>
+																			</span>
+																	</div>
+																	<div class="article-accordion-dropdown">
+																			<?= $taxing['value'] ?>
+																	</div>
+															</div>
+													<?php endfor; ?>
+												</div>
 
                         <!-- Crypto financial services block -->
                         <?php

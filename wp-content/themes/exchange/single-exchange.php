@@ -296,27 +296,30 @@ Template Post Type: exchange
 
                     <?php if (get_field('question_1')): ?>
                         <div class="article-content-heading" id="faqs">FAQs</div>
-                        <?php
-                        for ($i = 1; $i <= 7; $i++) {
-                            if (!get_field('question_' . $i)) {
-                                continue;
-                            }
+												
+												<div class=".article-accordion-wrap">
+													<?php
+													for ($i = 1; $i <= 7; $i++) {
+															if (!get_field('question_' . $i)) {
+																	continue;
+															}
 
-                            ?>
+															?>
 
-                            <div class="article-accordion <?= $i == 1 ? 'active' : '' ?>" data-accordion="faq">
-                                <div class="article-accordion-title">
-                                    <?= the_field('question_' . $i) ?>
-                                    <span class="article-accordion-title-btn"><span></span></span>
-                                </div>
-                                <div class="article-accordion-dropdown">
-                                    <?= the_field('answer_' . $i) ?>
-                                </div>
-                            </div>
+															<div class="article-accordion <?= $i == 1 ? 'active' : '' ?>">
+																	<div class="article-accordion-title">
+																			<?= the_field('question_' . $i) ?>
+																			<span class="article-accordion-title-btn"><span></span></span>
+																	</div>
+																	<div class="article-accordion-dropdown">
+																			<?= the_field('answer_' . $i) ?>
+																	</div>
+															</div>
 
-                            <?php
-                        }
-                        ?>
+															<?php
+													}
+													?>
+												</div>
                     <?php endif; ?>
 
                     <?php if (get_field('supported_countries')): ?>
