@@ -12,7 +12,7 @@ Template Post Type: country
             <section class="article-head container">
                 <div class="breadcrumbs">
                     <a class="breadcrumbs-link" href="<?= home_url() ?>">Main Page</a>
-                    <a class="breadcrumbs-link" href="<?= home_url() ?>/catalog">Country Reviews</a>
+                    <a class="breadcrumbs-link" href="<?= home_url() ?>/country">Country Reviews</a>
                     <a class="breadcrumbs-link" href="">Crypto exchanges & Regulation in <?= the_title() ?></a>
                 </div>
                 <div class="article-head-wrap">
@@ -31,7 +31,7 @@ Template Post Type: country
                             and here's how we make money.
                         </div>
                         <div class="article-review">
-                            <div class="article-review-date">01.05.2021</div>
+                            <div class="article-review-date">01.05.2021 - <?= country_post_reading() ?></div>
                             <div class="article-review-text">Top exchanges in <?= the_title() ?> by CoinCub criteria</div>
                             <div class="article-review-author">
                                 <div class="article-review-author-photo"><img class="article-review-author-photo-img"

@@ -235,3 +235,56 @@ function step_shortcode( $atts = array() ) {
 }
 
 add_shortcode('step', 'step_shortcode');
+
+function get_reading_speed(){
+    return 200;
+}
+
+function exchange_post_reading() {
+    $count = preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('fees')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('interface')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('opening_account')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('payment_methods')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('supported_countries')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('supported_currencies')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('experience_text')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('news')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('customer_support')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_2')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_3')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_4')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_5')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_6')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_7')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('compare')), ENT_QUOTES));$count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('security')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('services')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('tip_1')), ENT_QUOTES));$count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('tip_2')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('tip_3')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('tip_4')), ENT_QUOTES));$count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('tip_5')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('overview')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('regulation')), ENT_QUOTES));$count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('answer_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('privacy')), ENT_QUOTES));
+    return round($count / get_reading_speed()) + 1 . ' min read';
+}
+
+function country_post_reading() {
+    $count = preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('trading_text')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('lax_text_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('lax_text_2')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('taxing_text_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('taxing_text_2')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('taxing_text_3')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('taxing_text_4')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('services_text_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('services_text_2')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('services_text_3')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('using_text_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('using_text_2')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('regulation_text_1')), ENT_QUOTES));
+    $count += preg_match_all("/[\w']+/", html_entity_decode(strip_tags(get_field('regulation_text_2')), ENT_QUOTES));
+    return round($count / get_reading_speed()) + 1 . ' min read';
+}

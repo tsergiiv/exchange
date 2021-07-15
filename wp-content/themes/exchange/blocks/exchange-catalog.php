@@ -5,8 +5,8 @@
         </div>
         <div class="blog-elem-info">
             <div class="blog-elem-head">
-                <div class="blog-elem-author">By Daniel Olagbami</div>
-                <div class="blog-elem-date">May, 5, 2021</div>
+                <div class="blog-elem-author">By <?= the_field('author') ?></div>
+                <div class="blog-elem-date"><?= the_field('publish_date') ?></div>
             </div>
             <div class="blog-elem-title"><?= the_title() ?></div>
             <div class="blog-elem-rating">

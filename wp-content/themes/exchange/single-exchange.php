@@ -12,12 +12,27 @@ Template Post Type: exchange
             <section class="article-head container">
                 <div class="breadcrumbs">
                     <a class="breadcrumbs-link" href="<?= home_url() ?>">Main Page</a>
-                    <a class="breadcrumbs-link" href="<?= home_url() ?>/catalog">Exchange Reviews</a>
-                    <a class="breadcrumbs-link" href=""><?= the_title() ?> Review 2021 - Pros, Cons and More</a>
+                    <a class="breadcrumbs-link" href="<?= home_url() ?>/exchange">Exchange Reviews</a>
+                    <a class="breadcrumbs-link" href=""><?= the_title() ?> Review</a>
                 </div>
                 <div class="article-head-wrap">
                     <div class="article-head-left">
-                        <h1 class="section-header big"><span class="word-accent violet"><?= the_title() ?> Review:<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span>What Works & <span class="word-accent orange">What Doesn’t<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span></h1>
+                        <h1 class="section-header big">
+                            <span class="word-accent violet">
+                                <?= the_field('title_1') ?>:
+                                <span class="word-accent-square left"></span>
+                                <span class="word-accent-square right"></span>
+                            </span>
+                            <?php if (get_field('title_2')): ?>
+                                <?= the_field('title_2') ?>
+                            <?php endif; ?>
+                            <?php if (get_field('title_3')): ?>
+                                <span class="word-accent orange"><?= the_field('title_3') ?>
+                                    <span class="word-accent-square left"></span>
+                                    <span class="word-accent-square right"></span>
+                                </span>
+                            <?php endif; ?>
+                        </h1>
                         <div class="article-head-desc">
                             Many or all of the products featured here
                             are from our partners who compensate us.
@@ -27,16 +42,17 @@ Template Post Type: exchange
                             and here's how we make money.
                         </div>
                         <div class="article-review">
-                            <div class="article-review-date">01.05.2021</div>
-                            <div class="article-review-text">
-                                Our review of well-known exchange <?= the_title() ?>. How good is the security,
-                                what are the fees like, and how can you get rewards?
-                            </div>
+                            <div class="article-review-date">01.05.2021 - <?= exchange_post_reading() ?></div>
+                            <?php if (get_field('description')): ?>
+                                <div class="article-review-text">
+                                    <?= the_field('description') ?>
+                                </div>
+                            <?php endif; ?>
                             <div class="article-review-author">
                                 <div class="article-review-author-photo"><img class="article-review-author-photo-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/article/article-author.png" alt="Article review author"></div>
                                 <div class="article-review-author-info">
-                                    <div class="article-review-author-date">May, 5, 2021</div>
-                                    <div class="article-review-author-name">Laurel Murphy</div>
+                                    <div class="article-review-author-date"><?= the_field('publish_date') ?></div>
+                                    <div class="article-review-author-name"><?= the_field('author') ?></div>
                                 </div>
                             </div>
                         </div>
@@ -44,18 +60,12 @@ Template Post Type: exchange
                     <div class="article-head-right"><img class="article-head-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/exchanges/<?= basename(get_permalink()) ?>.png" alt="Article head image"></div>
                 </div>
             </section>
+
             <section class="article-wrap container">
                 <div class="article-content">
                     <!-- Rating block -->
                     <?php
                         $rating =  get_field_object('exchange_rating');
-                        $rating1 =  get_field_object('exchange_rating_1');
-                        $rating2 =  get_field_object('exchange_rating_2');
-                        $rating3 =  get_field_object('exchange_rating_3');
-                        $rating4 =  get_field_object('exchange_rating_4');
-                        $rating5 =  get_field_object('exchange_rating_5');
-                        $rating6 =  get_field_object('exchange_rating_6');
-
                     ?>
                     <section class="article-rating three" data-max="5">
                         <div class="article-rating-title">Rating: <?= $rating['value'] ?> / 5</div>
@@ -63,6 +73,9 @@ Template Post Type: exchange
                         <?php
                             for ($i = 1; $i <= 6; $i++):
                                 $rating = get_field_object('exchange_rating_' . $i);
+                                if (!$rating['value']) {
+                                    continue;
+                                }
                         ?>
                             <div class="article-rating-elem">
                                 <div class="article-rating-elem-content">
@@ -88,23 +101,34 @@ Template Post Type: exchange
                     </div>
                     <?= the_field('overview') ?>
                     <a class="btn article-btn" href=""><span class="btn-arrow"></span><span class="btn-text">Learn more</span></a>
-                    <div class="article-advantages">
-                        <div class="article-content-heading" id="proscons">Pros / Cons</div><img class="article-advantages-bg" src="<?php bloginfo('template_url'); ?>/assets/img/content/article/advantages-bg.png" alt="Advantages bg">
-                        <div class="article-advantages-elem cons">
-                            <div class="article-advantages-head">
-                                <div class="article-advantages-icon"><img class="article-advantages-icon-content" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/thumb-down.png" alt="Cons Icon"></div>
-                                <div class="article-advantages-title">Cons</div>
-                            </div>
-                            <?= the_field('cons') ?>
+
+                    <?php if (get_field('pros') || get_field('cons')): ?>
+                        <div class="article-advantages">
+                            <div class="article-content-heading" id="proscons">Pros / Cons</div><img class="article-advantages-bg" src="<?php bloginfo('template_url'); ?>/assets/img/content/article/advantages-bg.png" alt="Advantages bg">
+                            <?php if (get_field('cons')): ?>
+                                <div class="article-advantages-elem cons">
+                                    <div class="article-advantages-head">
+                                        <div class="article-advantages-icon"><img class="article-advantages-icon-content" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/thumb-down.png" alt="Cons Icon"></div>
+                                        <div class="article-advantages-title">Cons</div>
+                                    </div>
+                                    <?= the_field('cons') ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if (get_field('pros')): ?>
+                                <div class="article-advantages-elem pros">
+                                    <div class="article-advantages-head">
+                                        <div class="article-advantages-icon"><img class="article-advantages-icon-content" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/thumb-up.png" alt="Pros Icon"></div>
+                                        <div class="article-advantages-title">Pros</div>
+                                    </div>
+                                    <?= the_field('pros') ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <a class="btn article-btn" href=""><span class="btn-arrow"></span><span class="btn-text">Open a <?=  the_title() ?> account </span></a>
                         </div>
-                        <div class="article-advantages-elem pros">
-                            <div class="article-advantages-head">
-                                <div class="article-advantages-icon"><img class="article-advantages-icon-content" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/thumb-up.png" alt="Pros Icon"></div>
-                                <div class="article-advantages-title">Pros</div>
-                            </div>
-                            <?= the_field('pros') ?>
-                        </div><a class="btn article-btn" href=""><span class="btn-arrow"></span><span class="btn-text">Open a <?=  the_title() ?> account </span></a>
-                    </div>
+                    <?php endif; ?>
+
                     <!-- Exchange info block -->
                     <?php
                         $info1 =  get_field_object('info_1');
@@ -270,8 +294,9 @@ Template Post Type: exchange
                         <?= the_field('news') ?>
                     <?php endif; ?>
 
-                    <div class="article-content-heading" id="faqs">FAQs</div>
-                    <?php
+                    <?php if (get_field('question_1')): ?>
+                        <div class="article-content-heading" id="faqs">FAQs</div>
+                        <?php
                         for ($i = 1; $i <= 7; $i++) {
                             if (!get_field('question_' . $i)) {
                                 continue;
@@ -291,7 +316,8 @@ Template Post Type: exchange
 
                             <?php
                         }
-                    ?>
+                        ?>
+                    <?php endif; ?>
 
                     <?php if (get_field('supported_countries')): ?>
                         <div class="article-content-heading" id="supported_countries">Supported Countries</div>
@@ -325,7 +351,11 @@ Template Post Type: exchange
                 <div class="article-sidebar">
                     <div class="article-sidebar-title">Table of contents</div>
                     <a class="article-sidebar-link" href="#whatis">What is <?= the_title() ?>?</a>
-                    <a class="article-sidebar-link" href="#proscons">Pros/Cons</a>
+
+                    <?php if (get_field('pros') || get_field('cons')): ?>
+                        <a class="article-sidebar-link" href="#proscons">Pros/Cons</a>
+                    <?php endif; ?>
+
                     <a class="article-sidebar-link" href="#exchange">Exchange Info</a>
                     <a class="article-sidebar-link" href="#feestrading">Fees and Trading</a>
                     <a class="article-sidebar-link" href="#security">Security</a>
@@ -369,7 +399,9 @@ Template Post Type: exchange
                         <a class="article-sidebar-link" href="#news">News</a>
                     <?php endif; ?>
 
-                    <a class="article-sidebar-link" href="#faqs">FAQs</a>
+                    <?php if (get_field('question_1')): ?>
+                        <a class="article-sidebar-link" href="#faqs">FAQs</a>
+                    <?php endif; ?>
 
                     <?php if (get_field('supported_countries')): ?>
                         <a class="article-sidebar-link" href="#supported_countries">Supported Countries</a>
