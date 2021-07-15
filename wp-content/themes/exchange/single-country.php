@@ -22,7 +22,7 @@ Template Post Type: country
                                         class="word-accent-square right"></span></span>& Regulation in <span
                                     class="word-accent orange"><?= the_title() ?><span class="word-accent-square left"></span><span
                                         class="word-accent-square right"></span></span></h1>
-                        <div class="article-head-desc">
+                        <div class="section-desc">
                             Many or all of the products featured here
                             are from our partners who compensate us.
                             This may influence the products we write about,
