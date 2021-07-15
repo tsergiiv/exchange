@@ -1,12 +1,14 @@
-<div class="blog-elem" data-rating="<?= the_field('country_rating') ?>" data-blog-elem="countries">
+<div class="blog-elem blog-country" data-rating="<?= the_field('country_rating') ?>" data-blog-elem="countries">
     <a class="blog-elem-content" href="<?= the_permalink() ?>">
         <div class="blog-elem-country"><img class="blog-elem-country-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/flag-catalog/<?= basename(get_permalink()) ?>.png" alt="<?= the_title() ?>">
             <div class="blog-elem-country-name"><?= the_title() ?></div>
         </div>
         <div class="blog-elem-info">
             <div class="blog-elem-head">
-                <div class="blog-elem-author">By Daniel Olagbami</div>
-                <div class="blog-elem-date">May, 5, 2021</div>
+                <?php if (get_field('author') && get_field('publish_date')): ?>
+                    <div class="blog-elem-author">By <?= the_field('author') ?></div>
+                    <div class="blog-elem-date"><?= the_field('publish_date') ?></div>
+                <?php endif; ?>
             </div>
             <div class="blog-elem-title"><?= the_title() ?> Review 2021 </div>
             <div class="blog-elem-rating">

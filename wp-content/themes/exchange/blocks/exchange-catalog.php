@@ -1,12 +1,12 @@
-<div class="blog-elem" data-rating="<?= the_field('exchange_rating') ?>" data-blog-elem="<?= get_the_title() == 'Revolut' || get_the_title() == 'eToro' ? 'financial' : 'exchanges' ?>">
+<div class="blog-elem blog-default" data-rating="<?= the_field('exchange_rating') ?>" data-blog-elem="<?= get_the_title() == 'Revolut' || get_the_title() == 'eToro' ? 'financial' : 'exchanges' ?>">
     <a class="blog-elem-content" href="<?= the_permalink() ?>">
         <div class="blog-elem-img">
             <img class="blog-elem-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/exchange-logos/<?= basename(get_permalink()) ?>.png" alt="Blog content #1">
         </div>
         <div class="blog-elem-info">
             <div class="blog-elem-head">
-                <div class="blog-elem-author">By Daniel Olagbami</div>
-                <div class="blog-elem-date">May, 5, 2021</div>
+                <div class="blog-elem-author">By <?= the_field('author') ?></div>
+                <div class="blog-elem-date"><?= the_field('publish_date') ?></div>
             </div>
             <div class="blog-elem-title"><?= the_title() ?></div>
             <div class="blog-elem-rating">

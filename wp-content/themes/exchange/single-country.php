@@ -8,11 +8,11 @@ Template Post Type: country
 <?php get_header(); ?>
 
     <main class="content">
-        <div class="article country">
+        <div class="article country middle">
             <section class="article-head container">
                 <div class="breadcrumbs">
                     <a class="breadcrumbs-link" href="<?= home_url() ?>">Main Page</a>
-                    <a class="breadcrumbs-link" href="<?= home_url() ?>/catalog">Country Reviews</a>
+                    <a class="breadcrumbs-link" href="<?= home_url() ?>/country">Country Reviews</a>
                     <a class="breadcrumbs-link" href="">Crypto exchanges & Regulation in <?= the_title() ?></a>
                 </div>
                 <div class="article-head-wrap">
@@ -22,7 +22,7 @@ Template Post Type: country
                                         class="word-accent-square right"></span></span>& Regulation in <span
                                     class="word-accent orange"><?= the_title() ?><span class="word-accent-square left"></span><span
                                         class="word-accent-square right"></span></span></h1>
-                        <div class="article-head-desc">
+                        <div class="section-desc">
                             Many or all of the products featured here
                             are from our partners who compensate us.
                             This may influence the products we write about,
@@ -31,15 +31,15 @@ Template Post Type: country
                             and here's how we make money.
                         </div>
                         <div class="article-review">
-                            <div class="article-review-date">01.05.2021</div>
+                            <div class="article-review-date">01.05.2021 - <?= country_post_reading() ?></div>
                             <div class="article-review-text">Top exchanges in <?= the_title() ?> by CoinCub criteria</div>
                             <div class="article-review-author">
                                 <div class="article-review-author-photo"><img class="article-review-author-photo-img"
                                                                               src="<?php bloginfo('template_url'); ?>/assets/img/content/article/article-author.png"
                                                                               alt="Article review author"></div>
                                 <div class="article-review-author-info">
-                                    <div class="article-review-author-date">May, 5, 2021</div>
-                                    <div class="article-review-author-name">Daniel Olagbami</div>
+                                    <div class="article-review-author-date"><?= the_field('publish_date') ?></div>
+                                    <div class="article-review-author-name"><?= the_field('author') ?></div>
                                 </div>
                             </div>
                         </div>
@@ -163,41 +163,27 @@ Template Post Type: country
 
                         <!-- Taxing cryptocurrencies block -->
                         <?php
-                            $taxing1 =  get_field_object('taxing_text_1');
-                            $taxing2 =  get_field_object('taxing_text_2');
-                            $taxing3 =  get_field_object('taxing_text_3');
-                            $taxing4 =  get_field_object('taxing_text_4');
                         ?>
                         <div class="article-content-heading" id="tax">Taxing cryptocurrencies in <?= the_title() ?></div>
-                        <div class="article-accordion" data-accordion="tax">
-                            <div class="article-accordion-title">
-                                <?= $taxing1['label'] ?><span class="article-accordion-title-btn"><span></span></span></div>
-                            <div class="article-accordion-dropdown">
-                                <?= $taxing1['value'] ?>
-                            </div>
-                        </div>
-                        <div class="article-accordion" data-accordion="tax">
-                            <div class="article-accordion-title">
-                                <?= $taxing2['label'] ?><span class="article-accordion-title-btn"><span></span></span></div>
-                            <div class="article-accordion-dropdown">
-                                <?= $taxing2['value'] ?>
-                            </div>
-                        </div>
-                        <div class="article-accordion" data-accordion="tax">
-                            <div class="article-accordion-title">
-                                <?= $taxing3['label'] ?><span class="article-accordion-title-btn"><span></span></span>
-                            </div>
-                            <div class="article-accordion-dropdown">
-                                <?= $taxing3['value'] ?>
-                            </div>
-                        </div>
-                        <div class="article-accordion" data-accordion="tax">
-                            <div class="article-accordion-title">
-                                <?= $taxing4['label'] ?><span class="article-accordion-title-btn"><span></span></span></div>
-                            <div class="article-accordion-dropdown">
-                                <?= $taxing4['value'] ?>
-                            </div>
-                        </div>
+
+												<div class=".article-accordion-wrap">
+													<?php
+															for ($i = 1; $i <= 4; $i++):
+																	$taxing = get_field_object('taxing_text_' . $i);
+													?>
+															<div class="article-accordion <?= $i == 1 ? 'active' : '' ?>">
+																	<div class="article-accordion-title">
+																			<?= $taxing['label'] ?>
+																			<span class="article-accordion-title-btn">
+																					<span></span>
+																			</span>
+																	</div>
+																	<div class="article-accordion-dropdown">
+																			<?= $taxing['value'] ?>
+																	</div>
+															</div>
+													<?php endfor; ?>
+												</div>
 
                         <!-- Crypto financial services block -->
                         <?php
@@ -287,102 +273,45 @@ Template Post Type: country
                     </div>
                 </section>
             </div>
-            <section class="faq">
-                <div class="faq-head">
-                    <div class="section-title-simple">FAQ</div>
-                    <h1 class="section-header m"><span class="word-accent violet">New to crypto? Here’s our guide!<span
-                                    class="word-accent-square left"></span><span class="word-accent-square right"></span></span>
-                    </h1>
-                </div>
-                <div class="faq-wrap"><a class="faq-elem" href="">
-                        <div class="faq-elem-content"><img class="faq-elem-img"
-                                                           src="<?php bloginfo('template_url'); ?>/assets/img/content/faq/faq-img-1.png" alt="FAQ Image #1"><span
-                                    class="faq-elem-number">01</span><span class="faq-elem-title">
-                     Why Bitcoin? </span><span class="faq-elem-text">
-                    It seems like the buzz around Bitcoin
-                    just keeps growing. Bitcoin is a constantly
-                    evolving technology with a passionate
-                    community. What is it about the digital
-                    asset that makes it such a controversial
-                    topic and attractive investment? </span></div>
-                    </a><a class="faq-elem" href="">
-                        <div class="faq-elem-content"><img class="faq-elem-img"
-                                                           src="<?php bloginfo('template_url'); ?>/assets/img/content/faq/faq-img-2.png" alt="FAQ Image #2"><span
-                                    class="faq-elem-number">02</span><span class="faq-elem-title">
-                     How to Get Started with Bitcoin</span><span class="faq-elem-text">
-                    It can be difficult to get past the
-                    technical jargon surrounding Bitcoin in
-                    order to figure out how you can buy and
-                    store the digital asset. Beginners can
-                    purchase BTC on many exchanges with fiat
-                    currency. Once you’ve purchased crypto,
-                    invest in a safe  offline storage solution. </span></div>
-                    </a><a class="faq-elem" href="">
-                        <div class="faq-elem-content"><img class="faq-elem-img"
-                                                           src="<?php bloginfo('template_url'); ?>/assets/img/content/faq/faq-img-3.png" alt="FAQ Image #3"><span
-                                    class="faq-elem-number">03</span><span class="faq-elem-title">
-                     Blockchains 101</span><span class="faq-elem-text">
-                    Blockchains are a type of database where
-                    data is stored in blocks that are chained
-                    together. As new data comes in, it is
-                    entered into a block, which is then chained
-                    to the previous block. The Bitcoin blockchain
-                    serves as a ledger that records every Bitcoin
-                    transaction in history. </span></div>
-                    </a><a class="faq-elem" href="">
-                        <div class="faq-elem-content"><img class="faq-elem-img"
-                                                           src="<?php bloginfo('template_url'); ?>/assets/img/content/faq/faq-img-4.png" alt="FAQ Image #4"><span
-                                    class="faq-elem-number">04</span><span class="faq-elem-title">
-                     Bitcoin in the Real World</span><span class="faq-elem-text">
-                    Ok - you’ve found an exchange, bought your
-                    Bitcoin, and stored it safely. What’s next?
-                    By now you can buy just about anything with
-                    Bitcoin if you try hard enough, from Amazon
-                    gift cards to an old master painting. You can
-                    also convert your BTC to fiat with ATMs, an
-                    exchange, and more.</span></div>
-                    </a></div>
-            </section>
         </div>
     </main>
 
     <script type="text/x-template" id="country-table">
         <section class="article-exchange">
-                    <h1 class="section-header m"><span class="word-accent violet">Exchanges available in <?= the_title() ?><span
-                                    class="word-accent-square left"></span><span class="word-accent-square right"></span></span>
-                    </h1>
+                    <h1 class="section-header m"><span class="word-accent violet">Exchanges available in {{ countrys[country] }}<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span></h1>
                     <div class="table top-table">
                         <div class="table-wrap">
                             <div class="table-head">
-                                <div class="table-elem">Name</div>
-                                <div class="table-elem">Rating</div>
-                                <div class="table-elem">Founded Date</div>
-                                <div class="table-elem">Deposit Method</div>
-                                <div class="table-elem">Promotion</div>
-                                <div class="table-elem">CoinCub Review</div>
+                                <div class="table-elem"><span class="table-heading">Name</span></div>
+                                <div class="table-elem"><span class="table-heading">Rating</span></div>
+                                <div class="table-elem"><span class="table-heading">Founded Date</span></div>
+                                <div class="table-elem"><span class="table-heading">Deposit Method</span></div>
+                                <div class="table-elem"><span class="table-heading">Promotion </span></div>
+                                <div class="table-elem"><span class="table-heading">Coincub Review</span></div>
                             </div>
                             <div class="table-row" v-for="(exchanger, index) in display_exchanges">
-                                <div class="table-elem table-name"><img class="table-name-icon"
-                                    :src="'<?php bloginfo('template_url'); ?>/assets/img/content/table/'+exchanger.name.toLowerCase().replace('.', '')+'-logo.svg'"
-                                                                        :alt="exchanger.name + ' Logo'"><span
-                                            class="table-name-text">{{ exchanger.name }}</span></div>
-                                <div class="table-elem table-rating"><span class="table-rating-val">{{ exchanger.rating }}</span></div>
-                                <div class="table-elem table-date"><span class="table-date-val">{{ exchanger.founded }}</span></div>
-                                <div class="table-elem table-deposit"><img v-if="exchanger.creditCardFee" class="table-deposit-icon"
-                                                                           src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png"
-                                                                           alt="Cards Icon"><img v-if="exchanger.wireFee" class="table-deposit-icon"
-                                                                  src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png"
-                                                                  alt="Bank Icon"></div>
-                                <div class="table-elem table-promotion"><span v-if="!promo[exchanger.coinGeckoId]"
-                                            class="table-promotion-val orange">No</span>
-                                            <span v-if="promo[exchanger.coinGeckoId]"
-                                            class="table-promotion-val purple">Yes</span>
+                                <div class="table-elem">
+                                    <div class="table-name"><img class="table-name-icon" :src="'<?php bloginfo('template_url'); ?>/assets/img/content/table/'+exchanger.name.toLowerCase().replace('.', '')+'-logo.svg'" :alt="exchanger.name + ' Logo'"><span class="table-name-text">{{ exchanger.name }}</span></div><a class="table-link-mob" href="">Coincub Review
+                                        <svg class="table-link-icon">
+                                            <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
+                                        </svg></a>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Rating</span>
+                                    <div class="table-rating"><span class="table-rating-val">{{ exchanger.rating }}</span></div>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Founded Date</span>
+                                    <div class="table-date"><span class="table-date-val">{{ exchanger.founded }}</span></div>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Deposit Method</span>
+                                    <div class="table-deposit"><img v-if="exchanger.creditCardFee" class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png" alt="Cards Icon"><img v-if="exchanger.wireFee" class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png" alt="Bank Icon"></div>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Promotion </span>
+                                    <div class="table-promotion"><span class="table-promotion-val purple" v-if="promo[exchanger.coinGeckoId]">Yes</span><span class="table-promotion-val orange" v-if="!promo[exchanger.coinGeckoId]">No</span></div>
                                 </div>
                                 <div class="table-elem table-link"><a class="table-link-btn" href="">
-                                        <svg class="table-link-btn-icon">
+                                        <svg class="table-link-icon">
                                             <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
-                                        </svg>
-                                    </a></div>
+                                        </svg></a></div>
                             </div>
                         </div>
                     </div>

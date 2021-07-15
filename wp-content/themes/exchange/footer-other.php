@@ -1,3 +1,55 @@
+        <section class="faq middle">
+            <div class="faq-head">
+                <div class="section-title-simple">FAQ</div>
+                <h1 class="section-header m"><span class="word-accent violet">New to crypto? Here’s our guide!<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span></h1>
+            </div>
+            <div class="faq-wrap">
+                <a class="faq-elem" href="">
+                    <div class="faq-elem-content"><img class="faq-elem-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/faq/faq-img-1.png" alt="FAQ Image #1"><span class="faq-elem-number">01</span><span class="faq-elem-title">
+                         Why Bitcoin? </span><span class="faq-elem-text">
+                        It seems like the buzz around Bitcoin
+                        just keeps growing. Bitcoin is a constantly
+                        evolving technology with a passionate
+                        community. What is it about the digital
+                        asset that makes it such a controversial
+                        topic and attractive investment? </span></div>
+                </a>
+                <a class="faq-elem" href="">
+                    <div class="faq-elem-content"><img class="faq-elem-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/faq/faq-img-2.png" alt="FAQ Image #2"><span class="faq-elem-number">02</span><span class="faq-elem-title">
+                         How to Get Started with Bitcoin</span><span class="faq-elem-text">
+                        It can be difficult to get past the
+                        technical jargon surrounding Bitcoin in
+                        order to figure out how you can buy and
+                        store the digital asset. Beginners can
+                        purchase BTC on many exchanges with fiat
+                        currency. Once you’ve purchased crypto,
+                        invest in a safe  offline storage solution. </span></div>
+                </a>
+                <a class="faq-elem" href="">
+                    <div class="faq-elem-content"><img class="faq-elem-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/faq/faq-img-3.png" alt="FAQ Image #3"><span class="faq-elem-number">03</span><span class="faq-elem-title">
+                         Blockchains 101</span><span class="faq-elem-text">
+                        Blockchains are a type of database where
+                        data is stored in blocks that are chained
+                        together. As new data comes in, it is
+                        entered into a block, which is then chained
+                        to the previous block. The Bitcoin blockchain
+                        serves as a ledger that records every Bitcoin
+                        transaction in history. </span></div>
+                </a>
+                <a class="faq-elem" href="">
+                    <div class="faq-elem-content"><img class="faq-elem-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/faq/faq-img-4.png" alt="FAQ Image #4"><span class="faq-elem-number">04</span><span class="faq-elem-title">
+                         Bitcoin in the Real World</span><span class="faq-elem-text">
+                        Ok - you’ve found an exchange, bought your
+                        Bitcoin, and stored it safely. What’s next?
+                        By now you can buy just about anything with
+                        Bitcoin if you try hard enough, from Amazon
+                        gift cards to an old master painting. You can
+                        also convert your BTC to fiat with ATMs, an
+                        exchange, and more.</span></div>
+                </a>
+            </div>
+        </section>
+
         <?php
             $posts = get_posts( array(
                 'post_type' => 'footer',
@@ -25,13 +77,18 @@
                         </div>
                         <div class="footer-banner-right">
                             <?= do_shortcode('[email-subscribers-form id="1"]') ?>
-                            <input type="text" name="action" value="<?= admin_url('admin-ajax.php?action=send_mail') ?>" hidden>
-                            <form class="footer-banner-form" id="book-form" action="">
+                            <form class="footer-banner-form form-validate" id="book-form" novalidate>
+                                <input type="text" class="form-action" name="form-action" value="e-book" hidden>
+                                <input type="text" class="action" name="action" value="<?= admin_url('admin-ajax.php?action=send_mail') ?>" hidden>
                                 <div class="form-group">
                                     <label class="form-title">Email</label>
-                                    <input class="form-input" id="book-email" type="email" name="bannerEmail" placeholder="Your Email" value="youremail@mail.com">
-                                    <button id="book-btn" class="btn footer-banner-form-btn"><span class="btn-arrow"></span><span class="btn-text">Send me E-book now </span></button>
+                                    <input class="form-input" id="book-email" type="email" name="bannerEmail" placeholder="youremail@mail.com" required>
+                                    <span class="form-error-msg">Please type correct email</span>
                                 </div>
+                                <button class="btn form-btn footer-banner-form-btn">
+                                    <span class="btn-arrow"></span>
+                                    <span class="btn-text"><?= the_field('guide_button_text') ?></span>
+                                </button>
                             </form>
                         </div>
                     </section>
@@ -229,8 +286,8 @@
                         <h1 class="modal-heading">Contact Us</h1>
                         <div class="modal-desc">Please fill out the quick form and we will be in touch</div>
                         <form class="form modal-form form-validate" novalidate>
-                            <input type="text" id="form-action" name="form-action" value="contact-us" hidden>
-                            <input type="text" name="action" id="action" value="<?= admin_url('admin-ajax.php?action=contact_us') ?>" hidden>
+                            <input type="text" class="form-action" name="form-action" value="contact-us" hidden>
+                            <input type="text" name="action" class="action" value="<?= admin_url('admin-ajax.php?action=contact_us') ?>" hidden>
                             <div class="form-wrap">
                                 <div class="form-group">
                                     <label class="form-title">Name</label>
@@ -319,29 +376,7 @@
         let url = '<?= get_bloginfo("url"); ?>';
         // console.log(url);
 
-        jQuery('#book-btn').click(function(e) {
-            e.preventDefault();
-            let email = jQuery('#book-email').val();
-            console.log(email);
-            jQuery('.ig_es_form_field_email').val(email);
-
-            let $this = $('#book-form');
-
-            if (!validation.verificationFields($this)) {
-                return false;
-            }
-
-            let formBtn = $this.find('.form-btn');
-            let formBtnText = $this.find('.btn-text');
-            let formBtnArrow = $this.find('.btn-arrow');
-
-            formBtn.addClass('success');
-            formBtnText.text('Done');
-
-            validation.resetForm($this);
-
-            sendBook();
-        });
+        jQuery('.es_subscription_form').attr('action', window.location.pathname + '#es_form_f1-n1');
 
         function sendBook() {
             let email = jQuery('.ig_es_form_field_email').val();
@@ -377,6 +412,20 @@
             var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
             return re.test(email);
         }
+
+        jQuery(document).ready(function($) {
+            $('a').each(function () {
+                let link = '/' + window.location.host + '/';
+                var a = new RegExp('/' + window.location.host + '/');
+                if (!a.test(this.href)) {
+                    $(this).click(function (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        window.open(this.href, '_blank');
+                    });
+                }
+            });
+        });
     </script>
 
     <?php wp_footer(); ?>

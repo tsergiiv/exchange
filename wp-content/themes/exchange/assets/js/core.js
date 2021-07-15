@@ -3,7 +3,7 @@ let ppp = 8;
 
 function load_posts() {
     pageNumber++;
-    var str = '&pageNumber=' + pageNumber + '&action=more_post_ajax';
+    var str = '&pageNumber=' + pageNumber + '&category=' + category + '&action=more_post_ajax';
     console.log(str);
 
     jQuery.ajax({
@@ -23,9 +23,6 @@ function load_posts() {
                 console.log(ppp + ' - ' + pageNumber + ' - ' + postCount);
                 jQuery("#more_posts").remove();
             }
-
-            ratingVal(jQuery('.blog-country').find('.blog-elem'), 5);
-            ratingVal(jQuery('.blog-country').find('.blog-elem'), 10);
 
             ratingVal($('.blog-default'), 5);
             ratingVal($('.blog-country'), 10);
