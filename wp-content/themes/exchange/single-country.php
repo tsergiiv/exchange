@@ -76,89 +76,9 @@ Template Post Type: country
                         <?php endfor; ?>
                     </div>
                 </section>
-                <section class="article-exchange">
-                    <h1 class="section-header m"><span class="word-accent violet">Exchanges available in <?= the_title() ?><span
-                                    class="word-accent-square left"></span><span class="word-accent-square right"></span></span>
-                    </h1>
-                    <div class="table top-table">
-                        <div class="table-wrap">
-                            <div class="table-head">
-                                <div class="table-elem">Name</div>
-                                <div class="table-elem">Rating</div>
-                                <div class="table-elem">Founded Date</div>
-                                <div class="table-elem">Deposit Method</div>
-                                <div class="table-elem">Promotion</div>
-                                <div class="table-elem">CoinCub Review</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-elem table-name"><img class="table-name-icon"
-                                                                        src="<?php bloginfo('template_url'); ?>/assets/img/content/table/coinbase-logo.svg"
-                                                                        alt="Coinbase Logo"><span
-                                            class="table-name-text">Coinbase</span></div>
-                                <div class="table-elem table-rating"><span class="table-rating-val">5</span></div>
-                                <div class="table-elem table-date"><span class="table-date-val">May 2014</span></div>
-                                <div class="table-elem table-deposit"><img class="table-deposit-icon"
-                                                                           src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png"
-                                                                           alt="Cards Icon"><img
-                                            class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/globe-icon.png"
-                                            alt="Globe Icon"><img class="table-deposit-icon"
-                                                                  src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png"
-                                                                  alt="Bank Icon"></div>
-                                <div class="table-elem table-promotion"><span
-                                            class="table-promotion-val purple">Yes</span></div>
-                                <div class="table-elem table-link"><a class="table-link-btn" href="">
-                                        <svg class="table-link-btn-icon">
-                                            <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
-                                        </svg>
-                                    </a></div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-elem table-name"><img class="table-name-icon"
-                                                                        src="<?php bloginfo('template_url'); ?>/assets/img/content/table/kraken-logo.svg"
-                                                                        alt="Coinbase Logo"><span
-                                            class="table-name-text">Kraken</span></div>
-                                <div class="table-elem table-rating"><span class="table-rating-val">5</span></div>
-                                <div class="table-elem table-date"><span class="table-date-val">July 2021</span></div>
-                                <div class="table-elem table-deposit"><img class="table-deposit-icon"
-                                                                           src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png"
-                                                                           alt="Cards Icon"><img
-                                            class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/globe-icon.png"
-                                            alt="Globe Icon"><img class="table-deposit-icon"
-                                                                  src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png"
-                                                                  alt="Bank Icon"></div>
-                                <div class="table-elem table-promotion"><span
-                                            class="table-promotion-val orange">No</span></div>
-                                <div class="table-elem table-link"><a class="table-link-btn" href="">
-                                        <svg class="table-link-btn-icon">
-                                            <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
-                                        </svg>
-                                    </a></div>
-                            </div>
-                            <div class="table-row">
-                                <div class="table-elem table-name"><img class="table-name-icon"
-                                                                        src="<?php bloginfo('template_url'); ?>/assets/img/content/table/coinbase-logo.svg"
-                                                                        alt="Coinbase Logo"><span
-                                            class="table-name-text">Coinbase</span></div>
-                                <div class="table-elem table-rating"><span class="table-rating-val">5</span></div>
-                                <div class="table-elem table-date"><span class="table-date-val">May 2014</span></div>
-                                <div class="table-elem table-deposit"><img class="table-deposit-icon"
-                                                                           src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png"
-                                                                           alt="Cards Icon"><img
-                                            class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/globe-icon.png"
-                                            alt="Globe Icon"><img class="table-deposit-icon"
-                                                                  src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png"
-                                                                  alt="Bank Icon"></div>
-                                <div class="table-elem table-promotion"><span
-                                            class="table-promotion-val purple">Yes</span></div>
-                                <div class="table-elem table-link"><a class="table-link-btn" href="">
-                                        <svg class="table-link-btn-icon">
-                                            <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
-                                        </svg>
-                                    </a></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <div id="CountryPage">
+                    <exchanges_country country="<?= $customSelectCountry ?>"></exchanges_country>
+                </div>
                 <section class="article-wrap">
                     <div class="article-content">
                         <h1 class="section-header m"><span class="word-accent orange">Bitcoin and cryptocurrency trading <span
@@ -425,5 +345,48 @@ Template Post Type: country
             </section>
         </div>
     </main>
+
+    <script type="text/x-template" id="country-table">
+        <section class="article-exchange">
+                    <h1 class="section-header m"><span class="word-accent violet">Exchanges available in <?= the_title() ?><span
+                                    class="word-accent-square left"></span><span class="word-accent-square right"></span></span>
+                    </h1>
+                    <div class="table top-table">
+                        <div class="table-wrap">
+                            <div class="table-head">
+                                <div class="table-elem">Name</div>
+                                <div class="table-elem">Rating</div>
+                                <div class="table-elem">Founded Date</div>
+                                <div class="table-elem">Deposit Method</div>
+                                <div class="table-elem">Promotion</div>
+                                <div class="table-elem">CoinCub Review</div>
+                            </div>
+                            <div class="table-row" v-for="(exchanger, index) in display_exchanges">
+                                <div class="table-elem table-name"><img class="table-name-icon"
+                                    :src="'<?php bloginfo('template_url'); ?>/assets/img/content/table/'+exchanger.name.toLowerCase().replace('.', '')+'-logo.svg'"
+                                                                        :alt="exchanger.name + ' Logo'"><span
+                                            class="table-name-text">{{ exchanger.name }}</span></div>
+                                <div class="table-elem table-rating"><span class="table-rating-val">{{ exchanger.rating }}</span></div>
+                                <div class="table-elem table-date"><span class="table-date-val">{{ exchanger.founded }}</span></div>
+                                <div class="table-elem table-deposit"><img v-if="exchanger.creditCardFee" class="table-deposit-icon"
+                                                                           src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png"
+                                                                           alt="Cards Icon"><img v-if="exchanger.wireFee" class="table-deposit-icon"
+                                                                  src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png"
+                                                                  alt="Bank Icon"></div>
+                                <div class="table-elem table-promotion"><span v-if="!promo[exchanger.coinGeckoId]"
+                                            class="table-promotion-val orange">No</span>
+                                            <span v-if="promo[exchanger.coinGeckoId]"
+                                            class="table-promotion-val purple">Yes</span>
+                                </div>
+                                <div class="table-elem table-link"><a class="table-link-btn" href="">
+                                        <svg class="table-link-btn-icon">
+                                            <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
+                                        </svg>
+                                    </a></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    </script>
 
 <?php get_footer('other'); ?>
