@@ -3,7 +3,7 @@
 <?php
     $args = array(
         'posts_per_page' => -1,
-        'post_type'      => ['country', 'exchange'],
+        'post_type'      => 'country',
     );
 
     $posts_query = new WP_Query($args);
@@ -12,25 +12,23 @@
 
     <main class="content">
         <div class="blog blog-country">
-            <section class="blog-head container">
+            <section class="blog-head container middle">
                 <div class="blog-head-info">
-                    <div class="section-title sm">Back to main page</div>
-                    <h1 class="section-header big"><span class="word-accent orange">Exchange<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span> Reviews</h1>
+                    <a href="<?= home_url() ?>">
+                        <div class="section-title sm">Back to main page</div>
+                    </a>
+                    <h1 class="section-header big"><span class="word-accent orange">Country<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span> Reviews</h1>
                 </div><img class="blog-head-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/blog/blog-img.png" alt="Blog header image">
-            </section>
-            <section class="blog-nav">
-                <div class="blog-nav-link">All </div>
-                <div class="blog-nav-link">Exchanges</div>
-                <div class="blog-nav-link active">Financial Platforms</div>
             </section>
             <section class="blog-wrap">
                 <div class="blog-wrap-content" id="ajax-posts">
                     <?php
                         $posts = get_posts( array(
-                            'post_type'   => ['country', 'exchange'],
+                            'post_type'   => 'country',
                             'numberposts' => 9,
-                            'orderby'     => 'title',
-                            'order'       => 'ASC',
+                            'meta_key'	  => 'country_rating',
+                            'orderby'     => 'meta_value',
+                            'order'       => 'DESC',
                         ) );
 
                         foreach( $posts as $post ){

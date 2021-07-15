@@ -316,7 +316,7 @@ $(document).ready(function () {
         var $this = $(this);
 
         if (validation.verificationFields($this)) {
-            var formAction = $this.find('#form-action').val();
+            var formAction = $this.find('.form-action').val();
             var formBtn = $this.find('.form-btn');
             var formBtnText = $this.find('.btn-text');
             var formBtnArrow = $this.find('.btn-arrow');
@@ -324,7 +324,7 @@ $(document).ready(function () {
             formBtnText.text('Done');
 
             let email = jQuery('.ig_es_form_field_email').val();
-            let action = $this.find('#action').val();
+            let action = $this.find('.action').val();
             console.log(action);
 
             if (formAction == 'contact-us') {
@@ -347,6 +347,14 @@ $(document).ready(function () {
                         console.log('error' + error);
                     },
                 });
+            }
+
+            if (formAction == 'e-book') {
+                let email = jQuery('#book-email').val();
+                console.log(email);
+                jQuery('.ig_es_form_field_email').val(email);
+
+                sendBook();
             }
 
             validation.resetForm($this);

@@ -77,84 +77,88 @@ Template Post Type: country
                     </div>
                 </section>
                 <section class="article-exchange">
-                    <h1 class="section-header m"><span class="word-accent violet">Exchanges available in <?= the_title() ?><span
-                                    class="word-accent-square left"></span><span class="word-accent-square right"></span></span>
-                    </h1>
+                    <h1 class="section-header m"><span class="word-accent violet">Exchanges available in Hong Kong<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span></h1>
                     <div class="table top-table">
                         <div class="table-wrap">
                             <div class="table-head">
-                                <div class="table-elem">Name</div>
-                                <div class="table-elem">Rating</div>
-                                <div class="table-elem">Founded Date</div>
-                                <div class="table-elem">Deposit Method</div>
-                                <div class="table-elem">Promotion</div>
-                                <div class="table-elem">CoinCub Review</div>
+                                <div class="table-elem"><span class="table-heading">Name</span></div>
+                                <div class="table-elem"><span class="table-heading">Rating</span></div>
+                                <div class="table-elem"><span class="table-heading">Founded Date</span></div>
+                                <div class="table-elem"><span class="table-heading">Deposit Method</span></div>
+                                <div class="table-elem"><span class="table-heading">Promotion </span></div>
+                                <div class="table-elem"><span class="table-heading">Coincub Review</span></div>
                             </div>
                             <div class="table-row">
-                                <div class="table-elem table-name"><img class="table-name-icon"
-                                                                        src="<?php bloginfo('template_url'); ?>/assets/img/content/table/coinbase-logo.svg"
-                                                                        alt="Coinbase Logo"><span
-                                            class="table-name-text">Coinbase</span></div>
-                                <div class="table-elem table-rating"><span class="table-rating-val">5</span></div>
-                                <div class="table-elem table-date"><span class="table-date-val">May 2014</span></div>
-                                <div class="table-elem table-deposit"><img class="table-deposit-icon"
-                                                                           src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png"
-                                                                           alt="Cards Icon"><img
-                                            class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/globe-icon.png"
-                                            alt="Globe Icon"><img class="table-deposit-icon"
-                                                                  src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png"
-                                                                  alt="Bank Icon"></div>
-                                <div class="table-elem table-promotion"><span
-                                            class="table-promotion-val purple">Yes</span></div>
-                                <div class="table-elem table-link"><a class="table-link-btn" href="">
-                                        <svg class="table-link-btn-icon">
+                                <div class="table-elem">
+                                    <div class="table-name"><img class="table-name-icon" src="<?php bloginfo('template_url'); ?>/assets/img/content/table/coinbase-logo.svg" alt="Coinbase Logo"><span class="table-name-text">Coinbase</span></div><a class="table-link-mob" href="">Coincub Review
+                                        <svg class="table-link-icon">
                                             <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
-                                        </svg>
-                                    </a></div>
+                                        </svg></a>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Rating</span>
+                                    <div class="table-rating"><span class="table-rating-val">5</span></div>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Founded Date</span>
+                                    <div class="table-date"><span class="table-date-val">May 2014</span></div>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Deposit Method</span>
+                                    <div class="table-deposit"><img class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png" alt="Cards Icon"><img class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/globe-icon.png" alt="Globe Icon"><img class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png" alt="Bank Icon"></div>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Promotion </span>
+                                    <div class="table-promotion"><span class="table-promotion-val purple">Yes</span></div>
+                                </div>
+                                <div class="table-elem table-link"><a class="table-link-btn" href="">
+                                        <svg class="table-link-icon">
+                                            <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
+                                        </svg></a></div>
                             </div>
                             <div class="table-row">
-                                <div class="table-elem table-name"><img class="table-name-icon"
-                                                                        src="<?php bloginfo('template_url'); ?>/assets/img/content/table/kraken-logo.svg"
-                                                                        alt="Coinbase Logo"><span
-                                            class="table-name-text">Kraken</span></div>
-                                <div class="table-elem table-rating"><span class="table-rating-val">5</span></div>
-                                <div class="table-elem table-date"><span class="table-date-val">July 2021</span></div>
-                                <div class="table-elem table-deposit"><img class="table-deposit-icon"
-                                                                           src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png"
-                                                                           alt="Cards Icon"><img
-                                            class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/globe-icon.png"
-                                            alt="Globe Icon"><img class="table-deposit-icon"
-                                                                  src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png"
-                                                                  alt="Bank Icon"></div>
-                                <div class="table-elem table-promotion"><span
-                                            class="table-promotion-val orange">No</span></div>
-                                <div class="table-elem table-link"><a class="table-link-btn" href="">
-                                        <svg class="table-link-btn-icon">
+                                <div class="table-elem">
+                                    <div class="table-name"><img class="table-name-icon" src="<?php bloginfo('template_url'); ?>/assets/img/content/table/kraken-logo.svg" alt="Coinbase Logo"><span class="table-name-text">Kraken</span></div><a class="table-link-mob" href="">Coincub Review
+                                        <svg class="table-link-icon">
                                             <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
-                                        </svg>
-                                    </a></div>
+                                        </svg></a>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Rating</span>
+                                    <div class="table-rating"><span class="table-rating-val">5</span></div>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Founded Date</span>
+                                    <div class="table-date"><span class="table-date-val">July 2021</span></div>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Deposit Method</span>
+                                    <div class="table-deposit"><img class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png" alt="Cards Icon"><img class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/globe-icon.png" alt="Globe Icon"><img class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png" alt="Bank Icon"></div>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Promotion</span>
+                                    <div class="table-promotion"><span class="table-promotion-val orange">No</span></div>
+                                </div>
+                                <div class="table-elem table-link"><a class="table-link-btn" href="">
+                                        <svg class="table-link-icon">
+                                            <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
+                                        </svg></a></div>
                             </div>
                             <div class="table-row">
-                                <div class="table-elem table-name"><img class="table-name-icon"
-                                                                        src="<?php bloginfo('template_url'); ?>/assets/img/content/table/coinbase-logo.svg"
-                                                                        alt="Coinbase Logo"><span
-                                            class="table-name-text">Coinbase</span></div>
-                                <div class="table-elem table-rating"><span class="table-rating-val">5</span></div>
-                                <div class="table-elem table-date"><span class="table-date-val">May 2014</span></div>
-                                <div class="table-elem table-deposit"><img class="table-deposit-icon"
-                                                                           src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png"
-                                                                           alt="Cards Icon"><img
-                                            class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/globe-icon.png"
-                                            alt="Globe Icon"><img class="table-deposit-icon"
-                                                                  src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png"
-                                                                  alt="Bank Icon"></div>
-                                <div class="table-elem table-promotion"><span
-                                            class="table-promotion-val purple">Yes</span></div>
-                                <div class="table-elem table-link"><a class="table-link-btn" href="">
-                                        <svg class="table-link-btn-icon">
+                                <div class="table-elem">
+                                    <div class="table-name"><img class="table-name-icon" src="<?php bloginfo('template_url'); ?>/assets/img/content/table/coinbase-logo.svg" alt="Coinbase Logo"><span class="table-name-text">Coinbase</span></div><a class="table-link-mob" href="">Coincub Review
+                                        <svg class="table-link-icon">
                                             <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
-                                        </svg>
-                                    </a></div>
+                                        </svg></a>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Rating</span>
+                                    <div class="table-rating"><span class="table-rating-val">5</span></div>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Founded Date</span>
+                                    <div class="table-date"><span class="table-date-val">May 2014</span></div>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Deposit Method</span>
+                                    <div class="table-deposit"><img class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png" alt="Cards Icon"><img class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/globe-icon.png" alt="Globe Icon"><img class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png" alt="Bank Icon"></div>
+                                </div>
+                                <div class="table-elem"><span class="table-heading">Promotion</span>
+                                    <div class="table-promotion"><span class="table-promotion-val purple">Yes</span></div>
+                                </div>
+                                <div class="table-elem table-link"><a class="table-link-btn" href="">
+                                        <svg class="table-link-icon">
+                                            <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
+                                        </svg></a></div>
                             </div>
                         </div>
                     </div>
@@ -243,41 +247,24 @@ Template Post Type: country
 
                         <!-- Taxing cryptocurrencies block -->
                         <?php
-                            $taxing1 =  get_field_object('taxing_text_1');
-                            $taxing2 =  get_field_object('taxing_text_2');
-                            $taxing3 =  get_field_object('taxing_text_3');
-                            $taxing4 =  get_field_object('taxing_text_4');
                         ?>
                         <div class="article-content-heading" id="tax">Taxing cryptocurrencies in <?= the_title() ?></div>
-                        <div class="article-accordion" data-accordion="tax">
-                            <div class="article-accordion-title">
-                                <?= $taxing1['label'] ?><span class="article-accordion-title-btn"><span></span></span></div>
-                            <div class="article-accordion-dropdown">
-                                <?= $taxing1['value'] ?>
+                        <?php
+                            for ($i = 1; $i <= 4; $i++):
+                                $taxing = get_field_object('taxing_text_' . $i);
+                        ?>
+                            <div class="article-accordion <?= $i == 1 ? 'active' : '' ?>" data-accordion="tax">
+                                <div class="article-accordion-title">
+                                    <?= $taxing['label'] ?>
+                                    <span class="article-accordion-title-btn">
+                                        <span></span>
+                                    </span>
+                                </div>
+                                <div class="article-accordion-dropdown">
+                                    <?= $taxing['value'] ?>
+                                </div>
                             </div>
-                        </div>
-                        <div class="article-accordion" data-accordion="tax">
-                            <div class="article-accordion-title">
-                                <?= $taxing2['label'] ?><span class="article-accordion-title-btn"><span></span></span></div>
-                            <div class="article-accordion-dropdown">
-                                <?= $taxing2['value'] ?>
-                            </div>
-                        </div>
-                        <div class="article-accordion" data-accordion="tax">
-                            <div class="article-accordion-title">
-                                <?= $taxing3['label'] ?><span class="article-accordion-title-btn"><span></span></span>
-                            </div>
-                            <div class="article-accordion-dropdown">
-                                <?= $taxing3['value'] ?>
-                            </div>
-                        </div>
-                        <div class="article-accordion" data-accordion="tax">
-                            <div class="article-accordion-title">
-                                <?= $taxing4['label'] ?><span class="article-accordion-title-btn"><span></span></span></div>
-                            <div class="article-accordion-dropdown">
-                                <?= $taxing4['value'] ?>
-                            </div>
-                        </div>
+                        <?php endfor; ?>
 
                         <!-- Crypto financial services block -->
                         <?php

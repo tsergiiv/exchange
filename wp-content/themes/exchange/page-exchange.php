@@ -1,17 +1,24 @@
 <?php get_header(); ?>
 
+<?php
+    $args = array(
+        'posts_per_page' => -1,
+        'post_type'      => 'exchange',
+    );
+
+    $posts_query = new WP_Query($args);
+    $post_count = $posts_query->post_count;
+?>
+
     <main class="content">
         <div class="blog blog-default">
-            <section class="blog-head container">
+            <section class="blog-head container middle">
                 <div class="blog-head-info">
-                    <div class="section-title sm">Back to main page</div>
+                    <a href="<?= home_url() ?>">
+                        <div class="section-title sm">Back to main page</div>
+                    </a>
                     <h1 class="section-header big"><span class="word-accent orange">Exchange<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span> Reviews</h1>
                 </div><img class="blog-head-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/blog/blog-img.png" alt="Blog header image">
-            </section>
-            <section class="blog-nav">
-                <div class="blog-nav-link">All </div>
-                <div class="blog-nav-link">Exchanges</div>
-                <div class="blog-nav-link active">Financial Platforms</div>
             </section>
             <section class="blog-wrap">
                 <div class="blog-wrap-content" id="ajax-posts">
@@ -37,5 +44,10 @@
             </section>
         </div>
     </main>
+
+    <script>
+        let postCount = <?= $post_count ?>;
+        let category = 'exchange';
+    </script>
 
 <?php get_footer('other'); ?>

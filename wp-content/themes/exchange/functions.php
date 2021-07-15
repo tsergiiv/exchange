@@ -158,14 +158,16 @@ add_filter( 'nav_menu_link_attributes', 'add_menu_link_class', 1, 3 );
 function more_post_ajax() {
     $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
     $ppp = 9;
+    $category = $_POST['category'];
     $offset = ($page - 1) * $ppp;
 
     header("Content-Type: text/html");
 
     $args = array(
-        'post_type'      => ['country', 'exchange'],
-        'orderby'        => 'title',
-        'order'          => 'ASC',
+        'post_type'      => $category,
+        'meta_key'	     => $category . '_rating',
+        'orderby'        => 'meta_value',
+        'order'          => 'DESC',
         'posts_per_page' => $ppp,
         'offset'         => $offset,
     );

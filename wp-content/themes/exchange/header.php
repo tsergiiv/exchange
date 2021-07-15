@@ -28,7 +28,7 @@
                 <img class="header-logo-img" src="<?php bloginfo('template_url'); ?>/assets/img/general/logo.png" alt="СoinResident Logo">
             </a>
         <nav class="header-nav">
-            <a class="header-nav-link" href="<?= home_url() ?>/catalog">Countries</a>
-            <a class="header-nav-link" href="<?= home_url() ?>/catalog">Exchanges</a>
+            <a class="header-nav-link" href="<?= home_url() ?>/country">Countries</a>
+            <a class="header-nav-link" href="<?= home_url() ?>/exchange">Exchanges</a>
         </nav>
     </header>

@@ -80,7 +80,7 @@ Template Post Type: exchange
                         <?php endfor; ?>
                         </div>
                     </section>
-                    <div class="section-header m">
+                    <div class="section-header m" id="whatis">
                         <span class="word-accent violet"><?= the_title() ?> Overview
                             <span class="word-accent-square left"></span>
                             <span class="word-accent-square right"></span>
@@ -89,7 +89,7 @@ Template Post Type: exchange
                     <?= the_field('overview') ?>
                     <a class="btn article-btn" href=""><span class="btn-arrow"></span><span class="btn-text">Learn more</span></a>
                     <div class="article-advantages">
-                        <div class="article-content-heading">Pros / Cons</div><img class="article-advantages-bg" src="<?php bloginfo('template_url'); ?>/assets/img/content/article/advantages-bg.png" alt="Advantages bg">
+                        <div class="article-content-heading" id="proscons">Pros / Cons</div><img class="article-advantages-bg" src="<?php bloginfo('template_url'); ?>/assets/img/content/article/advantages-bg.png" alt="Advantages bg">
                         <div class="article-advantages-elem cons">
                             <div class="article-advantages-head">
                                 <div class="article-advantages-icon"><img class="article-advantages-icon-content" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/thumb-down.png" alt="Cons Icon"></div>
@@ -114,7 +114,7 @@ Template Post Type: exchange
                         $info5 =  get_field_object('info_5');
                     ?>
                     <div class="article-info orange">
-                        <div class="article-info-title">Exchange info</div>
+                        <div class="article-info-title" id="exchange">Exchange info</div>
                         <div class="article-info-elem">
                             <?= $info1['label'] ?>: <span class="article-info-elem-val"><?= $info1['value'] ?></span>
                         </div>
@@ -141,7 +141,7 @@ Template Post Type: exchange
                         $fee5 =  get_field_object('fee_5');
                     ?>
                     <div class="article-info pink">
-                        <div class="article-info-title">Fees and trading</div>
+                        <div class="article-info-title" id="feestrading">Fees and trading</div>
                         <?php if ($fee1['value']): ?>
                             <div class="article-info-elem">
                                 <?= $fee1['label'] ?>: <span class="article-info-elem-val pink"><?= $fee1['value'] ?></span>
@@ -168,11 +168,11 @@ Template Post Type: exchange
                             </div>
                         <?php endif; ?>
                     </div>
-                    <div class="article-content-heading">Security</div>
+                    <div class="article-content-heading" id="security">Security</div>
                     <?= the_field('security') ?>
 
                     <?php if (get_field('tip_1')): ?>
-                        <div class="article-content-heading">Tips for users</div>
+                        <div class="article-content-heading" id="tips">Tips for users</div>
                         <?php if (get_field('tip_1')): ?>
                             <div class="article-step">
                                 <div class="article-step-icon"><span class="article-step-icon-text">01</span></div>
@@ -225,148 +225,52 @@ Template Post Type: exchange
                         <?php endif; ?>
                     <?php endif; ?>
 
-                    <div class="article-content-heading">Regulation</div>
-                    <?= the_field('regulation') ?>
-                    <div class="article-content-heading">Privacy</div>
-                    <?= the_field('privacy') ?>
-                    <div class="article-content-heading"><?= the_field('experience_title') ?></div>
-                    <?= the_field('experience_text') ?>
+                    <?php if (get_field('regulation')): ?>
+                        <div class="article-content-heading" id="regulation">Regulation</div>
+                        <?= the_field('regulation') ?>
+                    <?php endif; ?>
+
+                    <?php if (get_field('privacy')): ?>
+                        <div class="article-content-heading" id="privacy">Privacy</div>
+                        <?= the_field('privacy') ?>
+                    <?php endif; ?>
+
+                    <?php if (get_field('experience_text')): ?>
+                        <div class="article-content-heading" id="experience"><?= the_field('experience_title') ?></div>
+                        <?= the_field('experience_text') ?>
+                    <?php endif; ?>
 
                     <?php if (get_field('interface')): ?>
-                        <div class="article-content-heading">Interface</div>
+                        <div class="article-content-heading" id="interface">Interface</div>
                         <?= the_field('interface') ?>
                     <?php endif; ?>
 
                     <?php if (get_field('compare')): ?>
-                        <div class="article-content-heading">How does <?= the_title() ?> compare? </div>
+                        <div class="article-content-heading" id="compare">How does <?= the_title() ?> compare? </div>
                         <?= the_field('compare') ?>
                     <?php endif; ?>
 
                     <?php if (get_field('customer_support')): ?>
-                        <div class="article-content-heading">Customer Support </div>
+                        <div class="article-content-heading" id="support">Customer Support </div>
                         <?= the_field('customer_support') ?>
                     <?php endif; ?>
 
                     <?php if (get_field('opening_account')): ?>
-                        <div class="article-content-heading">Opening an Account and Trading </div>
+                        <div class="article-content-heading" id="openacc">Opening an Account and Trading </div>
                         <?= the_field('opening_account') ?>
                     <?php endif; ?>
 
-                    <div class="article-content-heading">Binance Fees and Trading costs</div>
-                    <div class="article-accordion" data-accordion="fee">
-                        <div class="article-accordion-title">
-                            Trading Fees<span class="article-accordion-title-btn"><span></span></span></div>
-                        <div class="article-accordion-dropdown">
-                            <p>
-                                Binance has a tiered trading fee structure based on a 30-day
-                                cumulative trading volume. Traders are categorized into VIP
-                                Levels, ranging from Level 0 to Level 9. These can range
-                                from 0.1% for maker and taker to 0.02% / 0.04%, depending
-                                upon VIP level status.
-                            </p>
-                            <p>
-                                For example a VIP 0 user who trades less than 50 BTC worth per
-                                month would be charged the standard 0.1% fee per trade.
-                            </p>
-                            <p>
-                                This means if you buy $200 worth of Ethereum (ETH), you would
-                                only pay 200 x 0.001 = $0.20.
-                            </p>
-                            <p>
-                                These low fees make Binance a very attractive exchange for many
-                                seasoned crypto traders, as with such high trading volume,
-                                Binance are still profitable even with low fees.
-                            </p><img class="article-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/article/article-fee-img.png" alt="Article Fee Image">
-                        </div>
-                    </div>
-                    <div class="article-accordion" data-accordion="fee">
-                        <div class="article-accordion-title">
-                            Margin Borrow Interest Rates<span class="article-accordion-title-btn"><span></span></span></div>
-                        <div class="article-accordion-dropdown">
-                            If you trade cryptocurrencies professionally you’ll be
-                            eligible for income tax on your profits but if you only
-                            do it as a casual player you can avoid tax. However,
-                            whether you are trading cryptocurrencies professionally
-                            or as an amateur is something you’ll have to iron out
-                            with a glass of Sake and a specialist advisor. The
-                            important thing is whether your profits are derived in
-                            Hong Kong (even if the exchanges are overseas), so if
-                            you’re buying, selling, exchanging bitcoin for gain and
-                            based in Hong Kong you’ll need to declare them. Taxation
-                            issues around crypto currencies appear straightforward
-                            but expert advice is advisable as everything crypto is
-                            changing all the time.
-                        </div>
-                    </div>
-                    <div class="article-accordion" data-accordion="fee">
-                        <div class="article-accordion-title">
-                            Withdrawal Fees<span class="article-accordion-title-btn"><span></span></span></div>
-                        <div class="article-accordion-dropdown">
-                            If you trade cryptocurrencies professionally you’ll be
-                            eligible for income tax on your profits but if you only
-                            do it as a casual player you can avoid tax. However,
-                            whether you are trading cryptocurrencies professionally
-                            or as an amateur is something you’ll have to iron out
-                            with a glass of Sake and a specialist advisor. The
-                            important thing is whether your profits are derived in
-                            Hong Kong (even if the exchanges are overseas), so if
-                            you’re buying, selling, exchanging bitcoin for gain and
-                            based in Hong Kong you’ll need to declare them. Taxation
-                            issues around crypto currencies appear straightforward
-                            but expert advice is advisable as everything crypto is
-                            changing all the time.
-                        </div>
-                    </div>
-                    <div class="article-accordion" data-accordion="fee">
-                        <div class="article-accordion-title">
-                            Deposit & Withdrawal Options<span class="article-accordion-title-btn"><span></span></span></div>
-                        <div class="article-accordion-dropdown">
-                            If you trade cryptocurrencies professionally you’ll be
-                            eligible for income tax on your profits but if you only
-                            do it as a casual player you can avoid tax. However,
-                            whether you are trading cryptocurrencies professionally
-                            or as an amateur is something you’ll have to iron out
-                            with a glass of Sake and a specialist advisor. The
-                            important thing is whether your profits are derived in
-                            Hong Kong (even if the exchanges are overseas), so if
-                            you’re buying, selling, exchanging bitcoin for gain and
-                            based in Hong Kong you’ll need to declare them. Taxation
-                            issues around crypto currencies appear straightforward
-                            but expert advice is advisable as everything crypto is
-                            changing all the time.
-                        </div>
-                    </div>
-                    <div class="article-accordion" data-accordion="fee">
-                        <div class="article-accordion-title">
-                            How do you transfer from <?=  the_title() ?> to Binance?<span class="article-accordion-title-btn"><span></span></span></div>
-                        <div class="article-accordion-dropdown">
-                            If you trade cryptocurrencies professionally you’ll be
-                            eligible for income tax on your profits but if you only
-                            do it as a casual player you can avoid tax. However,
-                            whether you are trading cryptocurrencies professionally
-                            or as an amateur is something you’ll have to iron out
-                            with a glass of Sake and a specialist advisor. The
-                            important thing is whether your profits are derived in
-                            Hong Kong (even if the exchanges are overseas), so if
-                            you’re buying, selling, exchanging bitcoin for gain and
-                            based in Hong Kong you’ll need to declare them. Taxation
-                            issues around crypto currencies appear straightforward
-                            but expert advice is advisable as everything crypto is
-                            changing all the time.
-                        </div>
-                    </div>
-
                     <?php if (get_field('fees')): ?>
-                        <div class="article-content-heading">Fees </div>
+                        <div class="article-content-heading" id="fees">Fees</div>
                         <?= the_field('fees') ?>
                     <?php endif; ?>
 
                     <?php if (get_field('news')): ?>
-                        <div class="article-content-heading">News</div>
+                        <div class="article-content-heading" id="news">News</div>
                         <?= the_field('news') ?>
                     <?php endif; ?>
 
-                    <div class="article-content-heading">FAQs</div>
+                    <div class="article-content-heading" id="faqs">FAQs</div>
                     <?php
                         for ($i = 1; $i <= 7; $i++) {
                             if (!get_field('question_' . $i)) {
@@ -375,7 +279,7 @@ Template Post Type: exchange
 
                             ?>
 
-                            <div class="article-accordion" data-accordion="faq">
+                            <div class="article-accordion <?= $i == 1 ? 'active' : '' ?>" data-accordion="faq">
                                 <div class="article-accordion-title">
                                     <?= the_field('question_' . $i) ?>
                                     <span class="article-accordion-title-btn"><span></span></span>
@@ -389,8 +293,10 @@ Template Post Type: exchange
                         }
                     ?>
 
-                    <div class="article-content-heading">Supported Countries</div>
-                    <?= the_field('supported_countries') ?>
+                    <?php if (get_field('supported_countries')): ?>
+                        <div class="article-content-heading" id="supported_countries">Supported Countries</div>
+                        <?= the_field('supported_countries') ?>
+                    <?php endif; ?>
 
                     <?php if (get_field('supported_currencies')): ?>
                         <div class="article-content-heading"><?= the_field('currencies_title') ?></div>
@@ -407,7 +313,7 @@ Template Post Type: exchange
                         <?= the_field('trading_costs') ?>
                     <?php endif; ?>
 
-                    <div class="section-header m"><span class="word-accent orange"><?= the_title() ?>’s Services<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span></div>
+                    <div class="section-header m" id="services"><span class="word-accent orange"><?= the_title() ?>’s Services<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span></div>
                     <?= the_field('services') ?>
 
                     <div class="article-help"><span class="article-help-title">Helpful?</span>
@@ -417,7 +323,59 @@ Template Post Type: exchange
                     <div class="article-tag"><a href="">#<?=  the_title() ?></a><a href="">#<?=  the_title() ?> exchange </a><a href="">#what is <?=  the_title() ?>? </a><a href="">#<?=  the_title() ?> wallet </a><a href="">#<?=  the_title() ?> review </a></div>
                 </div>
                 <div class="article-sidebar">
-                    <div class="article-sidebar-title">Table of contents</div><a class="article-sidebar-link active" href="">What is <?= the_title() ?>?</a><a class="article-sidebar-link" href="">Pros/Cons</a><a class="article-sidebar-link" href="">Fees and Trading</a><a class="article-sidebar-link" href="">Exchange Info</a><a class="article-sidebar-link" href="">Security</a><a class="article-sidebar-link" href="">Tips for users</a><a class="article-sidebar-link" href="">Regulation</a><a class="article-sidebar-link" href="">Privacy</a><a class="article-sidebar-link" href="">User Experience</a><a class="article-sidebar-link" href="">Interface </a><a class="article-sidebar-link" href="">How does it compare</a><a class="article-sidebar-link" href="">Customer Support</a><a class="article-sidebar-link" href="">Open Account and Trade</a><a class="article-sidebar-link" href="">Fees</a><a class="article-sidebar-link" href="">Services</a>
+                    <div class="article-sidebar-title">Table of contents</div>
+                    <a class="article-sidebar-link" href="#whatis">What is <?= the_title() ?>?</a>
+                    <a class="article-sidebar-link" href="#proscons">Pros/Cons</a>
+                    <a class="article-sidebar-link" href="#exchange">Exchange Info</a>
+                    <a class="article-sidebar-link" href="#feestrading">Fees and Trading</a>
+                    <a class="article-sidebar-link" href="#security">Security</a>
+                    <?php if (get_field('tip_1')): ?>
+                        <a class="article-sidebar-link" href="#tips">Tips for users</a>
+                    <?php endif; ?>
+
+                    <?php if (get_field('regulation')): ?>
+                        <a class="article-sidebar-link" href="#regulation">Regulation</a>
+                    <?php endif; ?>
+
+                    <?php if (get_field('privacy')): ?>
+                        <a class="article-sidebar-link" href="#privacy">Privacy</a>
+                    <?php endif; ?>
+
+                    <?php if (get_field('experience_text')): ?>
+                        <a class="article-sidebar-link" href="#experience">User Experience</a>
+                    <?php endif; ?>
+
+                    <?php if (get_field('interface')): ?>
+                        <a class="article-sidebar-link" href="#interface">Interface </a>
+                    <?php endif; ?>
+
+                    <?php if (get_field('compare')): ?>
+                        <a class="article-sidebar-link" href="#compare">How does it compare</a>
+                    <?php endif; ?>
+
+                    <?php if (get_field('customer_support')): ?>
+                        <a class="article-sidebar-link" href="#support">Customer Support</a>
+                    <?php endif; ?>
+
+                    <?php if (get_field('opening_account')): ?>
+                        <a class="article-sidebar-link" href="#openacc">Open Account and Trade</a>
+                    <?php endif; ?>
+
+                    <?php if (get_field('fees')): ?>
+                        <a class="article-sidebar-link" href="#fees">Fees</a>
+                    <?php endif; ?>
+
+                    <?php if (get_field('news')): ?>
+                        <a class="article-sidebar-link" href="#news">News</a>
+                    <?php endif; ?>
+
+                    <a class="article-sidebar-link" href="#faqs">FAQs</a>
+
+                    <?php if (get_field('supported_countries')): ?>
+                        <a class="article-sidebar-link" href="#supported_countries">Supported Countries</a>
+                    <?php endif; ?>
+
+                    <a class="article-sidebar-link" href="#services">Services</a>
                 </div>
             </section>
         </div>
