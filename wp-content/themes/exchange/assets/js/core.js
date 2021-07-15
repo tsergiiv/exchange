@@ -24,9 +24,6 @@ function load_posts() {
                 jQuery("#more_posts").remove();
             }
 
-            ratingVal(jQuery('.blog-country').find('.blog-elem'), 5);
-            ratingVal(jQuery('.blog-country').find('.blog-elem'), 10);
-
             ratingVal($('.blog-default'), 5);
             ratingVal($('.blog-country'), 10);
         },

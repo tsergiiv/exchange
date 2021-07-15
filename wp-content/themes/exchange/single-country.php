@@ -38,8 +38,8 @@ Template Post Type: country
                                                                               src="<?php bloginfo('template_url'); ?>/assets/img/content/article/article-author.png"
                                                                               alt="Article review author"></div>
                                 <div class="article-review-author-info">
-                                    <div class="article-review-author-date">May, 5, 2021</div>
-                                    <div class="article-review-author-name">Daniel Olagbami</div>
+                                    <div class="article-review-author-date"><?= the_field('publish_date') ?></div>
+                                    <div class="article-review-author-name"><?= the_field('author') ?></div>
                                 </div>
                             </div>
                         </div>

@@ -5,8 +5,10 @@
         </div>
         <div class="blog-elem-info">
             <div class="blog-elem-head">
-                <div class="blog-elem-author">By Daniel Olagbami</div>
-                <div class="blog-elem-date">May, 5, 2021</div>
+                <?php if (get_field('author') && get_field('publish_date')): ?>
+                    <div class="blog-elem-author">By <?= the_field('author') ?></div>
+                    <div class="blog-elem-date"><?= the_field('publish_date') ?></div>
+                <?php endif; ?>
             </div>
             <div class="blog-elem-title"><?= the_title() ?> Review 2021 </div>
             <div class="blog-elem-rating">
