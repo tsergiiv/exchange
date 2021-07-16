@@ -277,7 +277,7 @@ Template Post Type: country
     </main>
 
     <script type="text/x-template" id="country-table">
-        <section class="article-exchange">
+        <section class="article-exchange" v-if="display_exchanges.length != 0">
                     <h1 class="section-header m"><span class="word-accent violet">Exchanges available in {{ countrys[country] }}<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span></h1>
                     <div class="table top-table">
                         <div class="table-wrap">
