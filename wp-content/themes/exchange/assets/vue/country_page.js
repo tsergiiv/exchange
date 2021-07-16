@@ -52,7 +52,7 @@ Vue.component('exchanges_country', {
     },
     methods: {
         filter: function(crypt_id) {
-            if (!this.exchanges_country[this.country].includes(crypt_id)) {
+            if (this.exchanges_country[this.country].includes(crypt_id)) {
               return false;
             } else {
               return true;
