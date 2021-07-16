@@ -77,7 +77,7 @@ Template Post Type: country
                     </div>
                 </section>
                 <div id="CountryPage">
-                    <exchanges_country country="<?= $customSelectCountry ?>"></exchanges_country>
+                    <exchanges_country country="<?= the_field('code') ?>"></exchanges_country>
                 </div>
                 <section class="article-wrap">
                     <div class="article-content">

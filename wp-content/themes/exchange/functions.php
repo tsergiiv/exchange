@@ -63,6 +63,11 @@ function enqueue_scripts()
         wp_register_script('top_page', get_template_directory_uri() . '/assets/vue/top_page.js');
         wp_enqueue_script('top_page');
     }
+
+    if (get_post_type() == 'country') {
+        wp_register_script('country_page', get_template_directory_uri() . '/assets/vue/country_page.js');
+        wp_enqueue_script('country_page');
+    }
 }
 
 add_theme_support('menus');
