@@ -230,36 +230,36 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter/Inter-Regular/Inter-Regular.eot");
-  src: url("../fonts/Inter/Inter-Regular/Inter-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Inter/Inter-Regular/Inter-Regular.woff") format("woff"), url("../fonts/Inter/Inter-Regular/Inter-Regular.woff2") format("woff2"), url("../fonts/Inter/Inter-Regular/Inter-Regular.ttf") format("truetype"), url("../fonts/Inter/Inter-Regular/Inter-Regular.svg?#webfont") format("svg");
+  src: url("./assets/fonts/Inter/Inter-Regular/Inter-Regular.eot");
+  src: url("./assets/fonts/Inter/Inter-Regular/Inter-Regular.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/Inter/Inter-Regular/Inter-Regular.woff") format("woff"), url("./assets/fonts/Inter/Inter-Regular/Inter-Regular.woff2") format("woff2"), url("./assets/fonts/Inter/Inter-Regular/Inter-Regular.ttf") format("truetype"), url("./assets/fonts/Inter/Inter-Regular/Inter-Regular.svg?#webfont") format("svg");
   font-weight: 400;
   font-style: normal; }
 
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter/Inter-Medium/Inter-Medium.eot");
-  src: url("../fonts/Inter/Inter-Medium/Inter-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Inter/Inter-Medium/Inter-Medium.woff") format("woff"), url("../fonts/Inter/Inter-Medium/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter/Inter-Medium/Inter-Medium.ttf") format("truetype"), url("../fonts/Inter/Inter-Medium/Inter-Medium.svg?#webfont") format("svg");
+  src: url("./assets/fonts/Inter/Inter-Medium/Inter-Medium.eot");
+  src: url("./assets/fonts/Inter/Inter-Medium/Inter-Medium.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/Inter/Inter-Medium/Inter-Medium.woff") format("woff"), url("./assets/fonts/Inter/Inter-Medium/Inter-Medium.woff2") format("woff2"), url("./assets/fonts/Inter/Inter-Medium/Inter-Medium.ttf") format("truetype"), url("./assets/fonts/Inter/Inter-Medium/Inter-Medium.svg?#webfont") format("svg");
   font-weight: 500;
   font-style: normal; }
 
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter/Inter-SemiBold/Inter-SemiBold.eot");
-  src: url("../fonts/Inter/Inter-SemiBold/Inter-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Inter/Inter-SemiBold/Inter-SemiBold.woff") format("woff"), url("../fonts/Inter/Inter-SemiBold/Inter-SemiBold.woff2") format("woff2"), url("../fonts/Inter/Inter-SemiBold/Inter-SemiBold.ttf") format("truetype"), url("../fonts/Inter/Inter-SemiBold/Inter-SemiBold.svg?#webfont") format("svg");
+  src: url("./assets/fonts/Inter/Inter-SemiBold/Inter-SemiBold.eot");
+  src: url("./assets/fonts/Inter/Inter-SemiBold/Inter-SemiBold.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/Inter/Inter-SemiBold/Inter-SemiBold.woff") format("woff"), url("./assets/fonts/Inter/Inter-SemiBold/Inter-SemiBold.woff2") format("woff2"), url("./assets/fonts/Inter/Inter-SemiBold/Inter-SemiBold.ttf") format("truetype"), url("./assets/fonts/Inter/Inter-SemiBold/Inter-SemiBold.svg?#webfont") format("svg");
   font-weight: 600;
   font-style: normal; }
 
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter/Inter-Bold/Inter-Bold.eot");
-  src: url("../fonts/Inter/Inter-Bold/Inter-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Inter/Inter-Bold/Inter-Bold.woff") format("woff"), url("../fonts/Inter/Inter-Bold/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter/Inter-Bold/Inter-Bold.ttf") format("truetype"), url("../fonts/Inter/Inter-Bold/Inter-Bold.svg?#webfont") format("svg");
+  src: url("./assets/fonts/Inter/Inter-Bold/Inter-Bold.eot");
+  src: url("./assets/fonts/Inter/Inter-Bold/Inter-Bold.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/Inter/Inter-Bold/Inter-Bold.woff") format("woff"), url("./assets/fonts/Inter/Inter-Bold/Inter-Bold.woff2") format("woff2"), url("./assets/fonts/Inter/Inter-Bold/Inter-Bold.ttf") format("truetype"), url("./assets/fonts/Inter/Inter-Bold/Inter-Bold.svg?#webfont") format("svg");
   font-weight: 700;
   font-style: normal; }
 
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter/Inter-Black/Inter-Black.eot");
-  src: url("../fonts/Inter/Inter-Black/Inter-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/Inter/Inter-Black/Inter-Black.woff") format("woff"), url("../fonts/Inter/Inter-Black/Inter-Black.woff2") format("woff2"), url("../fonts/Inter/Inter-Black/Inter-Black.ttf") format("truetype"), url("../fonts/Inter/Inter-Black/Inter-Black.svg?#webfont") format("svg");
+  src: url("./assets/fonts/Inter/Inter-Black/Inter-Black.eot");
+  src: url("./assets/fonts/Inter/Inter-Black/Inter-Black.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/Inter/Inter-Black/Inter-Black.woff") format("woff"), url("./assets/fonts/Inter/Inter-Black/Inter-Black.woff2") format("woff2"), url("./assets/fonts/Inter/Inter-Black/Inter-Black.ttf") format("truetype"), url("./assets/fonts/Inter/Inter-Black/Inter-Black.svg?#webfont") format("svg");
   font-weight: 900;
   font-style: normal; }
 
@@ -285,7 +285,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   background-color: #FAFCFF;
-  background-image: url(../images/general/page-bg-1.png);
+  background-image: url(./assets/img/general/page-bg-1.png);
   background-size: 100% auto;
   background-position: top center;
   background-repeat: no-repeat; }
@@ -431,7 +431,7 @@ section {
       margin-left: 15px;
       width: 4px;
       height: 8px;
-      background-image: url(../images/general/icon/breadcrumbs-arrow.svg);
+      background-image: url(./assets/img/general/icon/breadcrumbs-arrow.svg);
       background-size: 100% auto;
       background-position: center center;
       background-repeat: no-repeat; }
@@ -686,7 +686,7 @@ section {
       left: 50%;
       width: 27px;
       height: 27px;
-      background-image: url(../images/general/icon/btn-arrow.svg);
+      background-image: url(./assets/img/general/icon/btn-arrow.svg);
       background-size: 100% auto;
       background-position: center center;
       background-repeat: no-repeat;
@@ -741,7 +741,7 @@ section {
       left: 50%;
       width: 383px;
       height: 351px;
-      background-image: url(../images/content/footer/footer-bg.png);
+      background-image: url(./assets/img/content/footer/footer-bg.png);
       background-size: 100% auto;
       background-position: center center;
       background-repeat: no-repeat;
@@ -1005,7 +1005,7 @@ section {
       right: 0;
       width: 16px;
       height: 16px;
-      background-image: url(../images/general/icon/star-icon.svg);
+      background-image: url(./assets/img/general/icon/star-icon.svg);
       background-size: 100% auto;
       background-position: center center;
       background-repeat: no-repeat; }
@@ -1091,15 +1091,15 @@ section {
     .table-method-icon.credit_card {
       width: 26px;
       height: 19px;
-      background-image: url(../images/general/icon/cards-icon.png); }
+      background-image: url(./assets/img/general/icon/cards-icon.png); }
     .table-method-icon.wire {
       width: 22px;
       height: 23px;
-      background-image: url(../images/general/icon/globe-icon.png); }
+      background-image: url(./assets/img/general/icon/globe-icon.png); }
     .table-method-icon.crypto {
       width: 19px;
       height: 22px;
-      background-image: url(../images/general/icon/bank-icon.png); }
+      background-image: url(./assets/img/general/icon/bank-icon.png); }
   .table-sum {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1185,7 +1185,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../images/content/advantages/advantages-bg.png);
+    background-image: url(./assets/img/content/advantages/advantages-bg.png);
     background-size: 71% 100%;
     background-position: left center;
     background-repeat: no-repeat; }
@@ -1811,7 +1811,7 @@ section {
       width: 16px;
       height: 16px;
       background-color: rgba(103, 102, 226, 0.1);
-      background-image: url(../images/general/icon/select-arrow.svg);
+      background-image: url(./assets/img/general/icon/select-arrow.svg);
       background-size: 6px 3px;
       background-position: center center;
       background-repeat: no-repeat;
@@ -2027,8 +2027,8 @@ section {
       .form-checkbox-custom:after {
         width: 100%;
         height: 100%;
-        background: url(../images/general/icon/checkmark-icon.svg) 12px 9px no-repeat, -o-linear-gradient(5.29deg, #6766E2 3.61%, #9794E9 95.92%);
-        background: url(../images/general/icon/checkmark-icon.svg) 12px 9px no-repeat, linear-gradient(84.71deg, #6766E2 3.61%, #9794E9 95.92%);
+        background: url(./assets/img/general/icon/checkmark-icon.svg) 12px 9px no-repeat, -o-linear-gradient(5.29deg, #6766E2 3.61%, #9794E9 95.92%);
+        background: url(./assets/img/general/icon/checkmark-icon.svg) 12px 9px no-repeat, linear-gradient(84.71deg, #6766E2 3.61%, #9794E9 95.92%);
         background-position: center center;
         border-radius: 8px; }
     .form-checkbox-input {
@@ -2396,7 +2396,7 @@ section {
     right: 0;
     width: 41px;
     height: 52px;
-    background-image: url(../images/general/icon/more-arrow-icon.png);
+    background-image: url(./assets/img/general/icon/more-arrow-icon.png);
     background-size: 100% auto;
     background-position: center center;
     background-repeat: no-repeat; }
@@ -2564,13 +2564,13 @@ section {
     height: calc(100% - 20px);
     z-index: 0; }
   .article-info.orange:before {
-    background-image: url(../images/content/article/article-info-orange.png); }
+    background-image: url(./assets/img/content/article/article-info-orange.png); }
   .article-info.orange:after {
     background-color: rgba(249, 111, 62, 0.2); }
   .article-info.orange .article-info-title {
     color: #F96F3E; }
   .article-info.pink:before {
-    background-image: url(../images/content/article/article-info-pink.png); }
+    background-image: url(./assets/img/content/article/article-info-pink.png); }
   .article-info.pink:after {
     background-color: rgba(103, 102, 226, 0.2); }
   .article-info.pink .article-info-title {
@@ -2949,7 +2949,7 @@ section {
     margin-right: 12px;
     width: 39px;
     height: 33px;
-    background-image: url(../images/general/icon/rating-icon.png);
+    background-image: url(./assets/img/general/icon/rating-icon.png);
     background-size: 100% auto;
     background-position: center center;
     background-repeat: no-repeat; }
@@ -3120,7 +3120,7 @@ section {
       .article-advantages-elem.cons .article-advantages-title {
         color: #FE9B01; }
       .article-advantages-elem.cons .article-list li:before {
-        background-image: url(../images/general/icon/list-mark-orange.png); }
+        background-image: url(./assets/img/general/icon/list-mark-orange.png); }
     .article-advantages-elem.pros {
       border-color: rgba(95, 226, 166, 0.3); }
       .article-advantages-elem.pros .article-advantages-icon {
@@ -3128,7 +3128,7 @@ section {
       .article-advantages-elem.pros .article-advantages-title {
         color: #5FE2A6; }
       .article-advantages-elem.pros .article-list li:before {
-        background-image: url(../images/general/icon/list-mark-green.png); }
+        background-image: url(./assets/img/general/icon/list-mark-green.png); }
   .article-advantages-head {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3174,7 +3174,7 @@ section {
       left: 0;
       width: 14px;
       height: 16px;
-      background-image: url(../images/general/icon/list-mark-def.png);
+      background-image: url(./assets/img/general/icon/list-mark-def.png);
       background-size: 100% auto;
       background-position: center center;
       background-repeat: no-repeat; }
@@ -3345,7 +3345,7 @@ section {
   margin-top: 135px; }
 
 .soon {
-  background-image: url(../images/content/soon/soon-bg.jpg); }
+  background-image: url(./assets/img/content/soon/soon-bg.jpg); }
   .soon .content {
     position: relative;
     padding-bottom: 30px;

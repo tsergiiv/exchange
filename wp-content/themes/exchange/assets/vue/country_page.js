@@ -63,7 +63,7 @@ Vue.component('exchanges_country', {
         getAllExchanges: function(country) {
           console.log(this.country);
           axios
-            .get('http://api.ers.takasho.work/exchanges?page=0&size=' + Number.MAX_SAFE_INTEGER)
+            .get('https://api.ers.takasho.work/exchanges?page=0&size=' + Number.MAX_SAFE_INTEGER)
             .then(response => {
               if (response.data) {
                 var n_exchanges = 0;
