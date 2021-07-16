@@ -62,7 +62,6 @@ Vue.component('exchanges_country', {
             this.all_exchanges.sort((a, b) => { return b.rating - a.rating;});
         },
         getAllExchanges: function(country) {
-          console.log(this.country);
           axios
             .get('https://api.ers.takasho.work/exchanges?page=0&size=' + Number.MAX_SAFE_INTEGER)
             .then(response => {
