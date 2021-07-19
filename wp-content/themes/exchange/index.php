@@ -24,7 +24,7 @@
                                 <div class="form-custom-select select-country">
                                     <div class="form-custom-select-chosen"><span class="form-custom-select-chosen-name">{{ selected_country_name
                                         }}</span>
-                                        <input class="form-custom-select-search" type="text" name="customSelectSearch" placeholder="Chose coin" autocomplete="off">
+                                        <input class="form-custom-select-search" type="text" name="customSelectSearch" placeholder="Chose country" autocomplete="off">
                                     </div>
                                     <div class="form-custom-select-dd">
                                         <div class="form-custom-select-dd-wrap">
@@ -48,7 +48,7 @@
                                         <div class="form-custom-select-chosen"><span
                                                     class="form-custom-select-chosen-name">{{ selected_currency_name
                                             }}</span>
-                                            <input class="form-custom-select-search" type="text" name="customSelectSearch" placeholder="Chose coin" autocomplete="off">
+                                            <input class="form-custom-select-search" type="text" name="customSelectSearch" placeholder="Chose currency" autocomplete="off">
                                         </div>
                                         <div class="form-custom-select-dd">
                                             <div class="form-custom-select-dd-wrap">

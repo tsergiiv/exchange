@@ -1,11 +1,11 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 
-<div class="helpful<?php echo esc_attr( $class ); ?>">
+<div class="helpful article-help <?php echo esc_attr( $class ); ?>">
 
 	<?php if ( false === $hidden ) : ?>
-	<div class="helpful-header">
-		<?php echo apply_filters( 'helpful_headline_html', '<h3 class="helpful-headline">' . $helpful['heading'] . '</h3>' ); ?>
-	</div><!-- .helpful-header -->
+    <div class="helpful-header">
+        <span class="article-help-title"><?php echo $helpful['heading'] ?></span>
+    </div><!-- .helpful-header -->
 	<?php endif; ?>
 
 	<div class="helpful-content" role="alert">
@@ -15,19 +15,15 @@
 	<?php if ( false === $hidden ) : ?>
 	<div class="helpful-controls">
 
-		<div>
-			<button class="helpful-pro helpful-button" type="button" data-value="pro" data-post="<?php echo $helpful['post_id']; ?>" role="button">
-				<?php echo $helpful['button_pro']; ?>
-				<?php echo $helpful['counter'] ? sprintf( '<span class="helpful-counter">%s</span>', $helpful['count_pro'] ) : ''; ?>
-			</button>
-		</div>
+        <button class="helpful-pro helpful-button article-help-btn violet" type="button" data-value="pro" data-post="<?php echo $helpful['post_id']; ?>" role="button">
+            <?php echo $helpful['button_pro']; ?>
+            <?php echo $helpful['counter'] ? sprintf( '<span class="helpful-counter">%s</span>', $helpful['count_pro'] ) : ''; ?>
+        </button>
 
-		<div>
-			<button class="helpful-contra helpful-button" type="button" data-value="contra" data-post="<?php echo $helpful['post_id']; ?>" role="button">
-				<?php echo $helpful['button_contra']; ?>
-				<?php echo $helpful['counter'] ? sprintf( '<span class="helpful-counter">%s</span>', $helpful['count_contra'] ) : ''; ?>
-			</button>
-		</div>
+        <button class="helpful-contra helpful-button article-help-btn orange" type="button" data-value="contra" data-post="<?php echo $helpful['post_id']; ?>" role="button">
+            <?php echo $helpful['button_contra']; ?>
+            <?php echo $helpful['counter'] ? sprintf( '<span class="helpful-counter">%s</span>', $helpful['count_contra'] ) : ''; ?>
+        </button>
 
 	</div><!-- .helpful-controls -->
 	<?php endif; ?>

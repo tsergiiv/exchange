@@ -3306,7 +3306,7 @@ section {
 }
 
 .article-review-date {
-    font-size: 10px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 12px;
     color: #F96F3E;
@@ -4111,6 +4111,7 @@ section {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
+}
 
 .article-sidebar {
     position: sticky;
