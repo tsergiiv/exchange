@@ -65,9 +65,7 @@ $(document).ready(function () {
 
     if (parent.hasClass('active')) {
       parent.find('.form-custom-select-dd').fadeIn();
-      setTimeout(function () {
-        parent.find('.form-custom-select-search').focus();
-      }, 350);
+      parent.find('.form-custom-select-search').focus();
       clearSearch();
     }
   });

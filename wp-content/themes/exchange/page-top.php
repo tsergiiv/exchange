@@ -36,7 +36,7 @@
                                 <div class="form-custom-select-dd-wrap">
                                     <span class="form-custom-select-empty">Nothing found</span>
                                     <div v-for="(coin, index) in options_destination_coins" :class="'form-custom-select-elem'+(coin.code == selected_destination_coin ? ' active' : '')">
-                                        <input class="form-custom-select-elem-radio" type="radio" name="customSelectCoin" :value="coin.code" :checked="coin.code == selected_destination_coin" data-el-chenged="selected_destination_coin"><!-- <img class="form-custom-select-elem-icon" :src="'<?php bloginfo('template_url'); ?>/assets/img/content/select/'+coin.code.toLowerCase().replace('.', '')+'-icon.svg'" :alt="coin.code"> --><span class="form-custom-select-elem-name">{{ coin.name }}</span><span class="form-custom-select-elem-short">{{ coin.code }}</span>
+                                        <input class="form-custom-select-elem-radio" type="radio" name="customSelectCoin" :value="coin.code" :checked="coin.code == selected_destination_coin" data-el-chenged="selected_destination_coin"><img class="form-custom-select-elem-icon" :src="'<?php bloginfo('template_url'); ?>/assets/img/content/select/'+coin.code.toLowerCase().replace('.', '')+'-icon.svg'" :alt="coin.code"><span class="form-custom-select-elem-name">{{ coin.name }}</span><span class="form-custom-select-elem-short">{{ coin.code }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                             <div class="table-sum fee-percent"><span class="table-sum-val">{{ exchanger.feePercentage.toFixed(2) }}%</span></div>
                         </div>
                         <div class="table-elem"><span class="table-heading">You Get</span>
-                            <div class="table-sum get"><img class="table-sum-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/btc-icon.svg" alt="BTC Icon"><span class="table-sum-val">{{ exchanger.exchangedAmount }}</span></div>
+                            <div class="table-sum get"><img class="table-sum-icon" :src="'<?php bloginfo('template_url'); ?>/assets/img/content/select/'+selected_destination_coin.toLowerCase().replace('.', '')+'-icon.svg'" :alt="selected_destination_coin"><span class="table-sum-val">{{ exchanger.exchangedAmount }}</span></div>
                         </div>
                         <div class="table-elem">
                             <div class="table-link"><a class="table-link-btn" href="">

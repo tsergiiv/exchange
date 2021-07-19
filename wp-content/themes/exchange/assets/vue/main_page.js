@@ -132,7 +132,7 @@ var vMainpage = new Vue({
         // },
         getAllExchanges: function() {
           axios
-            .get('https://api.ers.takasho.work/exchanges?page=0&size=' + Number.MAX_SAFE_INTEGER)
+            .get('http://api.ers.takasho.work/exchanges?page=0&size=' + Number.MAX_SAFE_INTEGER)
             .then(response => {
               if (response.data) {
                 this.all_exchanges = response.data;
@@ -151,7 +151,7 @@ var vMainpage = new Vue({
         },
         getAllCoins: function() {
           axios
-            .get('https://api.ers.takasho.work/cryptoCurrencies?page=0&size=' + Number.MAX_SAFE_INTEGER)
+            .get('http://api.ers.takasho.work/cryptoCurrencies?page=0&size=' + Number.MAX_SAFE_INTEGER)
             .then(response => {
               if (response.data) {
                 this.options_destination_coins = response.data._embedded.cryptoCurrencies;
@@ -171,16 +171,24 @@ var vMainpage = new Vue({
         customSelectInit: function() {
             var vm = this;
             $(document).ready(function () {
-                $('.form-custom-select-elem').click(function () {
-                  var parent = $(this).closest('.form-custom-select');
-                  var chosen = parent.find('.form-custom-select-chosen-name');
-                  var elRadio = $(this).find('.form-custom-select-elem-radio').val();
-                  var elChenged = $(this).find('.form-custom-select-elem-radio').data('el-chenged');
-                  vm.setCustomSelected(elChenged, elRadio);
-                  var elName = $(this).find('.form-custom-select-elem-name').text();
-                  var elShortName = $(this).find('.form-custom-select-elem-short').text();
-                  $(this).addClass('active').siblings().removeClass('active');
-                });
+              $('.form-custom-select-elem').click(function () {
+                var parent = $(this).closest('.form-custom-select');
+                var chosen = parent.find('.form-custom-select-chosen-name');
+                var elRadio = $(this).find('.form-custom-select-elem-radio').val();
+                var elName = $(this).find('.form-custom-select-elem-name').text();
+                var elShortName = $(this).find('.form-custom-select-elem-short').text();
+                var elChenged = $(this).find('.form-custom-select-elem-radio').data('el-chenged');
+                vm.setCustomSelected(elChenged, elRadio);
+                $(this).addClass('active').siblings().removeClass('active');
+                parent.removeClass('active');
+                parent.find('.form-custom-select-dd').fadeOut();
+            
+                if (parent.find('.form-custom-select-elem-short').length) {
+                  chosen.html(elShortName);
+                } else {
+                  chosen.html(elName);
+                }
+              });
             });
         }
     },
