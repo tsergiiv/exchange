@@ -4,7 +4,7 @@
                 <h1 class="section-header m"><span class="word-accent violet">New to crypto? Here’s our guide!<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span></h1>
             </div>
             <div class="faq-wrap">
-                <a class="faq-elem" href="">
+                <div class="faq-elem">
                     <div class="faq-elem-content"><img class="faq-elem-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/faq/faq-img-1.png" alt="FAQ Image #1"><span class="faq-elem-number">01</span><span class="faq-elem-title">
                          Why Bitcoin? </span><span class="faq-elem-text">
                         It seems like the buzz around Bitcoin
@@ -13,8 +13,8 @@
                         community. What is it about the digital
                         asset that makes it such a controversial
                         topic and attractive investment? </span></div>
-                </a>
-                <a class="faq-elem" href="">
+                </div>
+                <div class="faq-elem">
                     <div class="faq-elem-content"><img class="faq-elem-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/faq/faq-img-2.png" alt="FAQ Image #2"><span class="faq-elem-number">02</span><span class="faq-elem-title">
                          How to Get Started with Bitcoin</span><span class="faq-elem-text">
                         It can be difficult to get past the
@@ -24,8 +24,8 @@
                         purchase BTC on many exchanges with fiat
                         currency. Once you’ve purchased crypto,
                         invest in a safe  offline storage solution. </span></div>
-                </a>
-                <a class="faq-elem" href="">
+                </div>
+                <div class="faq-elem">
                     <div class="faq-elem-content"><img class="faq-elem-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/faq/faq-img-3.png" alt="FAQ Image #3"><span class="faq-elem-number">03</span><span class="faq-elem-title">
                          Blockchains 101</span><span class="faq-elem-text">
                         Blockchains are a type of database where
@@ -35,8 +35,8 @@
                         to the previous block. The Bitcoin blockchain
                         serves as a ledger that records every Bitcoin
                         transaction in history. </span></div>
-                </a>
-                <a class="faq-elem" href="">
+                </div>
+                <div class="faq-elem">
                     <div class="faq-elem-content"><img class="faq-elem-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/faq/faq-img-4.png" alt="FAQ Image #4"><span class="faq-elem-number">04</span><span class="faq-elem-title">
                          Bitcoin in the Real World</span><span class="faq-elem-text">
                         Ok - you’ve found an exchange, bought your
@@ -46,7 +46,7 @@
                         gift cards to an old master painting. You can
                         also convert your BTC to fiat with ATMs, an
                         exchange, and more.</span></div>
-                </a>
+                </div>
             </div>
         </section>
 
@@ -375,43 +375,6 @@
 
         let url = '<?= get_bloginfo("url"); ?>';
         // console.log(url);
-
-        jQuery('.es_subscription_form').attr('action', window.location.pathname + '#es_form_f1-n1');
-
-        function sendBook() {
-            let email = jQuery('.ig_es_form_field_email').val();
-            let action = jQuery('input[name="action"]').val();
-            console.log(action);
-
-            let formData = new FormData();
-            formData.append('email', email);
-
-            if (validateEmail(email)) {
-                console.log(email);
-
-                jQuery.ajax({
-                    url: action,
-                    type: 'POST',
-                    dataType: 'json',
-                    processData: false,
-                    contentType: false,
-                    data: formData,
-                    success: function (data) {
-                        console.log(data);
-                        jQuery('.es_submit_button').attr('name', 'sth-else');
-                        jQuery('.es_subscription_form').submit();
-                    },
-                    error: function (error) {
-                        console.log('error' + error);
-                    },
-                });
-            };
-        };
-
-        function validateEmail(email) {
-            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-            return re.test(email);
-        }
 
         jQuery(document).ready(function($) {
             $('a').each(function () {

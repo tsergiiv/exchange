@@ -247,10 +247,14 @@ Template Post Type: country
                             <div class="article-content-subheading" id="sources"><?= $regulation2['label'] ?></div>
                             <?= $regulation2['value'] ?>
                         <?php endif; ?>
-                        <div class="article-help"><span class="article-help-title">Helpful?</span>
+                        <div class="article-help">
+                            <span class="article-help-title">Helpful?</span>
                             <button class="article-help-btn violet">Yes</button>
                             <button class="article-help-btn orange">No</button>
                         </div>
+
+                        <?= do_shortcode( '[helpful]' ); ?>
+
                         <div class="article-tag">
                             <a href="">#crypto</a>
                             <a href="">#exchanges</a>
