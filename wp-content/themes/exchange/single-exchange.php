@@ -146,7 +146,9 @@ Template Post Type: exchange
                             <?= $info2['label'] ?>: <span class="article-info-elem-val"><?= $info2['value'] ?></span>
                         </div>
                         <div class="article-info-elem">
-                            <?= $info3['label'] ?>: <span class="article-info-elem-val"><?= $info3['value'] ?></span>
+                            <?= $info3['label'] ?>: <span class="article-info-elem-val">
+                                <a class="article-link-sm violet" href="<?= $info3['value'] ?>"><?= $info3['value'] ?></a>
+                            </span>
                         </div>
                         <div class="article-info-elem">
                             <?= $info4['label'] ?>: <span class="article-info-elem-val green"><?= $info4['value'] ?></span>
@@ -296,30 +298,29 @@ Template Post Type: exchange
 
                     <?php if (get_field('question_1')): ?>
                         <div class="article-content-heading" id="faqs">FAQs</div>
-												
-												<div class=".article-accordion-wrap">
-													<?php
-													for ($i = 1; $i <= 7; $i++) {
-															if (!get_field('question_' . $i)) {
-																	continue;
-															}
+                        <div class="article-accordion-wrap">
+                            <?php
+                            for ($i = 1; $i <= 7; $i++) {
+                                    if (!get_field('question_' . $i)) {
+                                            continue;
+                                    }
 
-															?>
+                                    ?>
 
-															<div class="article-accordion <?= $i == 1 ? 'active' : '' ?>">
-																	<div class="article-accordion-title">
-																			<?= the_field('question_' . $i) ?>
-																			<span class="article-accordion-title-btn"><span></span></span>
-																	</div>
-																	<div class="article-accordion-dropdown">
-																			<?= the_field('answer_' . $i) ?>
-																	</div>
-															</div>
+                                    <div class="article-accordion <?= $i == 1 ? 'active' : '' ?>">
+                                            <div class="article-accordion-title">
+                                                    <?= the_field('question_' . $i) ?>
+                                                    <span class="article-accordion-title-btn"><span></span></span>
+                                            </div>
+                                            <div class="article-accordion-dropdown">
+                                                    <?= the_field('answer_' . $i) ?>
+                                            </div>
+                                    </div>
 
-															<?php
-													}
-													?>
-												</div>
+                                    <?php
+                            }
+                            ?>
+                        </div>
                     <?php endif; ?>
 
                     <?php if (get_field('supported_countries')): ?>

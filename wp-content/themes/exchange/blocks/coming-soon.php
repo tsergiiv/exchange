@@ -57,10 +57,13 @@
                                     <div class="soon-timer-text">Minutes</div>
                                 </div>
                             </div>
-                            <form class="soon-form" action="">
+                            <?= do_shortcode('[email-subscribers-form id="1"]') ?>
+                            <form class="soon-form form-validate" novalidate>
+                                <input type="text" class="form-action" name="form-action" value="e-book" hidden>
+                                <input type="text" class="action" name="action" value="<?= admin_url('admin-ajax.php?action=send_mail') ?>" hidden>
                                 <div class="form-group">
                                     <label class="form-title"><?= the_field('email_input_label') ?></label>
-                                    <input class="form-input" type="email" name="formEmail" placeholder="youremail@mail.com" required>
+                                    <input class="form-input" id="book-email" type="email" name="formEmail" placeholder="youremail@mail.com" required>
                                     <span class="form-error-msg">Please type correct email</span>
                                 </div>
                                 <button class="btn form-btn" id="submit-form-btn">
@@ -79,65 +82,13 @@
         wp_reset_postdata();
     ?>
 
-    <?= do_shortcode('[email-subscribers-form id="1"]') ?>
-
     <?php wp_footer(); ?>
 
     <script>
-        // Coming soon form validation
-        jQuery('.soon-form').on('submit', function (e) {
-            e.preventDefault();
-
-            var $this = jQuery(this);
-            var action = $this.attr('action');
-
-            if (!action) {
-                console.log('У формы отсутствует атрибут action, не знаю куда посылать данные');
-                return false;
-            };
-
-            if (validation.verificationFields($this)) {
-                let formBtn = $this.find('.form-btn');
-                let formBtnText = $this.find('.btn-text');
-                let formBtnArrow = $this.find('.btn-arrow');
-
-                formBtn.addClass('success');
-                formBtnText.text('Done');
-
-                validation.resetForm($this);
-            };
-
-            return false;
-        });
-
         // Coming soon form validation - end
         // Coming soon timer
         let endDate = '<?= $end_date ?>';
         console.log(endDate);
-
-        jQuery('#submit-form-btn').click(function(e) {
-            e.preventDefault();
-            let email = jQuery('#email').val();
-            jQuery('.ig_es_form_field_email').val(email);
-
-            let $this = jQuery('.soon-form');
-
-            if (!validation.verificationFields($this)) {
-                return false;
-            }
-
-            let formBtn = $this.find('.form-btn');
-            let formBtnText = $this.find('.btn-text');
-            let formBtnArrow = $this.find('.btn-arrow');
-
-            formBtn.addClass('success');
-            formBtnText.text('Done');
-
-            validation.resetForm($this);
-
-            jQuery('.es_submit_button').attr('name', 'sth-else');
-            jQuery('.es_subscription_form').submit();
-        });
 
         function makeTimer() {
 
