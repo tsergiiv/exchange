@@ -2511,9 +2511,7 @@ section {
 }
 
 .form-custom-select.active .form-custom-select-search {
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
+    display: block;
 }
 
 .form-custom-select-chosen {
@@ -2533,6 +2531,7 @@ section {
 }
 
 .form-custom-select-search {
+		display: none;
     position: absolute;
     padding: 16px 15px;
     padding-right: 35px;
@@ -2544,9 +2543,6 @@ section {
     line-height: 16px;
     color: #04044C;
     background-color: rgba(157, 154, 234, 0.01);
-    -webkit-transform: translateY(50px);
-    -ms-transform: translateY(50px);
-    transform: translateY(50px);
     -webkit-transition: 0.35s;
     -o-transition: 0.35s;
     transition: 0.35s;
