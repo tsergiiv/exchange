@@ -31,7 +31,7 @@ Template Post Type: country
                             and here's how we make money.
                         </div>
                         <div class="article-review">
-                            <div class="article-review-date">01.05.2021 - <?= country_post_reading() ?></div>
+                            <div class="article-review-date"><?= country_post_reading() ?></div>
                             <div class="article-review-text">Top exchanges in <?= the_title() ?> by CoinCub criteria</div>
                             <div class="article-review-author">
                                 <div class="article-review-author-photo"><img class="article-review-author-photo-img"
@@ -247,11 +247,6 @@ Template Post Type: country
                             <div class="article-content-subheading" id="sources"><?= $regulation2['label'] ?></div>
                             <?= $regulation2['value'] ?>
                         <?php endif; ?>
-                        <div class="article-help">
-                            <span class="article-help-title">Helpful?</span>
-                            <button class="article-help-btn violet">Yes</button>
-                            <button class="article-help-btn orange">No</button>
-                        </div>
 
                         <?= do_shortcode( '[helpful]' ); ?>
 

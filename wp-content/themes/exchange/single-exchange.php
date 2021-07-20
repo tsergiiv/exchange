@@ -42,7 +42,7 @@ Template Post Type: exchange
                             and here's how we make money.
                         </div>
                         <div class="article-review">
-                            <div class="article-review-date">01.05.2021 - <?= exchange_post_reading() ?></div>
+                            <div class="article-review-date"><?= exchange_post_reading() ?></div>
                             <?php if (get_field('description')): ?>
                                 <div class="article-review-text">
                                     <?= the_field('description') ?>
@@ -346,10 +346,8 @@ Template Post Type: exchange
                     <div class="section-header m" id="services"><span class="word-accent orange"><?= the_title() ?>’s Services<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span></div>
                     <?= the_field('services') ?>
 
-                    <div class="article-help"><span class="article-help-title">Helpful?</span>
-                        <button class="article-help-btn violet">Yes</button>
-                        <button class="article-help-btn orange">No</button>
-                    </div>
+                    <?= do_shortcode( '[helpful]' ); ?>
+
                     <div class="article-tag"><a href="">#<?=  the_title() ?></a><a href="">#<?=  the_title() ?> exchange </a><a href="">#what is <?=  the_title() ?>? </a><a href="">#<?=  the_title() ?> wallet </a><a href="">#<?=  the_title() ?> review </a></div>
                 </div>
                 <div class="article-sidebar">

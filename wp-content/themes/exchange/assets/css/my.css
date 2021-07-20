@@ -1,3 +1,8 @@
 .es_subscription_form, .es_subscription_message {
     display: none;
 }
+
+.helpful-controls {
+    display: inherit;
+    width: 100%;
+}

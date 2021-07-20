@@ -167,7 +167,7 @@ var vMainpage = new Vue({
             this.amount = 0
           }
           axios
-            .get('http://api.ers.takasho.work/exchange-rates?countryCode='+this.selected_country+'&cryptoCurrencyCode='+this.selected_destination_coin+'&fiatCurrencyCode='+currence_code3+'&depositMethodType='+this.selected_deposit_method+'&amount='+this.amount)
+            .get('https://api.ers.takasho.work/exchange-rates?countryCode='+this.selected_country+'&cryptoCurrencyCode='+this.selected_destination_coin+'&fiatCurrencyCode='+currence_code3+'&depositMethodType='+this.selected_deposit_method+'&amount='+this.amount)
             .then(response => {
               if (response.data) {
                 this.exchanges = response.data;
@@ -186,7 +186,7 @@ var vMainpage = new Vue({
         },
         getAllCoins: function() {
           axios
-            .get('http://api.ers.takasho.work/cryptoCurrencies?page=0&size=' + Number.MAX_SAFE_INTEGER)
+            .get('https://api.ers.takasho.work/cryptoCurrencies?page=0&size=' + Number.MAX_SAFE_INTEGER)
             .then(response => {
               if (response.data) {
                 this.options_destination_coins = response.data._embedded.cryptoCurrencies;
