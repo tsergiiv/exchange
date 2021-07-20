@@ -118,6 +118,14 @@ function register_post_types(){
         'rest_base'           => null, // $post_type. C WP 4.7
         'menu_position'       => 4,
         'menu_icon'           => null,
+        'capability_type' => 'post',
+        'capabilities' => [
+            'create_posts' => false,
+            'delete_posts' => false,
+            'delete_published_posts' => false,
+            'delete_private_posts' => false,
+        ],
+        'map_meta_cap' => true,
         'hierarchical'        => false,
         'supports'            => ['custom-fields'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'taxonomies'          => [],
@@ -126,11 +134,11 @@ function register_post_types(){
         'query_var'           => true,
     ] );
 
-    register_post_type( 'titles', [
+    register_post_type( 'why_coincub', [
         'label'  => null,
         'labels' => [
-            'name'               => 'Titles', // основное название для типа записи
-            'singular_name'      => 'Title', // название для одной записи этого типа
+            'name'               => 'Why Coincub', // основное название для типа записи
+            'singular_name'      => 'Why Coincub', // название для одной записи этого типа
             'add_new'            => 'Add content', // для добавления новой записи
             'add_new_item'       => 'Add content', // заголовка у вновь создаваемой записи в админ-панели.
             'edit_item'          => 'Edit content', // для редактирования типа записи
@@ -140,7 +148,7 @@ function register_post_types(){
             'not_found'          => 'Not found', // если в результате поиска ничего не было найдено
             'not_found_in_trash' => 'Not found in trash', // если не было найдено в корзине
             'parent_item_colon'  => '', // для родителей (у древовидных типов)
-            'menu_name'          => 'Titles Blocks', // название меню
+            'menu_name'          => 'Why Coincub', // название меню
         ],
         'description'         => '',
         'public'              => true,
@@ -154,14 +162,14 @@ function register_post_types(){
         'rest_base'           => null, // $post_type. C WP 4.7
         'menu_position'       => 4,
         'menu_icon'           => null,
-//        'capability_type' => 'post',
-//        'capabilities' => [
-//            'create_posts' => false,
-//            'delete_posts' => false,
-//            'delete_published_posts' => false,
-//            'delete_private_posts' => false,
-//        ],
-//        'map_meta_cap' => true,
+        'capability_type' => 'post',
+        'capabilities' => [
+            'create_posts' => false,
+            'delete_posts' => false,
+            'delete_published_posts' => false,
+            'delete_private_posts' => false,
+        ],
+        'map_meta_cap' => true,
         'hierarchical'        => false,
         'supports'            => ['custom-fields'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'taxonomies'          => [],

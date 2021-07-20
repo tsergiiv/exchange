@@ -246,52 +246,8 @@
                     </div>
                 </div>
             </section>
-            <section class="advantages">
-                <div class="advantages-bg"></div>
-                <div class="advantages-content middle"><img class="advantages-bg-cat" src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-image.png" alt="Advantages cat">
-                    <div class="advantages-block">
-                        <div class="section-title m icon"><img class="section-title-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/tips-icon.png" alt="Testimonials Icon">Why Coincub</div>
-                        <div class="advantages-wrap">
-                            <div class="advantages-elem green">
-                                <div class="advantages-elem-content">
-                                    <div class="advantages-img"><img class="advantages-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-1.png" alt="Advantages image #1"></div>
-                                    <div class="advantages-text"><span class="advantages-text-accent">Fees: </span>Are You Getting a Good Deal?</div>
-                                </div>
-                            </div>
-                            <div class="advantages-elem orange">
-                                <div class="advantages-elem-content">
-                                    <div class="advantages-img"><img class="advantages-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-2.png" alt="Advantages image #2"></div>
-                                    <div class="advantages-text"><span class="advantages-text-accent">Limits: </span>Are You Buying a Lot of Coins?</div>
-                                </div>
-                            </div>
-                            <div class="advantages-elem purple">
-                                <div class="advantages-elem-content">
-                                    <div class="advantages-img"><img class="advantages-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-3.png" alt="Advantages image #3"></div>
-                                    <div class="advantages-text"><span class="advantages-text-accent">Speed: </span>When Do You Need Access to your Bitcoins?</div>
-                                </div>
-                            </div>
-                            <div class="advantages-elem orange">
-                                <div class="advantages-elem-content">
-                                    <div class="advantages-img"><img class="advantages-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-4.png" alt="Advantages image #4"></div>
-                                    <div class="advantages-text"><span class="advantages-text-accent">Exchange </span>Rate</div>
-                                </div>
-                            </div>
-                            <div class="advantages-elem purple">
-                                <div class="advantages-elem-content">
-                                    <div class="advantages-img"><img class="advantages-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-5.png" alt="Advantages image #5"></div>
-                                    <div class="advantages-text"><span class="advantages-text-accent">Reputation: </span>Don't Get Scammed!</div>
-                                </div>
-                            </div>
-                            <div class="advantages-elem green">
-                                <div class="advantages-elem-content">
-                                    <div class="advantages-img"><img class="advantages-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-6.png" alt="Advantages image #6"></div>
-                                    <div class="advantages-text"><span class="advantages-text-accent">Privacy: </span>Keep Your Information Safe!</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
+            <?= get_template_part('blocks/block-why-coincub') ?>
         </div>
     </main>
 
