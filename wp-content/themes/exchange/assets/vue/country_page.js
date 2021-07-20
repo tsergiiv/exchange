@@ -11,7 +11,7 @@ Vue.component('exchanges_country', {
             },
             'luno' : {
               value: 'United Kingdom',
-              flag: 'https://restcountries.eu/data/ggy.svg'
+              flag: 'https://restcountries.eu/data/gbr.svg'
             },
             'kraken' : {
               value: 'United States',
