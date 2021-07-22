@@ -126,12 +126,12 @@
                             <div class="table-date"><span class="table-date-val">{{ exchanger.founded }}</span></div>
                         </div>
                         <div class="table-elem"><span class="table-heading">Deposit Method</span>
-                            <div class="table-deposit"><img v-if="exchanger.creditCardFee" class="table-deposit-icon"
+                            <div class="table-deposit"><div class="table-deposit-elem"><img v-if="exchanger.creditCardFee" class="table-deposit-icon"
                                                             src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png"
-                                                            alt="Cards Icon"><img v-if="exchanger.wireFee"
+                                                            alt="Cards Icon"></div><div class="table-deposit-elem"><img v-if="exchanger.wireFee"
                                                                                   class="table-deposit-icon"
                                                                                   src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png"
-                                                                                  alt="Bank Icon"></div>
+                                                                                  alt="Bank Icon"></div></div>
                         </div>
                         <div class="table-elem"><span class="table-heading">Based in</span>
                             <div class="table-based"><img class="table-based-flag" :src="exchanges_bassed[exchanger.coinGeckoId].flag" :alt="exchanges_bassed[exchanger.coinGeckoId].value"><span
