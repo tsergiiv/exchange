@@ -49,6 +49,7 @@ $(document).ready(function () {
      }, 1500);
   });
   // Preloader - end
+	
   // Form custom select
 
   $('.form-custom-select-chosen').click(function (e) {
@@ -94,6 +95,15 @@ $(document).ready(function () {
       empty.removeClass('active');
     }
   }); // Form custom select search - end
+	// Choose pair btn
+
+	$('.choose-pair-btn').click(function() {
+		$('html, body').animate({
+			scrollTop: $('.main-head-wrap').offset().top - 50
+		}, 2000);
+	});
+
+	// Choose pair btn - end
   // Tab 
 
   $('body').on('click', '.tab-nav-link', function () {
