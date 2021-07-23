@@ -34,28 +34,61 @@ var vMainpage = new Vue({
           contry_name: '',
           exchanges: [],
           exchanges_bassed: {
-            'binance' : 'Cayman Islands',
-            'luno' : 'United Kingdom',
-            'kraken' : 'United States',
-            'coinbase-exchange' : 'United States',
-            'crypto_com' : 'Hong Kong',
-            'blockchain_com' : 'Luxembourg',
-            'etorox' : 'Cyprus',
-            'kucoin' : 'Seychelles',
-            'gate-io' : 'Cayman Islands',
-            'gdax' : 'United States',
-            'gate' : 'Cayman Islands'
+            'Binance' : {
+              value: 'Cayman Islands',
+              flag: 'https://restcountries.eu/data/cym.svg'
+            },
+            'luno' : {
+              value: 'United Kingdom',
+              flag: 'https://restcountries.eu/data/ggy.svg'
+            },
+            'kraken' : {
+              value: 'United States',
+              flag: 'https://restcountries.eu/data/usa.svg'
+            },
+            'Coinbase' : {
+              value: 'United States',
+              flag: 'https://restcountries.eu/data/usa.svg'
+            },
+            'crypto_com' : {
+              value: 'Hong Kong',
+              flag: 'https://restcountries.eu/data/hkg.svg'
+            },
+            'blockchaincom' : {
+              value: 'Luxembourg',
+              flag: 'https://restcountries.eu/data/lux.svg'
+            },
+            'eToro' : {
+              value: 'Cyprus',
+              flag: 'https://restcountries.eu/data/cyp.svg'
+            },
+            'kucoin' : {
+              value: 'Seychelles',
+              flag: 'https://restcountries.eu/data/syc.svg'
+            },
+            'gateio' : {
+              value: 'Cayman Islands',
+              flag: 'https://restcountries.eu/data/cym.svg'
+            },
+            'gdax' : {
+              value: 'United States',
+              flag: 'https://restcountries.eu/data/usa.svg'
+            },
+            'gate' : {
+              value: 'Cayman Islands',
+              flag: 'https://restcountries.eu/data/cym.svg'
+            },
           },
           promo: {
-            'binance' : true,
+            'Binance' : true,
             'luno' : true,
             'kraken' : false,
-            'coinbase-exchange' : true,
+            'Coinbase' : true,
             'crypto_com' : true,
-            'blockchain_com' : true,
-            'etorox' : true,
+            'blockchaincom' : true,
+            'eToro' : true,
             'kucoin' : true,
-            'gate-io' : true,
+            'gateio' : true,
             'gdax' : true,
             'gate' : true
           },
@@ -79,8 +112,9 @@ var vMainpage = new Vue({
           ],
           selected_deposit_method: 'WIRE',
           options_destination_coins: [],
-          selected_destination_coin: 'BTC',
-          sort_by: 'cheapest'
+          selected_destination_coin: 'DOGE',
+          sort_by: 'cheapest',
+          top_page_msg: 0
         }   
     },
     watch: {
@@ -162,16 +196,26 @@ var vMainpage = new Vue({
             }
         },
         getExchanges: function() {
+          $('.table-wrap').addClass('loading');
           var currence_code3 = this.options_currencys.find(option => option.value === this.selected_currency).code;
           if(!this.amount) {
             this.amount = 0
           }
           axios
-            .get('https://api.ers.takasho.work/exchange-rates?countryCode='+this.selected_country+'&cryptoCurrencyCode='+this.selected_destination_coin+'&fiatCurrencyCode='+currence_code3+'&depositMethodType='+this.selected_deposit_method+'&amount='+this.amount)
+            .get('http://api.ers.takasho.work/exchange-rates?countryCode='+this.selected_country+'&cryptoCurrencyCode='+this.selected_destination_coin+'&fiatCurrencyCode='+currence_code3+'&depositMethodType='+this.selected_deposit_method+'&amount='+this.amount)
             .then(response => {
               if (response.data) {
                 this.exchanges = response.data;
-                this.sort(this.sort_by);
+                if(Object.keys(response.data).length != 0) {
+                  this.sort(this.sort_by);
+                  $('.table-wrap').removeClass('loading');
+                } else {
+                  setTimeout(function () {
+                    $('.top-page-msg').addClass('remove');
+                  }, 5500);
+                  this.top_page_msg = 1;
+                  this.selected_currency_code = 'EUR';
+                }
               }
               if (response.data.errors) {
                 var errores = [];
@@ -186,7 +230,7 @@ var vMainpage = new Vue({
         },
         getAllCoins: function() {
           axios
-            .get('https://api.ers.takasho.work/cryptoCurrencies?page=0&size=' + Number.MAX_SAFE_INTEGER)
+            .get('http://api.ers.takasho.work/cryptoCurrencies?page=0&size=' + Number.MAX_SAFE_INTEGER)
             .then(response => {
               if (response.data) {
                 this.options_destination_coins = response.data._embedded.cryptoCurrencies;

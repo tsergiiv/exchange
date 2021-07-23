@@ -33,19 +33,19 @@ var vMainpage = new Vue({
         return {
           all_exchanges: {},
           exchanges_bassed: {
-            'binance' : {
+            'Binance' : {
               value: 'Cayman Islands',
               flag: 'https://restcountries.eu/data/cym.svg'
             },
             'luno' : {
               value: 'United Kingdom',
-              flag: 'https://restcountries.eu/data/gbr.svg'
+              flag: 'https://restcountries.eu/data/ggy.svg'
             },
             'kraken' : {
               value: 'United States',
               flag: 'https://restcountries.eu/data/usa.svg'
             },
-            'coinbase-exchange' : {
+            'Coinbase' : {
               value: 'United States',
               flag: 'https://restcountries.eu/data/usa.svg'
             },
@@ -53,11 +53,11 @@ var vMainpage = new Vue({
               value: 'Hong Kong',
               flag: 'https://restcountries.eu/data/hkg.svg'
             },
-            'blockchain_com' : {
+            'blockchaincom' : {
               value: 'Luxembourg',
               flag: 'https://restcountries.eu/data/lux.svg'
             },
-            'etorox' : {
+            'eToro' : {
               value: 'Cyprus',
               flag: 'https://restcountries.eu/data/cyp.svg'
             },
@@ -65,7 +65,7 @@ var vMainpage = new Vue({
               value: 'Seychelles',
               flag: 'https://restcountries.eu/data/syc.svg'
             },
-            'gate-io' : {
+            'gateio' : {
               value: 'Cayman Islands',
               flag: 'https://restcountries.eu/data/cym.svg'
             },
@@ -165,7 +165,7 @@ var vMainpage = new Vue({
         // },
         getAllExchanges: function() {
           axios
-            .get('https://api.ers.takasho.work/exchanges?page=0&size=' + Number.MAX_SAFE_INTEGER)
+            .get('http://api.ers.takasho.work/exchanges?page=0&size=' + Number.MAX_SAFE_INTEGER)
             .then(response => {
               if (response.data) {
                 this.all_exchanges = response.data;
@@ -184,7 +184,7 @@ var vMainpage = new Vue({
         },
         getAllCoins: function() {
           axios
-            .get('https://api.ers.takasho.work/cryptoCurrencies?page=0&size=' + Number.MAX_SAFE_INTEGER)
+            .get('http://api.ers.takasho.work/cryptoCurrencies?page=0&size=' + Number.MAX_SAFE_INTEGER)
             .then(response => {
               if (response.data) {
                 this.options_destination_coins = response.data._embedded.cryptoCurrencies;

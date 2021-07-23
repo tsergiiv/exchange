@@ -50,6 +50,7 @@
                             </option>
                         </niceselect>
                     </div>
+                    <div v-if="top_page_msg" class="top-page-msg">We’re sorry, but none of our exchanges support <span class="top-page-msg-currency">USD</span>. <br>May we suggest checking results in <span class="top-page-msg-alternate-currency">EUR</span>?</div>
                 </form>
             </section>
             <section class="table result-table middle">
