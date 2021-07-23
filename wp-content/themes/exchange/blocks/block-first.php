@@ -70,36 +70,36 @@
                                 <div class="first-text">
                                     <?= the_field('step_1') ?>
                                 </div>
-                                <a class="btn first-btn" href=""><span class="btn-arrow"></span><span
-                                        class="btn-text">Choose pair</span></a>
+                                <button class="btn first-btn choose-pair-btn" href=""><span class="btn-arrow"></span><span
+                                        class="btn-text">Choose pair</span></button>
                             </div>
                             <div class="tab-elem first-tab-elem" data-tab-elem="2">
                                 <div class="first-text">
                                     <?= the_field('step_2') ?>
                                 </div>
-                                <a class="btn first-btn" href=""><span class="btn-arrow"></span><span
-                                        class="btn-text">Choose pair</span></a>
+                                <button class="btn first-btn choose-pair-btn" href=""><span class="btn-arrow"></span><span
+                                        class="btn-text">Choose pair</span></button>
                             </div>
                             <div class="tab-elem first-tab-elem" data-tab-elem="3">
                                 <div class="first-text">
                                     <?= the_field('step_3') ?>
                                 </div>
-                                <a class="btn first-btn" href=""><span class="btn-arrow"></span><span
-                                        class="btn-text">Choose pair</span></a>
+                                <button class="btn first-btn choose-pair-btn" href=""><span class="btn-arrow"></span><span
+                                        class="btn-text">Choose pair</span></button>
                             </div>
                             <div class="tab-elem first-tab-elem" data-tab-elem="4">
                                 <div class="first-text">
                                     <?= the_field('step_4') ?>
                                 </div>
-                                <a class="btn first-btn" href=""><span class="btn-arrow"></span><span
-                                        class="btn-text">Choose pair</span></a>
+                                <button class="btn first-btn choose-pair-btn" href=""><span class="btn-arrow"></span><span
+                                        class="btn-text">Choose pair</span></button>
                             </div>
                             <div class="tab-elem first-tab-elem" data-tab-elem="5">
                                 <div class="first-text">
                                     <?= the_field('step_5') ?>
                                 </div>
-                                <a class="btn first-btn" href=""><span class="btn-arrow"></span><span
-                                        class="btn-text">Choose pair</span></a>
+                                <button class="btn first-btn choose-pair-btn" href=""><span class="btn-arrow"></span><span
+                                        class="btn-text">Choose pair</span></button>
                             </div>
                         </div>
                     </div>

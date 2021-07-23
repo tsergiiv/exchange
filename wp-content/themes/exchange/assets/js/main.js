@@ -61,14 +61,6 @@ $(document).ready(function () {
     $(this).toggleClass('loading');
   });
 
-  if ($('.top-page-msg').length) {
-    $(window).ready(function () {
-      setTimeout(function () {
-        $('.top-page-msg').addClass('remove');
-        console.log('TOP PAGE MSG HELLO');
-      }, 5500);
-    });
-  }
   // Form custom select
 
   $('.form-custom-select-chosen').click(function (e) {
@@ -114,6 +106,15 @@ $(document).ready(function () {
       empty.removeClass('active');
     }
   }); // Form custom select search - end
+	// Choose pair btn
+
+	$('.choose-pair-btn').click(function() {
+		$('html, body').animate({
+			scrollTop: $('.main-head-wrap').offset().top - 50
+		}, 2000);
+	});
+
+	// Choose pair btn - end
   // Tab 
 
   $('body').on('click', '.tab-nav-link', function () {
