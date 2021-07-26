@@ -83,7 +83,7 @@
                         <div class="table-elem"><span class="table-heading">You Get</span></div>
                         <div class="table-elem"><span class="table-heading">Coincub Review</span></div>
                     </div>
-                    <div class="table-row" v-for="(exchanger, index) in exchanges" v-if="(promo_check && promo[exchanger.exchange.coinGeckoId]) || !promo_check">
+                    <div class="table-row" v-for="(exchanger, index) in exchanges" v-if="(promo_check && promo[exchanger.exchange.apiId]) || !promo_check">
                         <div class="table-elem">
                             <div class="table-name"><img class="table-name-icon"  :src="'<?php bloginfo('template_url'); ?>/assets/img/content/table/'+exchanger.exchange.name.toLowerCase().replace('.', '')+'-logo.svg'" :alt="exchanger.exchange.name + ' Logo'"><span class="table-name-text">{{ exchanger.exchange.name }}</span></div>
                             <div class="table-mob-wrap">

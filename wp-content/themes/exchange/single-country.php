@@ -305,7 +305,7 @@ Template Post Type: country
                                     <div class="table-deposit"><div class="table-deposit-elem"><img v-if="exchanger.creditCardFee" class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png" alt="Cards Icon"></div><div class="table-deposit-elem"><img v-if="exchanger.wireFee" class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png" alt="Bank Icon"></div></div>
                                 </div>
                                 <div class="table-elem"><span class="table-heading">Promotion </span>
-                                    <div class="table-promotion"><span class="table-promotion-val purple" v-if="promo[exchanger.coinGeckoId]">Yes</span><span class="table-promotion-val orange" v-if="!promo[exchanger.coinGeckoId]">No</span></div>
+                                    <div class="table-promotion"><span class="table-promotion-val purple" v-if="promo[exchanger.apiId]">Yes</span><span class="table-promotion-val orange" v-if="!promo[exchanger.apiId]">No</span></div>
                                 </div>
                                 <div class="table-elem table-link"><a class="table-link-btn" href="">
                                         <svg class="table-link-icon">

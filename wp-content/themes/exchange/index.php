@@ -134,8 +134,8 @@
                                                                                   alt="Bank Icon"></div></div>
                         </div>
                         <div class="table-elem"><span class="table-heading">Based in</span>
-                            <div class="table-based"><img class="table-based-flag" :src="exchanges_bassed[exchanger.coinGeckoId].flag" :alt="exchanges_bassed[exchanger.coinGeckoId].value"><span
-                                        class="table-based-val">{{ exchanges_bassed[exchanger.coinGeckoId].value }}</span></div>
+                            <div class="table-based"><img class="table-based-flag" :src="exchanges_bassed[exchanger.apiId].flag" :alt="exchanges_bassed[exchanger.apiId].value"><span
+                                        class="table-based-val">{{ exchanges_bassed[exchanger.apiId].value }}</span></div>
                         </div>
                         <div class="table-elem table-link"><a class="table-link-btn" href="">
                                 <svg class="table-link-icon">
