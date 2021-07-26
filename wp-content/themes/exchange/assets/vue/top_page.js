@@ -14,6 +14,7 @@ Vue.component('niceselect', {
   watch: {
     value: function (value) {
         $(this.$el).val(value);
+        $(this.$el).niceSelect('update');
     },
     options: function (options) {
         for(var i in options) {
