@@ -18,9 +18,17 @@
                 </h1>
             </div>
             <div class="first-wrap">
-                <div class="first-img"><img class="first-img-content"
-                                            src="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-1.png"
-                                            alt="First Time Image"></div>
+                <div class="first-img">
+									<noscript class="loading-lazy">
+										<picture>
+											<source type="image/webp" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-1-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-1-2x.webp 2x">
+											<source type="image/png" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-1-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-1-2x.png 2x">
+											<source type="image/webp" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-1-1x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-1-1x.webp 2x">
+											<source type="image/png" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-1-1x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-1-1x.png 2x">
+											<img class="first-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-1-2x.webp" loading="lazy" alt="First Time Image">
+										</picture>
+									</noscript>
+								</div>
                 <div class="first-info">
                     <div class="first-tab-wrap">
                         <div class="first-tab-nav">

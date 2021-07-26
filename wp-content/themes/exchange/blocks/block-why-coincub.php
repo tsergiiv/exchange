@@ -10,7 +10,15 @@
         <section class="advantages">
             <div class="advantages-bg"></div>
             <div class="advantages-content middle">
-                <img class="advantages-bg-cat" src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-image.png" alt="Advantages cat">
+								<noscript class="loading-lazy">
+									<picture>
+										<source type="image/webp" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-image-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-image-2x.webp 2x">
+										<source type="image/png" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-image-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-image-2x.png 2x">
+										<source type="image/webp" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-image-1x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-image-1x.webp 2x">
+										<source type="image/png" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-image-1x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-image-1x.png 2x">
+										<img class="advantages-bg-cat" src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-image-2x.webp" loading="lazy" alt="Advantages cat">
+									</picture>
+								</noscript>
                 <div class="advantages-block">
                     <div class="section-title m icon">
                         <img class="section-title-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/tips-icon.png" alt="Testimonials Icon">

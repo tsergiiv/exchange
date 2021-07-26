@@ -43,10 +43,10 @@ $(document).ready(function () {
       $('.preloader').css({
         display: 'none'
       });
-    }, 2200);
+    }, 2000);
     setTimeout(function () {
       $('body').removeClass('modal-active');
-    }, 1500);
+    }, 1300);
   }); // Preloader - end
   // Choose pair btn
 
@@ -55,11 +55,6 @@ $(document).ready(function () {
       scrollTop: $('.main-head-wrap').offset().top - 50
     }, 2000);
   }); // Choose pair btn - end
-  // Remove msg test
-
-  $('.table-wrap').click(function () {
-    $(this).toggleClass('loading');
-  });
 
   // Form custom select
 
@@ -255,7 +250,7 @@ $(document).ready(function () {
     button.click(function (event) {
       var buttonVal = $(this).data("modal-btn");
       var showModal = $('.modal').filter('[data-modal = "' + buttonVal + '"]');
-      var modalInput = showModal.find('.modal-input');
+      var modalInput = $('.modal-contact').find('.form-input');
 
       if (button.hasClass('disabled')) {
         $(this).addClass('showMsg');
