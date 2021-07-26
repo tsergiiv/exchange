@@ -280,22 +280,25 @@ $(document).ready(function () {
   ; // Modal - end
   // Article slider
 
-  $('.article-slider-wrap').slick({
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    dots: true,
-    infinite: false,
-    prevArrow: $('.article-slider-prev'),
-    nextArrow: $('.article-slider-next'),
-    appendDots: $('.article-slider-nav-dots'),
-    responsive: [{
-      breakpoint: 631,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }]
-  }); // Article slider - end
+	if($('.article-slider-wrap').length) {
+		$('.article-slider-wrap').slick({
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			dots: true,
+			infinite: false,
+			prevArrow: $('.article-slider-prev'),
+			nextArrow: $('.article-slider-next'),
+			appendDots: $('.article-slider-nav-dots'),
+			responsive: [{
+				breakpoint: 631,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			}]
+		});
+	} 
+	// Article slider - end
   // Article sidebar height
 
   $(document).ready(resizeSidebar);
