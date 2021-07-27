@@ -16,7 +16,7 @@
                                 <div class="form-custom-select-dd-wrap">
                                     <span class="form-custom-select-empty">Nothing found</span>
                                     <div v-for="(currency, index) in options_currencys" :class="'form-custom-select-elem'+(currency.value == selected_currency ? ' active' : '')">
-                                        <input class="form-custom-select-elem-radio" type="radio" name="customSelectCurrency" :value="currency.value" :checked="currency.value == selected_currency" data-el-chenged="selected_currency"><img class="form-custom-select-elem-icon" :src="currency.flag" :alt="currency.value"><span class="form-custom-select-elem-name">{{ currency.name }}</span><span class="form-custom-select-elem-short">{{ currency.code }}</span>
+                                        <input class="form-custom-select-elem-radio" type="radio" name="customSelectCurrency" :value="currency.value" :checked="currency.value == selected_currency" data-el-chenged="selected_currency"><img class="form-custom-select-elem-icon lazy" :data-src="currency.flag" :alt="currency.value"><span class="form-custom-select-elem-name">{{ currency.name }}</span><span class="form-custom-select-elem-short">{{ currency.code }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                                 <div class="form-custom-select-dd-wrap">
                                     <span class="form-custom-select-empty">Nothing found</span>
                                     <div v-for="(coin, index) in options_destination_coins" :class="'form-custom-select-elem'+(coin.code == selected_destination_coin ? ' active' : '')">
-                                        <input class="form-custom-select-elem-radio" type="radio" name="customSelectCoin" :value="coin.code" :checked="coin.code == selected_destination_coin" data-el-chenged="selected_destination_coin"><img class="form-custom-select-elem-icon" :src="'<?php bloginfo('template_url'); ?>/assets/img/content/select/'+coin.code.toLowerCase().replace('.', '')+'-icon.svg'" :alt="coin.code"><span class="form-custom-select-elem-name">{{ coin.name }}</span><span class="form-custom-select-elem-short">{{ coin.code }}</span>
+                                        <input class="form-custom-select-elem-radio" type="radio" name="customSelectCoin" :value="coin.code" :checked="coin.code == selected_destination_coin" data-el-chenged="selected_destination_coin"><img class="form-custom-select-elem-icon lazy" :data-src="'<?php bloginfo('template_url'); ?>/assets/img/content/select/'+coin.code.toLowerCase().replace('.', '')+'-icon.svg'" :alt="coin.code"><span class="form-custom-select-elem-name">{{ coin.name }}</span><span class="form-custom-select-elem-short">{{ coin.code }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
                     </div>
                     <div class="table-row" v-for="(exchanger, index) in exchanges" v-if="(promo_check && promo[exchanger.exchange.apiId]) || !promo_check">
                         <div class="table-elem">
-                            <div class="table-name"><img class="table-name-icon"  :src="'<?php bloginfo('template_url'); ?>/assets/img/content/table/'+exchanger.exchange.name.toLowerCase().replace('.', '')+'-logo.svg'" :alt="exchanger.exchange.name + ' Logo'"><span class="table-name-text">{{ exchanger.exchange.name }}</span></div>
+                            <div class="table-name"><img class="table-name-icon lazy"  :data-src="'<?php bloginfo('template_url'); ?>/assets/img/content/table/'+exchanger.exchange.name.toLowerCase().replace('.', '')+'-logo.svg'" :alt="exchanger.exchange.name + ' Logo'"><span class="table-name-text">{{ exchanger.exchange.name }}</span></div>
                             <div class="table-mob-wrap">
                                 <div class="table-rating"><span class="table-rating-val">{{ exchanger.exchange.rating }}</span></div>
                                     <a class="table-link-mob" href="">Coincub Review
@@ -111,7 +111,7 @@
                             <div class="table-sum fee-percent"><span class="table-sum-val">{{ exchanger.feePercentage.toFixed(2) }}%</span></div>
                         </div>
                         <div class="table-elem"><span class="table-heading">You Get</span>
-                            <div class="table-sum get"><img class="table-sum-icon" :src="'<?php bloginfo('template_url'); ?>/assets/img/content/select/'+selected_destination_coin.toLowerCase().replace('.', '')+'-icon.svg'" :alt="selected_destination_coin"><span class="table-sum-val">{{ exchanger.exchangedAmount }}</span></div>
+                            <div class="table-sum get"><img class="table-sum-icon lazy" :data-src="'<?php bloginfo('template_url'); ?>/assets/img/content/select/'+selected_destination_coin.toLowerCase().replace('.', '')+'-icon.svg'" :alt="selected_destination_coin"><span class="table-sum-val">{{ exchanger.exchangedAmount }}</span></div>
                         </div>
                         <div class="table-elem">
                             <div class="table-link"><a class="table-link-btn" href="">

@@ -27,7 +27,7 @@ Vue.component('niceselect', {
     $(this.$el).off().niceSelect('destroy');
   }
 })
-
+Vue.prototype.$lazyLoadInstance = window.lazyLoadInstance;
 var vMainpage = new Vue({
     el: '#topPage',
     data () {
@@ -217,6 +217,10 @@ var vMainpage = new Vue({
                   this.top_page_msg = 1;
                   this.selected_currency_code = 'EUR';
                 }
+                var vm = this;
+                setTimeout(function () {
+                  vm.$lazyLoadInstance.update();
+                }, 1);
               }
               if (response.data.errors) {
                 var errores = [];

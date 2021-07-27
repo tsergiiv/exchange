@@ -26,7 +26,7 @@ Vue.component('niceselect', {
     $(this.$el).off().niceSelect('destroy');
   }
 })
-
+Vue.prototype.$lazyLoadInstance = window.lazyLoadInstance;
 var vMainpage = new Vue({
     el: '#mainPage',
     data () {
@@ -171,6 +171,10 @@ var vMainpage = new Vue({
                 this.all_exchanges = response.data;
                 this.default_sort();
               }
+              var vm = this;
+              setTimeout(function () {
+                vm.$lazyLoadInstance.update();
+              }, 1);
               if (response.data.errors) {
                 var errores = [];
                 for(var index in response.data.errors) {

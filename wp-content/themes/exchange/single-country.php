@@ -285,7 +285,7 @@ Template Post Type: country
                             </div>
                             <div class="table-row" v-for="(exchanger, index) in display_exchanges">
                                 <div class="table-elem">
-                                    <div class="table-name"><img class="table-name-icon" :src="'<?php bloginfo('template_url'); ?>/assets/img/content/table/'+exchanger.name.toLowerCase().replace('.', '')+'-logo.svg'" :alt="exchanger.name + ' Logo'"><span class="table-name-text">{{ exchanger.name }}</span></div><a class="table-link-mob" href="">Coincub Review
+                                    <div class="table-name"><img class="table-name-icon lazy" :data-src="'<?php bloginfo('template_url'); ?>/assets/img/content/table/'+exchanger.name.toLowerCase().replace('.', '')+'-logo.svg'" :alt="exchanger.name + ' Logo'"><span class="table-name-text">{{ exchanger.name }}</span></div><a class="table-link-mob" href="">Coincub Review
                                         <svg class="table-link-icon">
                                             <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
                                         </svg></a>
@@ -297,7 +297,7 @@ Template Post Type: country
                                     <div class="table-date"><span class="table-date-val">{{ exchanger.founded }}</span></div>
                                 </div>
                                 <div class="table-elem"><span class="table-heading">Deposit Method</span>
-                                    <div class="table-deposit"><div class="table-deposit-elem"><img v-if="exchanger.creditCardFee" class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png" alt="Cards Icon"></div><div class="table-deposit-elem"><img v-if="exchanger.wireFee" class="table-deposit-icon" src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png" alt="Bank Icon"></div></div>
+                                    <div class="table-deposit"><div class="table-deposit-elem"><img v-if="exchanger.creditCardFee" class="table-deposit-icon lazy" data-src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/cards-icon.png" alt="Cards Icon"></div><div class="table-deposit-elem"><img v-if="exchanger.wireFee" class="table-deposit-icon lazy" data-src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/bank-icon.png" alt="Bank Icon"></div></div>
                                 </div>
                                 <div class="table-elem"><span class="table-heading">Promotion </span>
                                     <div class="table-promotion"><span class="table-promotion-val purple" v-if="promo[exchanger.apiId]">Yes</span><span class="table-promotion-val orange" v-if="!promo[exchanger.apiId]">No</span></div>

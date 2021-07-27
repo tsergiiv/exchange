@@ -1,3 +1,4 @@
+Vue.prototype.$lazyLoadInstance = window.lazyLoadInstance;
 Vue.component('exchanges_country', {
   props: ['country'],
   template: '#country-table',
@@ -111,6 +112,10 @@ Vue.component('exchanges_country', {
                     n_exchanges++;
                   }
                 }
+                var vm = this;
+                setTimeout(function () {
+                  vm.$lazyLoadInstance.update();
+                }, 1);
               }
               if (response.data.errors) {
                 var errores = [];
