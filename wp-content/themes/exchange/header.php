@@ -3,7 +3,19 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php bloginfo('title'); ?></title>
+    <title>
+        <?php bloginfo('title'); ?>
+        <?= get_post_type() == 'country' ? 'Country Reviews - ' . get_the_title() : '' ?>
+        <?= get_post_type() == 'exchange' ? 'Exchange Reviews - ' . get_the_title() : '' ?>
+    </title>
+    <meta name="google-site-verification" content="6LyFnGHdK23s24GhlIRZhu62kMbsm2X8izZKYVFkEho" />
+
+    <meta name="description"
+          content="<?= get_post_type() == 'country' ? get_field('description') : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' ?>"
+    >
+    <meta name="keywords" content="coincub, crypto, coincub, exchange, bitcoin">
+
+    <link rel="preload" type="text/css" as="style" onload="this.rel='stylesheet'" href="<?php bloginfo('template_url'); ?>/assets/css/fonts/font.min.css">
 
     <link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('template_url'); ?>/assets/img/general/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_url'); ?>/assets/img/general/favicon/favicon-32x32.png">
@@ -16,7 +28,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="modal-active">
+<body class="modal-active <?= is_404() ? 'not-found' : '' ?>">
     <div class="preloader">
         <svg class="preloader-logo" width="188" height="204" viewBox="0 0 188 204" fill="none"
              xmlns="http://www.w3.org/2000/svg">

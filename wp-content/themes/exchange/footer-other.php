@@ -137,7 +137,7 @@
 														<source type="image/png" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-2x.png 2x">
 														<source type="image/webp" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-1x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-1x.webp 2x">
 														<source type="image/png" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-1x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-1x.png 2x">
-														<img class="modal-info-bg" src="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-2x.png" alt="">
+														<img class="modal-info-bg" src="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-2x.webp" alt="">
 													</picture>
 												</noscript>
                         <div class="modal-info-content">
@@ -196,7 +196,7 @@
 														<source type="image/png" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-2x.png 2x">
 														<source type="image/webp" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-1x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-1x.webp 2x">
 														<source type="image/png" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-1x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-1x.png 2x">
-														<img class="modal-info-bg" src="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-2x.png" alt="">
+														<img class="modal-info-bg" src="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-2x.webp" alt="">
 													</picture>
 												</noscript>
                         <div class="modal-info-content">
@@ -264,7 +264,7 @@
 									<picture>
 										<source type="image/webp" media="(min-width: 629px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.webp 2x">
 										<source type="image/png" media="(min-width: 629px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.png 2x">
-										<img class="modal-contact-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.png" alt="">
+										<img class="modal-contact-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.webp" alt="">
 									</picture>
 								</noscript>
                 <div class="modal-contact-wrap">

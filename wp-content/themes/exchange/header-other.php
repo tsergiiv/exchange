@@ -3,8 +3,9 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php bloginfo('title'); ?></title>
-	<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" type="image/x-icon"/>
+    <title><?php bloginfo('title'); ?> <?= get_post_type() ?></title>
+    <link rel="preload" type="text/css" as="style" onload="this.rel='stylesheet'" href="<?php bloginfo('template_url'); ?>/assets/css/font.min.css">
+    <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" type="image/x-icon"/>
     <?php wp_head(); ?>
 </head>
 

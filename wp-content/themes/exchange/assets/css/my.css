@@ -6,3 +6,29 @@
     display: inherit;
     width: 100%;
 }
+
+.article-img {
+    height: auto !important;
+    min-width: 80% !important;
+    width: auto !important;
+}
+
+.article-review-date {
+    font-size: 18px !important;
+}
+
+.article-tag span {
+    margin-right: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 4px;
+    color: #797990;
+    white-space: nowrap;
+    text-transform: uppercase;
+    -webkit-transition: 0.35s;
+    -o-transition: 0.35s;
+    transition: 0.35s; }
+
+.article-tag span:hover {
+    color: #6766E2; }

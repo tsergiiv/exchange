@@ -23,12 +23,7 @@ Template Post Type: country
                                     class="word-accent orange"><?= the_title() ?><span class="word-accent-square left"></span><span
                                         class="word-accent-square right"></span></span></h1>
                         <div class="section-desc">
-                            Many or all of the products featured here
-                            are from our partners who compensate us.
-                            This may influence the products we write about,
-                            however, this does not influence our evaluations.
-                            Our opinions are our own. Here is a list of our partners
-                            and here's how we make money.
+                            Many or all of the products featured here are from our partners who compensate us. This may influence the products we write about, however, this does not influence our evaluations. Our opinions are our own.
                         </div>
                         <div class="article-review">
                             <div class="article-review-date"><?= country_post_reading() ?></div>
@@ -251,14 +246,14 @@ Template Post Type: country
                         <?= do_shortcode( '[helpful]' ); ?>
 
                         <div class="article-tag">
-                            <a href="">#crypto</a>
-                            <a href="">#exchanges</a>
-                            <a href="">#regulation</a>
-                            <a href="">#<?= the_title() ?></a>
-                            <a href="">#coinbase exchange </a>
-                            <a href="">#what is coinbase? </a>
-                            <a href="">#coinbase wallet </a>
-                            <a href="">#coinbase review </a>
+                            <span>#crypto</span>
+                            <span>#exchanges</span>
+                            <span>#regulation</span>
+                            <span>#<?= the_title() ?></span>
+                            <span>#coinbase exchange </span>
+                            <span>#what is coinbase? </span>
+                            <span>#coinbase wallet </span>
+                            <span>#coinbase review </span>
                         </div>
                     </div>
                     <div class="article-sidebar">

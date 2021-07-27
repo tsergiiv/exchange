@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <main class="content">
+    <main class="content" id="choose_pair">
         <div class="main">
             <section class="main-head container middle">
                 <div class="main-head-wrap">

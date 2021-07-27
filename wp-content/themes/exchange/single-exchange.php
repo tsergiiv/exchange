@@ -34,12 +34,7 @@ Template Post Type: exchange
                             <?php endif; ?>
                         </h1>
                         <div class="section-desc">
-                            Many or all of the products featured here
-                            are from our partners who compensate us.
-                            This may influence the products we write about,
-                            however, this does not influence our evaluations.
-                            Our opinions are our own. Here is a list of our partners
-                            and here's how we make money.
+                            Many or all of the products featured here are from our partners who compensate us. This may influence the products we write about, however, this does not influence our evaluations. Our opinions are our own.
                         </div>
                         <div class="article-review">
                             <div class="article-review-date"><?= exchange_post_reading() ?></div>
@@ -199,6 +194,7 @@ Template Post Type: exchange
 
                     <?php if (get_field('tip_1')): ?>
                         <div class="article-content-heading" id="tips">Tips for users</div>
+                        <p><?= get_field('tip_text') ? get_field('tip_text') : '' ?></p>
                         <?php if (get_field('tip_1')): ?>
                             <div class="article-step">
                                 <div class="article-step-icon"><span class="article-step-icon-text">01</span></div>
@@ -287,8 +283,13 @@ Template Post Type: exchange
                     <?php endif; ?>
 
                     <?php if (get_field('fees')): ?>
-                        <div class="article-content-heading" id="fees">Fees</div>
+                        <div class="article-content-heading" id="fees"><?= the_title() ?> Fees</div>
                         <?= the_field('fees') ?>
+                    <?php endif; ?>
+
+                    <?php if (get_field('trading_costs')): ?>
+                        <div class="article-content-heading" id="fees"><?=  the_title() ?> Fees and Trading costs</div>
+                        <?= the_field('trading_costs') ?>
                     <?php endif; ?>
 
                     <?php if (get_field('news')): ?>
@@ -329,26 +330,32 @@ Template Post Type: exchange
                     <?php endif; ?>
 
                     <?php if (get_field('supported_currencies')): ?>
-                        <div class="article-content-heading"><?= the_field('currencies_title') ?></div>
+                        <div class="article-content-heading" id="supported_currencies"><?= the_field('currencies_title') ?></div>
                         <?= the_field('supported_currencies') ?>
                     <?php endif; ?>
 
                     <?php if (get_field('payment_methods')): ?>
-                        <div class="article-content-heading"><?=  the_title() ?> Payment Methods</div>
+                        <div class="article-content-heading" id="payment_methods"><?=  the_title() ?> Payment Methods</div>
                         <?= the_field('payment_methods') ?>
-                    <?php endif; ?>
-
-                    <?php if (get_field('trading_costs')): ?>
-                        <div class="article-content-heading"><?=  the_title() ?> Fees and Trading costs</div>
-                        <?= the_field('trading_costs') ?>
                     <?php endif; ?>
 
                     <div class="section-header m" id="services"><span class="word-accent orange"><?= the_title() ?>’s Services<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span></div>
                     <?= the_field('services') ?>
 
+                    <?php if (get_field('socilas_text')): ?>
+                        <div class="article-content-heading" id="socials">Socials</div>
+                        <?= the_field('socilas_text') ?>
+                    <?php endif; ?>
+
                     <?= do_shortcode( '[helpful]' ); ?>
 
-                    <div class="article-tag"><a href="">#<?=  the_title() ?></a><a href="">#<?=  the_title() ?> exchange </a><a href="">#what is <?=  the_title() ?>? </a><a href="">#<?=  the_title() ?> wallet </a><a href="">#<?=  the_title() ?> review </a></div>
+                    <div class="article-tag">
+                        <span>#<?=  the_title() ?></span>
+                        <span>#<?=  the_title() ?> exchange </span>
+                        <span>#what is <?=  the_title() ?>? </span>
+                        <span>#<?=  the_title() ?> wallet </span>
+                        <span>#<?=  the_title() ?> review </span>
+                    </div>
                 </div>
                 <div class="article-sidebar">
                     <div class="article-sidebar-title">Table of contents</div>
@@ -393,7 +400,7 @@ Template Post Type: exchange
                         <a class="article-sidebar-link" href="#openacc">Open Account and Trade</a>
                     <?php endif; ?>
 
-                    <?php if (get_field('fees')): ?>
+                    <?php if (get_field('fees') || get_field('trading_costs')): ?>
                         <a class="article-sidebar-link" href="#fees">Fees</a>
                     <?php endif; ?>
 
@@ -409,7 +416,19 @@ Template Post Type: exchange
                         <a class="article-sidebar-link" href="#supported_countries">Supported Countries</a>
                     <?php endif; ?>
 
+                    <?php if (get_field('supported_currencies')): ?>
+                        <a class="article-sidebar-link" href="#supported_currencies">Supported Currencies</a>
+                    <?php endif; ?>
+
+                    <?php if (get_field('payment_methods')): ?>
+                        <a class="article-sidebar-link" href="#payment_methods">Payment Methods</a>
+                    <?php endif; ?>
+
                     <a class="article-sidebar-link" href="#services">Services</a>
+
+                    <?php if (get_field('socilas_text')): ?>
+                        <a class="article-sidebar-link" href="#socials">Socials</a>
+                    <?php endif; ?>
                 </div>
             </section>
         </div>

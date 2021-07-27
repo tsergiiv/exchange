@@ -5,6 +5,8 @@ var $ = jQuery.noConflict();
 $(document).ready(function() {
    jQuery('.es_subscription_form').attr('action', window.location.pathname + '#es_form_f1-n1');
 
+   $('a').attr('rel', 'nofollow noopener');
+
    // add class for images uploaded through wordpress
    $("img[class^='wp-image-'],img[class*=' wp-image-']").removeClass().addClass('article-img');
 
