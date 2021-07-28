@@ -153,15 +153,13 @@
                         </div>
                         <div class="first-wrap">
                             <div class="first-img">
-															<noscript class="loading-lazy">
-																<picture>
-																	<source type="image/webp" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-2x.webp 2x">
-																	<source type="image/png" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-2x.png 2x">
-																	<source type="image/webp" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-1x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-1x.webp 2x">
-																	<source type="image/png" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-1x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-1x.png 2x">
-																	<img class="first-img-content" src="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-2x.webp" loading="lazy" alt="First Time Image">
-																</picture>
-															</noscript>
+															<picture>
+																<source type="image/webp" media="(min-width: 552px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-2x.webp 2x">
+																<source type="image/png" media="(min-width: 552px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-2x.png 2x">
+																<source type="image/webp" media="(min-width: 0px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-1x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-1x.webp 2x">
+																<source type="image/png" media="(min-width: 0px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-1x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-1x.png 2x">
+																<img class="first-img-content lazy" data-src="<?php bloginfo('template_url'); ?>/assets/img/content/first/first-img-2-2x.webp" alt="First Time Image">
+															</picture>
 														</div>
                             <div class="first-info">
                                 <div class="first-text">

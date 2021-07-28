@@ -12,15 +12,13 @@
 
                 <footer class="footer">
                     <section class="footer-banner middle">
-												<noscript class="loading-lazy">
-													<picture>
-														<source type="image/webp" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-2x.webp 2x">
-														<source type="image/png" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-2x.png 2x">
-														<source type="image/webp" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-1x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-1x.webp 2x">
-														<source type="image/png" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-1x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-1x.png 2x">
-														<img class="footer-banner-bg" src="<?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-2x.webp" loading="lazy" alt="">
-													</picture>
-												</noscript>
+												<picture>
+													<source type="image/webp" media="(min-width: 552px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-2x.webp 2x">
+													<source type="image/png" media="(min-width: 552px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-2x.png 2x">
+													<source type="image/webp" media="(min-width: 0px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-1x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-1x.webp 2x">
+													<source type="image/png" media="(min-width: 0px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-1x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-1x.png 2x">
+													<img class="footer-banner-bg lazy" data-src="<?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-2x.webp" alt="">
+												</picture>
                         <div class="footer-banner-left">
                             <div class="section-title-simple"> <span class="orange">Free guide </span>on how to get into crypto market</div>
                             <h1 class="section-header m">
@@ -131,15 +129,13 @@
                 <div class="modal-close"><img src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/close-modal-icon.svg" alt=""></div>
                 <div class="modal-content-wrap">
                     <div class="modal-info">
-												<noscript class="loading-lazy">
-													<picture>
-														<source type="image/webp" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-2x.webp 2x">
-														<source type="image/png" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-2x.png 2x">
-														<source type="image/webp" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-1x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-1x.webp 2x">
-														<source type="image/png" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-1x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-1x.png 2x">
-														<img class="modal-info-bg" src="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-2x.webp" alt="">
-													</picture>
-												</noscript>
+												<picture>
+													<source type="image/webp" media="(min-width: 552px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-2x.webp 2x">
+													<source type="image/png" media="(min-width: 552px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-2x.png 2x">
+													<source type="image/webp" media="(min-width: 0px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-1x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-1x.webp 2x">
+													<source type="image/png" media="(min-width: 0px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-1x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-1x.png 2x">
+													<img class="modal-info-bg lazy" data-src="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-terms-bg-2x.webp" alt="">
+												</picture>
                         <div class="modal-info-content">
                             <h1 class="modal-heading">Terms and Conditions</h1>
                             <div class="modal-subheading">Disclaimers and Limitation of Liability</div>
@@ -190,15 +186,13 @@
                 <div class="modal-close"><img src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/close-modal-icon.svg" alt=""></div>
                 <div class="modal-content-wrap">
                     <div class="modal-info">
-												<noscript class="loading-lazy">
-													<picture>
-														<source type="image/webp" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-2x.webp 2x">
-														<source type="image/png" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-2x.png 2x">
-														<source type="image/webp" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-1x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-1x.webp 2x">
-														<source type="image/png" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-1x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-1x.png 2x">
-														<img class="modal-info-bg" src="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-2x.webp" alt="">
-													</picture>
-												</noscript>
+												<picture>
+													<source type="image/webp" media="(min-width: 552px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-2x.webp 2x">
+													<source type="image/png" media="(min-width: 552px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-2x.png 2x">
+													<source type="image/webp" media="(min-width: 0px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-1x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-1x.webp 2x">
+													<source type="image/png" media="(min-width: 0px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-1x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-1x.png 2x">
+													<img class="modal-info-bg lazy" data-src="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-review-bg-2x.webp" alt="">
+												</picture>
                         <div class="modal-info-content">
                             <div class="modal-subheading">Coincub - Exchange Reviews</div>
                             <p>
@@ -260,13 +254,11 @@
                 <div class="modal-close">
 									<img src="<?php bloginfo('template_url'); ?>/assets/img/general/icon/close-modal-icon-black.svg" alt="">
 								</div>
-								<noscript class="loading-lazy">
-									<picture>
-										<source type="image/webp" media="(min-width: 629px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.webp 2x">
-										<source type="image/png" media="(min-width: 629px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.png 2x">
-										<img class="modal-contact-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.webp" alt="">
-									</picture>
-								</noscript>
+								<picture>
+									<source type="image/webp" media="(min-width: 629px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.webp 2x">
+									<source type="image/png" media="(min-width: 629px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.png 2x">
+									<img class="modal-contact-img lazy" data-src="<?php bloginfo('template_url'); ?>/assets/img/content/modal/modal-contact-bg-2x.webp" alt="">
+								</picture>
                 <div class="modal-contact-wrap">
                     <div class="modal-contact-info">
                         <h1 class="modal-heading">Contact Us</h1>

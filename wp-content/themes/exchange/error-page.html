@@ -37,20 +37,17 @@
             <h1 class="section-header"><span class="word-accent orange">404<span class="word-accent-square left"></span><span class="word-accent-square right"></span></span></h1>
             <div class="not-found-info-desc">Page not found</div><a class="btn not-found-btn" href=""><span class="btn-arrow"></span><span class="btn-text">Go home</span></a>
           </div>
-					<noscript class="loading-lazy">
-						<picture>
-							<source type="image/webp" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-2x.webp 2x">
-							<source type="image/png" media="(min-width: 552px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-2x.png 2x">
-							<source type="image/webp" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-1x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-1x.webp 2x">
-							<source type="image/png" media="(min-width: 0px)" srcset="<?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-1x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-1x.png 2x">
-							<img class="not-found-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-2x.webp" loading="lazy" alt="Not found panda">
-						</picture>
-					</noscript>
+					<picture>
+						<source type="image/webp" media="(min-width: 552px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-2x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-2x.webp 2x">
+						<source type="image/png" media="(min-width: 552px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-2x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-2x.png 2x">
+						<source type="image/webp" media="(min-width: 0px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-1x.webp 1x, <?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-1x.webp 2x">
+						<source type="image/png" media="(min-width: 0px)" data-srcset="<?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-1x.png 1x, <?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-1x.png 2x">
+						<img class="not-found-img lazy" data-src="<?php bloginfo('template_url'); ?>/assets/img/content/error/error-page-img-2x.webp" alt="Not found panda">
+					</picture>
         </div>
       </main>
     </div>
     <script src="static/js/jquery-3.6.0.min.js"></script>
     <script src="static/js/main.js"></script>
-    <script src="static/js/loading-attribute-polyfill.umd.js"></script>
   </body>
 </html>
