@@ -32,3 +32,7 @@
 
 .article-tag span:hover {
     color: #6766E2; }
+
+.tab-nav-link {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+}

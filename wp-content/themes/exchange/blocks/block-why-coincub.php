@@ -59,7 +59,7 @@
                         </div>
                         <div class="advantages-elem purple">
                             <div class="advantages-elem-content">
-                                <div class="advantages-img"><img class="advantages-img-content"
+                                <div class="advantages-img"><img class="advantages-img-content lazy"
                                                                  src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-5.png"
                                                                  alt="Advantages image #5"></div>
                                 <div class="advantages-text"><span class="advantages-text-accent">
@@ -69,7 +69,7 @@
                         </div>
                         <div class="advantages-elem green">
                             <div class="advantages-elem-content">
-                                <div class="advantages-img"><img class="advantages-img-content"
+                                <div class="advantages-img"><img class="advantages-img-content lazy"
                                                                  src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-6.png"
                                                                  alt="Advantages image #6"></div>
                                 <div class="advantages-text"><span class="advantages-text-accent">

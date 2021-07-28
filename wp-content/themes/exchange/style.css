@@ -841,7 +841,7 @@ section {
       height: 19px;
       background-image: url(./../img/general/icon/cards-icon.png); }
     .table-method-icon.wire {
-      width: 22px;
+      width: 22px;tab-nav-link
       height: 23px;
       background-image: url(./../img/general/icon/globe-icon.png); }
     .table-method-icon.crypto {
