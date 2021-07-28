@@ -20,9 +20,6 @@ function enqueue_styles()
     wp_register_style('style', get_template_directory_uri() . '/assets/css/style.min.css', array(), date("h:i:s"));
     wp_enqueue_style('style');
 
-    wp_register_style('polyfill', get_template_directory_uri() . '/assets/css/loading-attribute-polyfill.css', array(), date("h:i:s"));
-    wp_enqueue_style('polyfill');
-
     wp_register_style('my', get_template_directory_uri() . '/assets/css/my.css', array(), date("h:i:s"));
     wp_enqueue_style('my');
 }
@@ -41,8 +38,8 @@ function enqueue_scripts()
     wp_register_script('jquery-actual', get_template_directory_uri() . '/assets/js/jquery.actual.min.js', array(), date("h:i:s"));
     wp_enqueue_script('jquery-actual');
 
-    wp_enqueue_script('polyfill', get_template_directory_uri() . '/assets/js/loading-attribute-polyfill.umd.js', array('jquery'), date("h:i:s"));
-    wp_enqueue_script('polyfill');
+    wp_register_script('lazyload', get_template_directory_uri() . '/assets/js/lazyload.min.js', array(), date("h:i:s"));
+    wp_enqueue_script('lazyload');
 
     wp_enqueue_script('my', get_template_directory_uri() . '/assets/js/my.js', array('jquery'), date("h:i:s"));
     wp_enqueue_script('my');

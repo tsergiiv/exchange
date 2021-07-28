@@ -137,21 +137,21 @@ Template Post Type: country
                             $law2 =  get_field_object('lax_text_2');
                         ?>
                         <div class="article-content-heading" id="law">Law and crypto trading in <?= the_title() ?></div>
-                        <a class="article-link" href="">
+                        <a class="article-link" href="<?= the_field('lax_link_1') ?>">
                             <span class="article-link-icon">
                                 <svg class="article-link-icon-content">
                                   <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"> </use>
                                 </svg>
                             </span><?= $law1['label'] ?></a>
                         <?= $law1['value'] ?>
-                        <?php if ($law2['value']): ?>
-                        <a class="article-link" href="">
+                        <a class="article-link" href="<?= the_field('lax_link_2') ?>">
                             <span class="article-link-icon">
                                 <svg class="article-link-icon-content">
                                     <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#link-icon"></use>
                                 </svg>
                             </span><?= $law2['label'] ?>
                         </a>
+                        <?php if ($law2['value']): ?>
                         <?= $law2['value'] ?>
                         <?php endif; ?>
 

@@ -1,6 +1,6 @@
 var $ = jQuery.noConflict();
 
-// Article add img class
+window['lazyLoadInstance'] = new LazyLoad();
 
 $(document).ready(function() {
    jQuery('.es_subscription_form').attr('action', window.location.pathname + '#es_form_f1-n1');
@@ -14,6 +14,14 @@ $(document).ready(function() {
 
    // remove empty paragraphs
    $('p').filter(function () { return $.trim(this.innerHTML) == "" }).remove();
+
+   $('a').each(function () {
+      let link = '/' + window.location.host + '/';
+      var a = new RegExp('/' + window.location.host + '/');
+      if (!a.test(this.href)) {
+         $(this).attr('target', '_blank');
+      }
+   });
 });
 
 function sendBook() {
