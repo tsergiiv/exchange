@@ -346,6 +346,18 @@
             </div>
         </div>
     </div>
+    <div class="cookie">
+        <div class="close-btn-msg cookie-close-btn">
+            <svg class="close-btn-msg-icon">
+                <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#book-close-btn"></use>
+            </svg>
+        </div><img class="cookies-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/cookie/cookie-img.svg" alt="Cookie img">
+        <div class="cookie-title">Have a cookie:)</div>
+        <div class="cookie-desc">
+            This website uses cookies to ensure you get the best
+            expirience on our website
+        </div><a class="cookie-link" href="">Learn more </a>
+    </div>
 
     <script type="text/javascript">
         let templateUrl = '<?= get_bloginfo("template_url"); ?>';

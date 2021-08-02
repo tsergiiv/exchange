@@ -7,7 +7,7 @@ Template Post Type: exchange
 
 <?php get_header(); ?>
 
-    <main class="content">
+    <main class="content exchange-article">
         <div class="article middle">
             <section class="article-head container">
                 <div class="breadcrumbs">
@@ -282,6 +282,11 @@ Template Post Type: exchange
                         <?= the_field('opening_account') ?>
                     <?php endif; ?>
 
+                    <?php if (get_field('deposits_withdrawal')): ?>
+                        <div class="article-content-heading" id="dep_with">Deposits / Withdrawal </div>
+                        <?= the_field('deposits_withdrawal') ?>
+                    <?php endif; ?>
+
                     <?php if (get_field('fees')): ?>
                         <div class="article-content-heading" id="fees"><?= the_title() ?> Fees</div>
                         <?= the_field('fees') ?>
@@ -400,6 +405,10 @@ Template Post Type: exchange
                         <a class="article-sidebar-link" href="#openacc">Open Account and Trade</a>
                     <?php endif; ?>
 
+                    <?php if (get_field('deposits_withdrawal')): ?>
+                        <a class="article-sidebar-link" href="#dep_with">Deposits / Withdrawal</a>
+                    <?php endif; ?>
+
                     <?php if (get_field('fees') || get_field('trading_costs')): ?>
                         <a class="article-sidebar-link" href="#fees">Fees</a>
                     <?php endif; ?>
@@ -417,7 +426,7 @@ Template Post Type: exchange
                     <?php endif; ?>
 
                     <?php if (get_field('supported_currencies')): ?>
-                        <a class="article-sidebar-link" href="#supported_currencies">Supported Currencies</a>
+                        <a class="article-sidebar-link" href="#supported_currencies"><?= the_field('currencies_title') ?></a>
                     <?php endif; ?>
 
                     <?php if (get_field('payment_methods')): ?>

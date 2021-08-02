@@ -50,6 +50,50 @@ $(document).ready(function () {
   }); // Preloader - end
   // Choose pair btn
 
+  // Show book message
+
+  function showBook() {
+    var wH = $(window).height();
+    var wS = $(window).scrollTop();
+    var bookMsg = $('.book');
+
+    if (wS >= wH) {
+      bookMsg.css({
+        opacity: 1
+      });
+    }
+  }
+
+  $(window).scroll(function () {
+    clearTimeout($.data(this, 'scrollTimer'));
+    $('.book').css({
+      opacity: 0
+    });
+    $.data(this, 'scrollTimer', setTimeout(function () {
+      showBook();
+    }, 1100));
+  }); // Show book message - end
+  // Close book message
+
+  $('.book-close-btn-icon').click(function () {
+    $('.book').fadeOut();
+  }); // Close book message - end
+  // Close cookies message
+
+  $('.cookie-close-btn').click(function() {
+    $('.cookie').fadeOut();
+    localStorage.setItem('cookiesAccepted', 'close');
+  })
+
+  $(window).on('load', function() {
+    let cookies = localStorage.getItem('cookiesAccepted');
+    if(cookies == "close") {
+      $('.cookie').fadeOut();
+    } else {
+      $('.cookie').fadeIn();
+    }
+  });
+
   $('.choose-pair-btn').click(function () {
     $('html, body').animate({
       scrollTop: $('.main-head-wrap').offset().top - 50
@@ -336,25 +380,51 @@ $(document).ready(function () {
   $('.form-validate').on('submit', function (e) {
     e.preventDefault();
     var $this = $(this);
-    var action = $this.attr('action');
-
-    if (!action) {
-      console.log('У формы отсутствует атрибут action, не знаю куда посылать данные');
-      return false;
-    }
-
-    ;
 
     if (validation.verificationFields($this)) {
+      var formAction = $this.find('.form-action').val();
       var formBtn = $this.find('.form-btn');
       var formBtnText = $this.find('.btn-text');
       var formBtnArrow = $this.find('.btn-arrow');
       formBtn.addClass('success');
       formBtnText.text('Done');
+
+      let email = jQuery('.ig_es_form_field_email').val();
+      let action = $this.find('.action').val();
+
+      if (formAction == 'contact-us') {
+        let formData = new FormData();
+        formData.append('name', $('#contact-name').val());
+        formData.append('email', $('#contact-email').val());
+        formData.append('message', $('#contact-message').val());
+
+        jQuery.ajax({
+          url: action,
+          type: 'POST',
+          dataType: 'json',
+          processData: false,
+          contentType: false,
+          data: formData,
+          success: function (data) {
+            console.log(data);
+          },
+          error: function (error) {
+            console.log('error' + error);
+          },
+        });
+      }
+
+      if (formAction == 'e-book') {
+        let email = jQuery('#book-email').val();
+        console.log(email);
+        jQuery('.ig_es_form_field_email').val(email);
+
+        sendBook();
+      }
+
       validation.resetForm($this);
     }
 
-    ;
     return false;
   }); // Form validate - end
 });

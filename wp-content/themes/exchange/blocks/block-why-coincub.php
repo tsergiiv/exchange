@@ -60,7 +60,7 @@
                         <div class="advantages-elem purple">
                             <div class="advantages-elem-content">
                                 <div class="advantages-img"><img class="advantages-img-content lazy"
-                                                                 src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-5.png"
+                                                                 data-src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-5.png"
                                                                  alt="Advantages image #5"></div>
                                 <div class="advantages-text"><span class="advantages-text-accent">
                                     <?= the_field('title_5') ?>: </span><?= the_field('text_5') ?>
@@ -70,7 +70,7 @@
                         <div class="advantages-elem green">
                             <div class="advantages-elem-content">
                                 <div class="advantages-img"><img class="advantages-img-content lazy"
-                                                                 src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-6.png"
+                                                                 data-src="<?php bloginfo('template_url'); ?>/assets/img/content/advantages/advantages-img-6.png"
                                                                  alt="Advantages image #6"></div>
                                 <div class="advantages-text"><span class="advantages-text-accent">
                                     <?= the_field('title_6') ?>: </span><?= the_field('text_6') ?>
