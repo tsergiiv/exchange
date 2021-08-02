@@ -114,6 +114,12 @@ var vMainpage = new Vue({
           selected_deposit_method: 'WIRE',
           options_destination_coins: [],
           selected_destination_coin: 'DOGE',
+          sort_options: [
+            {"value":"cheapest","name":"Cheapest offer"},
+            {"value":"l_fees","name":"Lowest fees"},
+            {"value":"coin_p","name":"Coin price"},
+            {"value":"rating","name":"Rating"},
+          ],
           sort_by: 'cheapest',
           top_page_msg: 0
         }   

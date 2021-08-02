@@ -64,12 +64,11 @@
                         </div>
                         <div class="table-form-group">
                             <label class="table-form-group-title sm">Sort by:</label>
-                            <select class="form-select" v-model="sort_by">
-                                <option value="cheapest">Cheapest offer</option>
-                                <option value="l_fees">Lowest fees</option>
-                                <option value="coin_p">Coin price</option>
-                                <option value="rating">Rating</option>
-                            </select>
+                            <niceselect  class="form-select" :options="sort_options" v-model="sort_by">
+                              <option v-for="(sort_option, index) in sort_options" :value="sort_option.value">
+                               {{ sort_option.name }}
+                              </option>
+                            </niceselect>
                         </div>
                     </form>
                 </div>
