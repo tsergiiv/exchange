@@ -50,7 +50,7 @@
                             </option>
                         </niceselect>
                     </div>
-                    <div v-if="top_page_msg" class="top-page-msg">We’re sorry, but none of our exchanges support <span class="top-page-msg-currency">USD</span>. <br>May we suggest checking results in <span class="top-page-msg-alternate-currency">EUR</span>?</div>
+                    <div v-if="top_page_msg" class="top-page-msg">We’re sorry, but none of our exchanges support <span class="top-page-msg-currency">{{ last_selected_currency_code }}</span>. <br>May we suggest checking results in <span class="top-page-msg-alternate-currency">EUR</span>?</div>
                 </form>
             </section>
             <section class="table result-table middle">
@@ -64,12 +64,11 @@
                         </div>
                         <div class="table-form-group">
                             <label class="table-form-group-title sm">Sort by:</label>
-                            <select class="form-select" v-model="sort_by">
-                                <option value="cheapest">Cheapest offer</option>
-                                <option value="l_fees">Lowest fees</option>
-                                <option value="coin_p">Coin price</option>
-                                <option value="rating">Rating</option>
-                            </select>
+                            <niceselect  class="form-select" :options="sort_options" v-model="sort_by">
+                              <option v-for="(sort_option, index) in sort_options" :value="sort_option.value">
+                               {{ sort_option.name }}
+                              </option>
+                            </niceselect>
                         </div>
                     </form>
                 </div>
@@ -83,7 +82,7 @@
                         <div class="table-elem"><span class="table-heading">You Get</span></div>
                         <div class="table-elem"><span class="table-heading">Coincub Review</span></div>
                     </div>
-                    <div class="table-row" v-for="(exchanger, index) in exchanges" v-if="(promo_check && promo[exchanger.exchange.apiId]) || !promo_check">
+                    <div class="table-row" v-for="(exchanger, index) in exchanges" v-show="(promo_check && promo[exchanger.exchange.apiId]) || !promo_check">
                         <div class="table-elem">
                             <div class="table-name"><img class="table-name-icon lazy"  :data-src="'<?php bloginfo('template_url'); ?>/assets/img/content/table/'+exchanger.exchange.name.toLowerCase().replace('.', '')+'-logo.svg'" :alt="exchanger.exchange.name + ' Logo'"><span class="table-name-text">{{ exchanger.exchange.name }}</span></div>
                             <div class="table-mob-wrap">
