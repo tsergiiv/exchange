@@ -28,6 +28,7 @@ Vue.component('niceselect', {
   }
 })
 Vue.prototype.$lazyLoadInstance = window.lazyLoadInstance;
+
 var vMainpage = new Vue({
     el: '#topPage',
     data () {
@@ -114,6 +115,7 @@ var vMainpage = new Vue({
           selected_deposit_method: 'WIRE',
           options_destination_coins: [],
           selected_destination_coin: 'DOGE',
+          last_selected_currency_code: '',
           sort_options: [
             {"value":"cheapest","name":"Cheapest offer"},
             {"value":"l_fees","name":"Lowest fees"},
@@ -129,8 +131,15 @@ var vMainpage = new Vue({
         this.sort(val);
       },
       selected_currency: function(val, oldVal) {
-        this.selected_currency_name = this.options_currencys.find(option => option.value === val).name;
         this.selected_currency_code = this.options_currencys.find(option => option.value === val).code;
+        this.setCookieData();
+        this.getExchanges();
+      },
+      selected_currency_code: function(val, oldVal) {
+        if (!this.last_selected_currency_code) {
+          this.last_selected_currency_code = this.selected_currency_code;
+        }
+        this.selected_currency_name = this.options_currencys.find(option => option.code === val).name;
         this.setCookieData();
         this.getExchanges();
       },
@@ -204,23 +213,22 @@ var vMainpage = new Vue({
         },
         getExchanges: function() {
           $('.table-wrap').addClass('loading');
-          var currence_code3 = this.options_currencys.find(option => option.value === this.selected_currency).code;
           if(!this.amount) {
             this.amount = 0
           }
           axios
-            .get('http://api.ers.takasho.work/exchange-rates?countryCode='+this.selected_country+'&cryptoCurrencyCode='+this.selected_destination_coin+'&fiatCurrencyCode='+currence_code3+'&depositMethodType='+this.selected_deposit_method+'&amount='+this.amount)
+            .get('http://api.ers.takasho.work/exchange-rates?countryCode='+this.selected_country+'&cryptoCurrencyCode='+this.selected_destination_coin+'&fiatCurrencyCode='+this.selected_currency_code+'&depositMethodType='+this.selected_deposit_method+'&amount='+this.amount)
             .then(response => {
               if (response.data) {
                 this.exchanges = response.data;
-                if(Object.keys(response.data).length != 0) {
+                if(Object.keys(response.data).length > 0) {
                   this.sort(this.sort_by);
                   $('.table-wrap').removeClass('loading');
                 } else {
+                  this.top_page_msg = 1;
                   setTimeout(function () {
                     $('.top-page-msg').addClass('remove');
                   }, 5500);
-                  this.top_page_msg = 1;
                   this.selected_currency_code = 'EUR';
                 }
                 var vm = this;
@@ -246,6 +254,10 @@ var vMainpage = new Vue({
               if (response.data) {
                 this.options_destination_coins = response.data._embedded.cryptoCurrencies;
                 this.customSelectInit();
+                var vm = this;
+                setTimeout(function () {
+                  vm.$lazyLoadInstance.update();
+                }, 1);
               }
               if (response.data.errors) {
                 var errores = [];
