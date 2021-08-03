@@ -223,12 +223,6 @@ var vMainpage = new Vue({
                 $(this).addClass('active').siblings().removeClass('active');
                 parent.removeClass('active');
                 parent.find('.form-custom-select-dd').fadeOut();
-            
-                if (parent.find('.form-custom-select-elem-short').length) {
-                  chosen.html(elShortName);
-                } else {
-                  chosen.html(elName);
-                }
               });
             });
         }

@@ -86,11 +86,15 @@ Vue.component('exchanges_country', {
     },
     methods: {
         filter: function(crypt_id) {
+          if(this.exchanges_country[this.country]){
             if (this.exchanges_country[this.country].includes(crypt_id)) {
               return false;
             } else {
               return true;
             }
+          } else {
+            return true;
+          }
         },
         default_sort: function() {
             this.all_exchanges.sort((a, b) => { return b.rating - a.rating;});
