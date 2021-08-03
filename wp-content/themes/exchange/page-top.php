@@ -15,8 +15,8 @@
                             <div class="form-custom-select-dd">
                                 <div class="form-custom-select-dd-wrap">
                                     <span class="form-custom-select-empty">Nothing found</span>
-                                    <div v-for="(currency, index) in options_currencys" :class="'form-custom-select-elem'+(currency.value == selected_currency ? ' active' : '')">
-                                        <input class="form-custom-select-elem-radio" type="radio" name="customSelectCurrency" :value="currency.value" :checked="currency.value == selected_currency" data-el-chenged="selected_currency"><img class="form-custom-select-elem-icon lazy" :data-src="currency.flag" :alt="currency.value"><span class="form-custom-select-elem-name">{{ currency.name }}</span><span class="form-custom-select-elem-short">{{ currency.code }}</span>
+                                    <div v-for="(currency, index) in options_currencys" :class="'form-custom-select-elem'+(currency.code == selected_currency ? ' active' : '')">
+                                        <input class="form-custom-select-elem-radio" type="radio" name="customSelectCurrency" :value="currency.code" :checked="currency.code == selected_currency" data-el-chenged="selected_currency"><span class="form-custom-select-elem-name">{{ currency.name }}</span><span class="form-custom-select-elem-short">{{ currency.code }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -76,8 +76,8 @@
                     <div class="table-head">
                         <div class="table-elem"> <span class="table-heading">Name</span></div>
                         <div class="table-elem"><span class="table-heading">Rating</span></div>
-                        <div class="table-elem"><span class="table-heading">Coin Price (<span class="table-heading-currency">{{ selected_currency_code }}</span>)</span></div>
-                        <div class="table-elem"><span class="table-heading">Fees (<span class="table-heading-currency">{{ selected_currency_code }}</span>)</span></div>
+                        <div class="table-elem"><span class="table-heading">Coin Price (<span class="table-heading-currency">{{ selected_currency }}</span>)</span></div>
+                        <div class="table-elem"><span class="table-heading">Fees (<span class="table-heading-currency">{{ selected_currency }}</span>)</span></div>
                         <div class="table-elem"><span class="table-heading">Fees(%)</span></div>
                         <div class="table-elem"><span class="table-heading">You Get</span></div>
                         <div class="table-elem"><span class="table-heading">Coincub Review</span></div>
@@ -96,12 +96,12 @@
                         <div class="table-elem">
                             <div class="table-rating"><span class="table-rating-val">{{ exchanger.exchange.rating }}</span></div>
                         </div>
-                        <div class="table-elem"><span class="table-heading">Coin Price (<span class="table-heading-currency">{{ selected_currency_code }}</span>)</span>
+                        <div class="table-elem"><span class="table-heading">Coin Price (<span class="table-heading-currency">{{ selected_currency }}</span>)</span>
                             <div class="table-sum price">
                                 <span class="table-sum-val">{{ exchanger.coinPrice.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") }}</span>
                             </div>
                         </div>
-                        <div class="table-elem"><span class="table-heading">Fees (<span class="table-heading-currency">{{ selected_currency_code }}</span>)</span>
+                        <div class="table-elem"><span class="table-heading">Fees (<span class="table-heading-currency">{{ selected_currency }}</span>)</span>
                             <div class="table-sum fee">
                                 <span class="table-sum-val">{{ exchanger.feeAmount.toFixed(2) }}</span>
                             </div>
