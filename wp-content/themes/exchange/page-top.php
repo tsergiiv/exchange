@@ -196,54 +196,71 @@
                         <div class="tab-elem top-page-info-content-elem active" data-tab-elem="1">
                             <div class="top-page-info-content-elem-card">
                                 <div class="top-page-info-content-elem-text">
-                                    <p>
-                                        Crypto traders are frequently targets of scams and phishing attacks.
-                                        Make sure you’re up to date with security best practices, like avoiding phishing
-                                        emails, using a password manager, and enabling two-factor authentication.
-                                    </p>
+																	<p>
+																		Crypto traders are frequently targets of scams and phishing attacks. 
+																		Make sure you’re up to date with security best practices, like identifying 
+																		phishing emails, using a password manager, and enabling two-factor authentication.
+																	</p>
+																	<p>
+																		Exchanges aren’t safe either - make sure security is a factor when choosing an 
+																		exchange. Above all, keep any crypto you aren’t actively trading offline in a cold wallet.
+																	</p>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-elem top-page-info-content-elem" data-tab-elem="2">
                             <div class="top-page-info-content-elem-card">
                                 <div class="top-page-info-content-elem-text">
-                                    <p>
-                                        Many exchanges have built in perks and rewards programs to incentivize
-                                        users. Keep this in mind when choosing an exchange; depending on what kind of
-                                        investment you want to make, you can passively earn income.
-                                    </p>
+																	<p>
+																		Many exchanges have built in perks and rewards programs to incentivize 
+																		users. Keep this in mind when choosing an exchange; depending on what 
+																		kind of investment you want to make, you can passively earn income.
+																	</p>
+																	<p>
+																		Whether you’re looking for a referral program, rewards card, Netflix 
+																		subscription, or futures trading competition, there’s an exchange that offers it.
+																	</p>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-elem top-page-info-content-elem" data-tab-elem="3">
                             <div class="top-page-info-content-elem-card">
                                 <div class="top-page-info-content-elem-text">
-                                    <p>
-                                        Keep an eye out for fees! Many crypto exchanges have several different
-                                        fee schedules with complicated structures. Make sure you give them a once over
-                                        to avoid nasty surprises.
-                                    </p>
+																	<p>
+																		Keep an eye out for fees! Many crypto exchanges have several different 
+																		fee schedules with complicated structures.
+																	</p>
+																	<p>
+																		Remember that fees can add up, and different cryptocurrencies can have 
+																		different fees. Make sure you give them a once over to avoid nasty surprises.
+																	</p>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-elem top-page-info-content-elem" data-tab-elem="4">
                             <div class="top-page-info-content-elem-card">
                                 <div class="top-page-info-content-elem-text">
-                                    <p>
-                                        Always do your research before investing. Read exchange reviews,
-                                        see if that exciting new coin has an actual community, and make sure you’re
-                                        familiar with the crypto landscape.
-                                    </p>
+																	<p>
+																		Always do your research before investing. Read exchange reviews, see if that 
+																		exciting new coin has an actual community, and make sure you’re familiar with 
+																		the crypto landscape.
+																	</p>
+																	<p>
+																		The crypto landscape is constantly changing, so read widely before deciding to 
+																		put all your eggs in one basket/ meme coin.
+																	</p>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-elem top-page-info-content-elem" data-tab-elem="5">
                             <div class="top-page-info-content-elem-card">
                                 <div class="top-page-info-content-elem-text">
-                                    <p>
-                                        You would not believe the sheer volume of scams being run. If
-                                        someone wants to give you free money, run in the opposite direction.
-                                    </p>
+																	<p>
+																		Someone will try to scam you. Keep your wits about you, use your common sense, 
+																		and don’t believe anyone who says that they’ll send you free Bitcoin. If someone 
+																		wants to give you free money, run in the opposite direction. Don’t click links in 
+																		strange emails, verify the URL of the exchange you’re on, and never share your private keys. 
+																	</p>
                                 </div>
                             </div>
                         </div>
