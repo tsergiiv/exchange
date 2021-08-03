@@ -52,58 +52,62 @@ $(document).ready(function () {
 
   // Show book message 
 
-	function showBook() {
-		let wH = $(window).height();
-		let wS = $(window).scrollTop();
-		let bookMsg = $('.book');
+	// function showBook() {
+	// 	let wH = $(window).height();
+	// 	let wS = $(window).scrollTop();
+	// 	let bookMsg = $('.book');
 		
-		if(wS >= wH) {
-			bookMsg.show();
-			setTimeout(function() {
-				bookMsg.addClass('active');
-			}, 500);
-		}
-	}
+	// 	if(wS >= wH) {
+	// 		bookMsg.show();
+	// 		setTimeout(function() {
+	// 			bookMsg.addClass('active');
+	// 		}, 500);
+	// 	}
+	// }
 
-	$(window).scroll(function() {
-    clearTimeout($.data(this, 'scrollTimer'));
+	// $(window).scroll(function() {
+  //   clearTimeout($.data(this, 'scrollTimer'));
 
-		$('.book').removeClass('active');
-		setTimeout(function() {
-			$('.book').hide();
-		}, 600);
+	// 	$('.book').removeClass('active');
+	// 	setTimeout(function() {
+	// 		$('.book').hide();
+	// 	}, 600);
 		
-		if(!$('.book').hasClass('close')) {
-			$.data(this, 'scrollTimer', setTimeout(function() {
-				showBook();
-			}, 1100));
-		}
-	});
+	// 	if(!$('.book').hasClass('close')) {
+	// 		$.data(this, 'scrollTimer', setTimeout(function() {
+	// 			showBook();
+	// 		}, 1100));
+	// 	}
+	// });
 
 	// Show book message - end
   // Close book message 
 
-	$('.book-close-btn').click(function() {
-		$('.book').fadeOut();
-		$('.book').addClass('close');
-	});
+	// $('.book-close-btn').click(function() {
+	// 	$('.book').fadeOut();
+	// 	$('.book').addClass('close');
+	// });
 
 	// Close book message - end
   // Close cookies message
 
-  $('.cookie-close-btn').click(function() {
-    $('.cookie').fadeOut();
-    localStorage.setItem('cookiesAccepted', 'close');
-  })
+  // $('.cookie-close-btn').click(function() {
+  //   $('.cookie').fadeOut();
+  //   localStorage.setItem('cookiesAccepted', 'close');
+  // })
 
-  $(window).on('load', function() {
-    let cookies = localStorage.getItem('cookiesAccepted');
-    if(cookies == "close") {
-      $('.cookie').fadeOut();
-    } else {
-      $('.cookie').fadeIn();
-    }
-  });
+  // $(window).on('load', function() {
+  //   let cookies = localStorage.getItem('cookiesAccepted');
+  //   if(cookies == "close") {
+  //     $('.cookie').fadeOut();
+  //   } else {
+  //     $('.cookie').fadeIn();
+  //   }
+  // });
+
+	// Close cookies message - end
+
+	// Choose pair btn
 
   $('.choose-pair-btn').click(function () {
     $('html, body').animate({
