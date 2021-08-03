@@ -240,6 +240,7 @@ var vMainpage = new Vue({
                   }, 5500);
                   this.selected_currency = 'EUR';
                 }
+                $('img').removeAttr('data-ll-status');
                 var vm = this;
                 setTimeout(function () {
                   vm.$lazyLoadInstance.update();
