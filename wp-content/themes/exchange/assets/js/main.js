@@ -390,6 +390,24 @@ $(document).ready(function () {
 
   $(window).on('load', firstWrapHeight);
   $(window).resize(firstWrapHeight); // First time tab height - end 
+	// Top page info height
+
+	function topInfoHeight() {
+		let topInfoElem = $('.top-page-info').find('.top-page-info-content-elem');
+
+		let elementHeights = topInfoElem.map(function() {
+			return $(this).outerHeight();
+		}).get();
+	
+		let maxHeight = Math.max.apply(null, elementHeights);
+
+		$('.top-page-info-content').css({'min-height': maxHeight})
+	}
+
+	$(window).on('load', topInfoHeight);
+	$(window).resize(topInfoHeight);
+
+	// Top page info height - end 
   // Form validate
 
   $('.form-validate').on('submit', function (e) {
