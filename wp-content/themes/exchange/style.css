@@ -518,8 +518,7 @@ section {
 .footer-banner-left, .footer-banner-right {
   position: relative; }
 .footer-banner-left {
-  width: 50%;
-  max-width: 570px; }
+  max-width: 625px }
 .footer-banner-right {
   padding-right: 40px;
   width: 50%; }
@@ -1191,8 +1190,6 @@ section {
   -webkit-transition: 0.35s;
   -o-transition: 0.35s;
   transition: 0.35s; }
-.modal-close:hover {
-  border-color: red; }
 .modal-close:hover img {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
@@ -1366,6 +1363,8 @@ section {
   transition: .85s;
   z-index: 50;
   opacity: 0; }
+.book.active {
+	opacity: 1; }
 .book-wrap {
   position: relative;
   padding-left: 184px;
@@ -2361,7 +2360,9 @@ section {
   width: fit-content; }
 .article-head .section-desc {
   margin-top: 24px;
-  max-width: 520px; }
+  max-width: 520px;
+	font-size: 12px;
+	line-height: 18px; }
 
 .article-review {
   margin-top: 40px; }
@@ -2995,6 +2996,7 @@ section {
   margin: 10px 0;
   width: 6px; }
 .article-sidebar.full-height::-webkit-scrollbar-track {
+	margin: 50px 0;
   background: #EDF0F4;
   border-radius: 20px; }
 .article-sidebar.full-height::-webkit-scrollbar-thumb {
@@ -3520,7 +3522,9 @@ section {
     padding-left: 44px; }
   .first-img {
     margin-left: -62px;
-    left: 0; } }
+    left: 0; } 
+	.footer-banner-left {
+		max-width: 570px } }
 
 @media screen and (max-width: 1200px) {
   .blog-head {
@@ -4562,7 +4566,7 @@ section {
   .footer-banner-right {
     margin-top: 206px; }
   .footer-note {
-    font-size: 9px;
+    font-size: 10px;
     line-height: 19px; }
   .footer-nav {
     margin-top: 41px;

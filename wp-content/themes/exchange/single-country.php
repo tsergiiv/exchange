@@ -13,11 +13,11 @@ Template Post Type: country
                 <div class="breadcrumbs">
                     <a class="breadcrumbs-link" href="<?= home_url() ?>">Main Page</a>
                     <a class="breadcrumbs-link" href="<?= home_url() ?>/country">Country Reviews</a>
-                    <a class="breadcrumbs-link" href="">Crypto exchanges & Regulation in <?= the_title() ?></a>
+                    <a class="breadcrumbs-link" href="">Crypto Exchanges & Regulation in <?= the_title() ?></a>
                 </div>
                 <div class="article-head-wrap">
                     <div class="article-head-left">
-                        <h1 class="section-header big"><span class="word-accent violet">Crypto exchanges<span
+                        <h1 class="section-header big"><span class="word-accent violet">Crypto Exchanges<span
                                         class="word-accent-square left"></span><span
                                         class="word-accent-square right"></span></span>& Regulation in <span
                                     class="word-accent orange"><?= the_title() ?><span class="word-accent-square left"></span><span
@@ -111,22 +111,22 @@ Template Post Type: country
                             <div class="article-info-title">Services</div>
                             <?php if ($service1['value']): ?>
                             <div class="article-info-elem">
-                                <?= $service1['label'] ?> <span class="article-info-elem-val"><?= $service1['value'] ?></span>
+                                <?= $service1['label'] ?> <?= the_title() ?>: <span class="article-info-elem-val"><?= $service1['value'] ?></span>
                             </div>
                             <?php endif; ?>
                             <?php if ($service2['value']): ?>
                             <div class="article-info-elem">
-                                <?= $service2['label'] ?> <span class="article-info-elem-val"><?= $service2['value'] ?></span>
+                                <?= $service2['label'] ?> <?= the_title() ?>: <span class="article-info-elem-val"><?= $service2['value'] ?></span>
                             </div>
                             <?php endif; ?>
                             <?php if ($service3['value']): ?>
                             <div class="article-info-elem">
-                                <?= $service3['label'] ?> <span class="article-info-elem-val violet"><?= $service3['value'] ?></span>
+                                <?= $service3['label'] ?>: <span class="article-info-elem-val violet"><?= $service3['value'] ?></span>
                             </div>
                             <?php endif; ?>
                             <?php if ($service4['value']): ?>
                             <div class="article-info-elem">
-                                <?= $service4['label'] ?> <span class="article-info-elem-val"><?= $service4['value'] ?></span>
+                                <?= $service4['label'] ?>: <span class="article-info-elem-val"><?= $service4['value'] ?></span>
                             </div>
                             <?php endif; ?>
                         </div>
@@ -245,15 +245,11 @@ Template Post Type: country
 
                         <?= do_shortcode( '[helpful]' ); ?>
 
+                        <?php $tags = get_the_terms( get_the_ID(), 'tag'); ?>
                         <div class="article-tag">
-                            <span>#crypto</span>
-                            <span>#exchanges</span>
-                            <span>#regulation</span>
-                            <span>#<?= the_title() ?></span>
-                            <span>#coinbase exchange </span>
-                            <span>#what is coinbase? </span>
-                            <span>#coinbase wallet </span>
-                            <span>#coinbase review </span>
+                            <?php foreach ( $tags as $tag ) { ?>
+                                <span>#<?= $tag->name; ?></span>
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="article-sidebar">

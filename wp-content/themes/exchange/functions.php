@@ -121,12 +121,10 @@ function send_mail()
 
     $file = get_field('email_book_file', 25);
     $path = array_pop(explode('/uploads/', $file));
-    $body .= '<a href="' . $file . '">
+    $body .= '<a href="' . $file . '" download>
                 <button style="background: #3498db; color: #ffffff; font-size: 20px; padding: 10px 20px 10px 20px; border-radius: 28px; border: solid #fff 0px; cursor: pointer" type="button" class="btn">Download</button>
               </a>';
-    $attachments = array(WP_CONTENT_DIR . '/uploads/' . $path);
-
-    $result = wp_mail($to, $subject, $body, $headers, $attachments);
+    $result = wp_mail($to, $subject, $body, $headers);
 
     if ($result) {
         $data = [
