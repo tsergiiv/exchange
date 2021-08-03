@@ -1418,6 +1418,7 @@ section {
   margin-top: 0; }
 
 .cookie {
+	display: none;
   position: fixed;
   padding: 24px;
   padding-top: 26px;
