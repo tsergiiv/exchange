@@ -50,34 +50,45 @@ $(document).ready(function () {
   }); // Preloader - end
   // Choose pair btn
 
-  // Show book message
+  // Show book message 
 
-  function showBook() {
-    var wH = $(window).height();
-    var wS = $(window).scrollTop();
-    var bookMsg = $('.book');
+	function showBook() {
+		let wH = $(window).height();
+		let wS = $(window).scrollTop();
+		let bookMsg = $('.book');
+		
+		if(wS >= wH) {
+			bookMsg.show();
+			setTimeout(function() {
+				bookMsg.addClass('active');
+			}, 500);
+		}
+	}
 
-    if (wS >= wH) {
-      bookMsg.css({
-        opacity: 1
-      });
-    }
-  }
-
-  $(window).scroll(function () {
+	$(window).scroll(function() {
     clearTimeout($.data(this, 'scrollTimer'));
-    $('.book').css({
-      opacity: 0
-    });
-    $.data(this, 'scrollTimer', setTimeout(function () {
-      showBook();
-    }, 1100));
-  }); // Show book message - end
-  // Close book message
 
-  $('.book-close-btn-icon').click(function () {
-    $('.book').fadeOut();
-  }); // Close book message - end
+		$('.book').removeClass('active');
+		setTimeout(function() {
+			$('.book').hide();
+		}, 600);
+		
+		if(!$('.book').hasClass('close')) {
+			$.data(this, 'scrollTimer', setTimeout(function() {
+				showBook();
+			}, 1100));
+		}
+	});
+
+	// Show book message - end
+  // Close book message 
+
+	$('.book-close-btn').click(function() {
+		$('.book').fadeOut();
+		$('.book').addClass('close');
+	});
+
+	// Close book message - end
   // Close cookies message
 
   $('.cookie-close-btn').click(function() {

@@ -20,7 +20,7 @@
 													<img class="footer-banner-bg lazy" data-src="<?php bloginfo('template_url'); ?>/assets/img/content/footer/footer-bg-2x.webp" alt="">
 												</picture>
                         <div class="footer-banner-left">
-                            <div class="section-title-simple"> <span class="orange">Free guide </span>on how to get into crypto market</div>
+                            <div class="section-title-simple">FREE GUIDE TO GETTING STARTED WITH CRYPTO</div>
                             <h1 class="section-header m">
                                 <span class="word-accent orange">
                                     <?= the_field('guide_title') ?>
@@ -50,14 +50,12 @@
                         </div>
                     </section>
                     <section class="footer-note">
-                        This is not financial advice. Coincub is an independent publisher
-                        and comparison service. Its articles, interactive tools and other
-                        content are provided to you for free, as self-help tools and for
-                        informational purposes only. This space changes rapidly and evolving,
-                        so please make sure to do your own research. Although we do our best
-                        to provide you the best information, we cannot guarantee the accuracy
-                        or applicability of any information on this site or in regard to your
-                        individual circumstances.
+											This is not financial advice. Coincub is an independent publisher and comparison 
+											service. Its articles, interactive tools and other content are provided to you for 
+											free, as self-help tools and for informational purposes only. This space evolves 
+											rapidly, so please make sure to do your own research. Although we do our best to 
+											provide you with the best information, we cannot guarantee the accuracy or applicability 
+											of any information on this site or in regard to your individual circumstances.
                     </section>
                     <section class="footer-nav container">
                         <div class="footer-nav-content">
@@ -218,28 +216,21 @@
                             </p>
                             <div class="modal-subheading">Coincub - Country Reviews</div>
                             <p>
-                                The Country Crypto Rating is unique to Coincub and, as ever, we
-                                take our ratings and reviews very seriously indeed.
+															The Country Crypto Rating is unique to Coincub and, as ever, we take 
+															our ratings and reviews very seriously indeed.
                             </p>
                             <p>
-                                In any country we cover, our team of editors and researchers
-                                assess the general culture towards crypto currencies and how widely
-                                they are used and traded. This includes collating the views and
-                                attitudes of government, financial sectors and other relevant bodies
-                                in that country.
-                            </p>
-                            <p>
-                                Within our rating we include prevailing and upcoming legislation
-                                and regulation along with tax implications allowances or schemes.
-                                We also include the ease of exchanging crypto and how prevalent
-                                the outlets are for buying goods or exchanging crypto currency.
-                            </p>
-                            <p>
-                                Investing is always subject to laws and regulations. Our reviews
-                                seek to provide impartial analysis of a country’s general level
-                                of acceptance and disposition towards the cryptoeconomy and the
-                                advantages and disadvantages of buying or selling crypto assets
-                                within it.
+															In any country we cover, our team of editors and researchers assess the 
+															general culture towards cryptocurrencies and how widely they are used and 
+															traded. This includes collating the views and attitudes of government, 
+															financial sectors and other relevant bodies in that country. Within our rating 
+															we include prevailing and upcoming legislation and regulation along with tax 
+															implications allowances or schemes. We also include the ease of exchanging 
+															crypto and how prevalent the outlets are for buying goods or exchanging cryptocurrency. 
+															Investing is always subject to laws and regulations. Our reviews seek to provide 
+															impartial analysis of a country’s general level of acceptance and disposition towards 
+															the crypto economy and the advantages and disadvantages of buying or selling crypto 
+															assets within it.
                             </p>
                         </div>
                     </div>
@@ -352,10 +343,9 @@
                 <use href="<?php bloginfo('template_url'); ?>/assets/img/svg/symbol/sprite.svg#book-close-btn"></use>
             </svg>
         </div><img class="cookies-img" src="<?php bloginfo('template_url'); ?>/assets/img/content/cookie/cookie-img.svg" alt="Cookie img">
-        <div class="cookie-title">Have a cookie:)</div>
+        <div class="cookie-title">Have a cookie :)</div>
         <div class="cookie-desc">
-            This website uses cookies to ensure you get the best
-            expirience on our website
+					This website uses cookies to ensure you have the best experience.
         </div><a class="cookie-link" href="">Learn more </a>
     </div>
 
