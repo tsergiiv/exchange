@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-group">
                         <label class="form-title">Amount</label>
-                        <input class="form-input" type="text" name="formAmount" placeholder="Your Amount" v-model.number="amount">
+                        <input class="form-input" type="text" name="formAmount" placeholder="Your Amount" v-model.number="amount" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label class="form-title">Target coin</label>
