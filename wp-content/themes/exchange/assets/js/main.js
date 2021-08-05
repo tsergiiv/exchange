@@ -43,10 +43,10 @@ $(document).ready(function () {
       $('.preloader').css({
         display: 'none'
       });
-    }, 2000);
+    }, 1000);
     setTimeout(function () {
       $('body').removeClass('modal-active');
-    }, 1300);
+    }, 650);
   }); // Preloader - end
   // Choose pair btn
 
